@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>和音確認</title>
+  <link href="/static/style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+  <div id="app" class="w-full max-w-3xl p-6">
+    <div class="bg-white rounded-xl shadow p-6">
+      <h1 class="text-xl font-bold mb-4">わおん の かくにん</h1>
+      <p id="info" class="text-sm text-gray-600 mb-4"></p>
+
+  <div id="chords" class="grid grid-cols-4 gap-6 mb-4"></div>
+
+      <div class="flex gap-3">
+        <button id="startQuizBtn" class="btn-action px-6 py-3 bg-indigo-600 text-white rounded">スタート</button>
+        <a href="/level_select" class="btn-action px-6 py-3 inline-block border rounded text-center bg-white">もどる</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const level = Number(localStorage.getItem('selectedLevel') || 1);
+    const instant = localStorage.getItem('instant') === '1';
+    document.getElementById('info').textContent = `れべる ${level} — ${instant ? 'すぐにこたえをみる' : 'あとでこたえをみる'}`;
+
+    const colorMap = {
+      red: 'あか', yellow: 'きいろ', blue: 'あお', black: 'くろ', green: 'みどり', orange: 'おれんじ', purple: 'むらさき', pink: 'ぴんく', brown: 'ちゃいろ', beige: 'べーじゅ', lavender: 'らべんだー', gray: 'ぐれー', lightblue: 'みずいろ', yellowgreen: 'きみどり'
+    };
+
+    // shared preview audio to prevent overlapping playback
+    const previewAudio = new Audio();
+    let playingBtn = null;
+
+    fetch(`/api/sounds/${level}`)
+      .then(r => r.json())
+      .then(data => {
+        const sounds = data.sounds || [];
+        const container = document.getElementById('chords');
+        if (!sounds.length) { container.textContent = '音ファイルがありません'; return; }
+
+  const icons = {
+          bell: '<path d="M12 3v2.1A7 7 0 0 0 9 12H15a7 7 0 0 0-3-6.9V3z"/>',
+          trumpet: '<path d="M2 12h6v2H2z"/>',
+          guitar: '<path d="M6 11l6-6 1 1-6 6z"/>',
+          drum: '<path d="M4 6v8a8 8 0 0 0 16 0V6H4z"/>',
+          flute: '<path d="M2 11h20v2H2z"/>',
+          xylophone: '<path d="M2 16l20-6v2L2 18z"/>',
+          harp: '<path d="M6 3h2v14H6z"/>',
+          sax: '<path d="M4 12h8v2H4z"/>',
+          banjo: '<path d="M10 3h4v14h-4z"/>',
+          triangle: '<path d="M12 3l9 15H3z"/>',
+          maraca: '<path d="M10 3L14 11l-4 8-4-8z"/>',
+          piano: '<path d="M2 6h20v12H2z"/>',
+          ukulele: '<path d="M4 12h6v2H4z"/>',
+          ocarina: '<path d="M12 3c4 0 6 8 0 10z"/>'
+  };
+  const iconMap = { red:'trumpet', yellow:'trumpet', blue:'guitar', black:'drum', green:'flute', orange:'xylophone', purple:'harp', pink:'sax', brown:'banjo', beige:'triangle', lavender:'maraca', gray:'piano', lightblue:'ukulele', yellowgreen:'ocarina' };
+
+        sounds.forEach((fname) => {
+          const parts = fname.split('_');
+          const raw = parts.length > 1 ? parts[1].split('.')[0] : fname;
+          const color = parts.length > 1 ? parts[1].split('.')[0] : null;
+          const label = (colorMap[raw]) || raw;
+          const iconKey = iconMap[raw] || 'bell';
+
+          const btn = document.createElement('button');
+          btn.className = 'flex flex-col items-center justify-center gap-2 btn-large rounded-lg shadow-lg focus:outline-none w-full';
+          btn.dataset.file = fname;
+
+          const swatch = document.createElement('div');
+          swatch.className = 'swatch';
+          swatch.style.borderRadius = '9999px';
+          swatch.style.boxShadow = '0 2px 6px rgba(0,0,0,0.12)';
+          swatch.style.display = 'flex';
+          swatch.style.alignItems = 'center';
+          swatch.style.justifyContent = 'center';
+          swatch.style.marginBottom = '4px';
+          swatch.className = 'swatch';
+          let cssColor = '#f3f4f6';
+          if (raw && /^[a-z0-9]+$/.test(raw)){
+            cssColor = raw.toLowerCase();
+          }
+          swatch.style.background = cssColor;
+          swatch.style.border = '32px solid rgba(0,0,0,0.06)';
+          // insert svg icon
+          // swatch.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + (icons[iconKey] || icons['bell']) + '</svg>';
+
+          const lbl = document.createElement('div');
+          lbl.textContent = label;
+          lbl.className = 'text-xl font-bold';
+
+          btn.appendChild(swatch);
+          btn.appendChild(lbl);
+
+          btn.addEventListener('click', () => {
+            if (!previewAudio.paused) { previewAudio.pause(); previewAudio.currentTime = 0; }
+            if (playingBtn && playingBtn !== btn) { playingBtn.style.boxShadow = 'none'; }
+            previewAudio.src = `/static/sounds/${fname}`;
+            previewAudio.play().catch(() => {});
+            playingBtn = btn;
+            btn.style.boxShadow = '0 0 12px rgba(0,0,0,0.18)';
+            previewAudio.onended = () => { if (playingBtn) { playingBtn.style.boxShadow = 'none'; playingBtn = null; } };
+          });
+
+          container.appendChild(btn);
+        });
+      }).catch(e => { document.getElementById('chords').textContent = '音ファイルの取得に失敗しました'; });
+
+    document.getElementById('startQuizBtn').addEventListener('click', () => {
+      localStorage.setItem('instant', instant ? '1' : '0');
+      window.location.href = '/quiz';
+    });
+
+    function goBack(){ window.location.href = '/level_select'; }
+  </script>
+</body>
+</html>

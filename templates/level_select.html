@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>レベル選択</title>
+    <link href="/static/style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <div id="app" class="w-full max-w-2xl p-6">
+        <div class="bg-white rounded-xl shadow p-6">
+            <h1 class="text-xl font-bold mb-4">れべるをえらんでね</h1>
+
+            <div class="grid grid-cols-3 gap-4 mb-4">
+                <button v-for="lvl in levels" :key="lvl" @click="selectLevel(lvl)" class="btn-large px-6 py-3 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700">
+                    <span v-text="'れべる' + lvl"></span>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <label class="flex items-center gap-2">
+                    <input type="checkbox" v-model="instant" class="w-4 h-4" />
+                    <span class="text-sm">すぐにこたえをみる</span>
+                </label>
+            <button @click="goBack" class="ml-auto px-3 py-2 border rounded">もどる</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+        createApp({
+            data(){ return { levels: [1,2,3,4,5,6], instant: true } },
+            methods:{
+                selectLevel(l){
+                    localStorage.setItem('selectedLevel', String(l));
+                    localStorage.setItem('instant', this.instant ? '1' : '0');
+                    window.location.href = '/chord_check';
+                },
+                goBack(){ window.location.href = '/'; }
+            },
+            mounted(){
+                const stored = localStorage.getItem('instant');
+                if (stored === '1') this.instant = true;
+                else if (stored === '0') this.instant = false;
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

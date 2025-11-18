@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>過去の結果</title>
+  <link href="/static/style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-2xl p-6">
+    <div class="bg-white rounded-xl shadow p-6">
+      <h1 class="text-xl font-bold mb-4">過去の結果</h1>
+      <div id="list" class="mb-4"></div>
+
+      <div class="flex gap-3">
+        <button id="clearBtn" class="btn-action px-3 py-2 border rounded">クリア</button>
+        <button onclick="location.href='/'" class="btn-action px-3 py-2 border rounded">タイトルへ</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function render(){
+      const list = JSON.parse(localStorage.getItem('pastResults') || '[]');
+      const container = document.getElementById('list');
+      container.innerHTML = '';
+      if (!list.length) { container.textContent = 'まだ結果がありません'; return; }
+      const ul = document.createElement('ul');
+      ul.className = 'space-y-2';
+      list.forEach((r) => {
+        const li = document.createElement('li');
+        li.className = 'px-3 py-2 border rounded';
+        const d = new Date(r.date);
+        li.textContent = `${d.toLocaleString()}: ${r.rate}% (${r.score}/${r.total})`;
+        ul.appendChild(li);
+      });
+      container.appendChild(ul);
+    }
+    document.getElementById('clearBtn').addEventListener('click', () => {
+      localStorage.removeItem('pastResults'); render();
+    });
+    render();
+  </script>
+</body>
+</html>

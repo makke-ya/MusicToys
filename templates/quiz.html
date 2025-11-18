@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <title>クイズ</title>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center">
+<div id="app" class="w-full max-w-3xl p-6">
+  <div class="bg-white rounded-xl shadow p-6">
+  <h1 id="status">おとをきいてね！</h1>
+
+  <div id="buttons" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4 opacity-0 transition-opacity duration-700"></div>
+
+  <div class="flex justify-center gap-4 mt-4">
+    <button id="nextBtn" class="opacity-50 px-6 py-3 rounded-lg bg-green-500 text-white" disabled>つぎへ</button>
+    <button id="replayBtn" class="px-6 py-3 rounded-lg bg-gray-200">もういちどきく</button>
+  </div>
+
+  <audio id="audio"></audio>
+  </div>
+</div>
+
+<script>
+let quiz = [];
+let index = 0;
+let instant = true; // 即時採点ON/OFF
+const audio = document.getElementById('audio');
+let answers = []; // {choice, correct, file}
+let answered = false; // prevent multiple answers per question
+let currentSelection = null; // for instant-off mode
+
+async function loadQuiz(level) {
+  const res = await fetch(`/api/quiz/${level}`);
+  const data = await res.json();
+  quiz = data.questions;
+  answers = [];
+  // also fetch choice buttons for this level
+  try{
+    const r = await fetch(`/api/sounds/${level}`);
+    const d = await r.json();
+    renderChoiceButtons(d.sounds || []);
+  }catch(e){ console.log(e); }
+  playQuestion();
+}
+
+function playQuestion() {
+  if (index >= quiz.length) {
+  // save results to localStorage and go to result page
+  localStorage.setItem('lastAnswers', JSON.stringify(answers));
+  // compute score
+  const score = answers.filter(a => a.correct).length;
+  localStorage.setItem('score', String(score));
+  window.location.href = "/result";
+    return;
+  }
+  const note = quiz[index];
+  audio.src = `/static/sounds/${note}`;
+  audio.pause();
+  audio.currentTime = 0;
+  document.getElementById('buttons').classList.add('opacity-0');
+  document.getElementById('nextBtn').disabled = true;
+  document.getElementById('status').textContent = '再生中...';
+
+  audio.play().then(() => {
+    setTimeout(() => {
+      // show buttons with fade
+      document.getElementById('buttons').classList.remove('opacity-0');
+      document.getElementById('status').textContent = 'おとをきいたらボタンを押してね';
+  // allow answering
+  answered = false;
+  setChoiceButtonsDisabled(false);
+    }, 2000); // 2秒再生
+  }).catch(e => console.log(e));
+}
+
+function renderChoiceButtons(sounds){
+  // sounds: array of filenames like '01_red.mp3'
+  const container = document.getElementById('buttons');
+  container.innerHTML = '';
+  // collect distinct colors from filenames and use as choices
+  const colors = sounds.map(f => {
+    const parts = f.split('_');
+    return parts.length>1 ? parts[1].split('.')[0] : f;
+  });
+  // collapse unique and pick up to 6 choices
+  const unique = Array.from(new Set(colors)).slice(0,6);
+  const colorMap = { red:'あか', yellow:'きいろ', blue:'あお', black:'くろ', green:'みどり', orange:'おれんじ', purple:'むらさき', pink:'ぴんく', brown:'ちゃいろ', beige:'べーじゅ', lavender:'らべんだー', gray:'ぐれー', lightblue:'みずいろ', yellowgreen:'きみどり' };
+  unique.forEach((raw) => {
+    const label = colorMap[raw] || raw;
+    const btn = document.createElement('button');
+  btn.className = 'flex flex-col items-center justify-center gap-2 p-3 rounded-lg shadow-lg w-full';
+    btn.dataset.label = raw;
+
+  const swatch = document.createElement('div');
+  swatch.className = 'swatch';
+    swatch.style.borderRadius = '9999px';
+    swatch.style.boxShadow = '0 2px 6px rgba(0,0,0,0.12)';
+    swatch.style.display = 'flex';
+    swatch.style.alignItems = 'center';
+    swatch.style.justifyContent = 'center';
+    swatch.style.marginBottom = '4px';
+
+      const lbl = document.createElement('div');
+      lbl.textContent = label;
+      lbl.style.fontSize = '18px';
+
+    let cssColor = '#f3f4f6';
+    if (raw && /^[a-z0-9]+$/.test(raw)){
+      cssColor = raw.toLowerCase();
+    }
+    swatch.style.background = cssColor;
+    swatch.style.border = '32px solid rgba(0,0,0,0.06)';
+
+    btn.appendChild(swatch);
+    btn.appendChild(lbl);
+  // Initially disabled until audio finishes
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+    // click handler supports both instant and non-instant modes
+    btn.addEventListener('click', (e) => {
+      e.preventDefault(); e.stopPropagation();
+        if (instant) {
+        if (!btn.disabled) { btn.disabled = true; btn.style.opacity = '0.6'; }
+        answer(raw);
+      } else {
+        // allow changing selection before Next
+        currentSelection = raw;
+        // visually mark selected button
+        Array.from(container.querySelectorAll('button')).forEach(b => {
+          b.style.outline = (b.dataset.label === raw) ? '3px solid rgba(0,0,0,0.4)' : 'none';
+        });
+    // show selected answer and enable Next
+  document.getElementById('status').textContent = `あなたの　えらんだおと: ${label}`;
+        document.getElementById('nextBtn').disabled = false;
+        document.getElementById('nextBtn').classList.remove('opacity-50');
+      }
+    });
+    container.appendChild(btn);
+  });
+}
+
+function answer(ans) {
+  if (answered) return; // ignore subsequent clicks
+  answered = true;
+  setChoiceButtonsDisabled(true);
+  const file = quiz[index];
+  const correct = file.toLowerCase().includes(ans.toLowerCase()); // ファイル名の色と一致判定
+  answers.push({choice: ans, correct: correct, file: file});
+  const statusEl = document.getElementById('status');
+  if (instant) {
+    if (correct) {
+      statusEl.textContent = 'やったね！せいかい！';
+      try { new Audio('/static/sounds/correct.mp3').play(); } catch(e){}
+    } else {
+      const raw = file.split('_')[1] ? file.split('_')[1].split('.')[0] : file;
+      const label = ( { red:'あか', yellow:'きいろ', blue:'あお', black:'くろ', green:'みどり', orange:'おれんじ', purple:'むらさき', pink:'ぴんく', brown:'ちゃいろ', beige:'べーじゅ', lavender:'らべんだー', gray:'ぐれー', lightblue:'みずいろ', yellowgreen:'きみどり' }[raw] ) || raw;
+      statusEl.textContent = `ちがうよ。こたえは ${label} だよ`;
+      try { new Audio('/static/sounds/wrong.mp3').play(); } catch(e){}
+    }
+    setTimeout(() => { document.getElementById('status').textContent = 'つぎへ'; }, 1600);
+  } else {
+    // show what the user selected without revealing correctness
+    statusEl.textContent = `あなたの　えらんだおと: ${ (colorMap[ans] || ans) }`;
+    // optional: hint to proceed
+    setTimeout(() => { document.getElementById('status').textContent = 'つぎへ'; }, 1200);
+  }
+
+  document.getElementById('nextBtn').disabled = false;
+  document.getElementById('nextBtn').classList.remove('opacity-50');
+}
+
+function setChoiceButtonsDisabled(disabled){
+  const container = document.getElementById('buttons');
+  Array.from(container.querySelectorAll('button')).forEach(b => {
+    b.disabled = disabled;
+    b.style.opacity = disabled ? '0.6' : '1';
+  });
+}
+
+document.getElementById('nextBtn').onclick = () => {
+  if (!instant) {
+    // finalize the current selection if any
+    const file = quiz[index];
+    const choice = currentSelection || '';
+    const correct = file.toLowerCase().includes(choice.toLowerCase());
+    answers.push({choice: choice, correct: correct, file: file});
+    // reset selection state
+    currentSelection = null;
+    Array.from(document.getElementById('buttons').querySelectorAll('button')).forEach(b => { b.style.outline = 'none'; });
+  }
+  index++;
+  playQuestion();
+};
+
+document.getElementById('replayBtn').onclick = () => {
+  audio.pause();
+  audio.currentTime = 0;
+  audio.play();
+};
+
+// 初期化（選択されたレベルを localStorage から読み取る）
+const storedLevel = Number(localStorage.getItem('selectedLevel') || 1);
+const storedInstant = localStorage.getItem('instant');
+if (storedInstant === '1') instant = true;
+else if (storedInstant === '0') instant = false;
+loadQuiz(storedLevel);
+</script>
+</body>
+</html>

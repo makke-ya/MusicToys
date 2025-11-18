@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>けっか</title>
+  <link href="/static/style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-3xl p-6">
+    <div class="bg-white rounded-xl shadow p-6">
+  <h1 class="text-xl font-bold mb-4">けっか</h1>
+  <div id="summary" class="mb-4 text-lg"></div>
+      <div id="table" class="mb-4"></div>
+
+      <div class="flex gap-3">
+  <button onclick="location.href='/level_select'" class="btn-action px-4 py-2 border rounded">もういちど</button>
+  <button onclick="location.href='/'" class="btn-action px-4 py-2 border rounded">タイトルへ</button>
+  <button onclick="location.href='/past_results'" class="btn-action px-4 py-2 border rounded">過去の結果</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  const lastAnswers = JSON.parse(localStorage.getItem('lastAnswers') || '[]');
+  const score = lastAnswers.filter(a => a.correct).length;
+  const total = lastAnswers.length || 10;
+  const rate = Math.round(score / total * 100);
+
+  let msg = "";
+  if (rate < 40) msg = "レベルを さげてみよう";
+  else if (rate < 80) msg = "もういちど やってみよう";
+  else msg = "レベルを あげてみよう！";
+
+  document.getElementById('summary').innerHTML = `
+    <p class="font-medium">せいかいりつ: ${rate}% (${score}/${total})</p>
+    <p class="text-sm text-gray-600">${msg}</p>
+  `;
+
+  if (lastAnswers.length){
+    const table = document.createElement('table');
+    table.className = 'min-w-full text-left border-collapse';
+    const thead = table.createTHead();
+    const hdr = thead.insertRow();
+    ['No','選択','正誤','ファイル'].forEach(h => { const th = document.createElement('th'); th.textContent = h; th.className='px-3 py-2 border-b'; hdr.appendChild(th); });
+    const tbody = table.createTBody();
+    lastAnswers.forEach((a, i) => {
+      const r = tbody.insertRow();
+      r.insertCell().textContent = (i+1);
+      r.insertCell().textContent = a.choice;
+      r.insertCell().textContent = a.correct ? '○' : '×';
+      r.insertCell().textContent = a.file;
+      Array.from(r.cells).forEach(c => c.className='px-3 py-2 border-b');
+    });
+    document.getElementById('table').appendChild(table);
+  }
+
+  try{
+    const past = JSON.parse(localStorage.getItem('pastResults') || '[]');
+    past.unshift({date: new Date().toISOString(), score: score, total: total, rate: rate});
+    localStorage.setItem('pastResults', JSON.stringify(past.slice(0, 20)));
+  }catch(e){}
+  </script>
+
+</body>
+</html>
