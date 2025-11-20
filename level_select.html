@@ -19,23 +19,32 @@
                 </button>
             </div>
 
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-4 mb-3">
                 <label class="flex items-center gap-2">
                     <input type="checkbox" v-model="instant" class="w-4 h-4" />
                     <span class="text-sm">すぐにこたえをみる</span>
                 </label>
-            <button @click="goBack" class="ml-auto px-3 py-2 border rounded">もどる</button>
+                <div class="ml-auto flex items-center gap-3">
+                  <label class="text-sm">イラスト: </label>
+                  <label class="flex items-center gap-1"><input type="radio" v-model="iconSet" value="animals" /> <span class="text-sm">どうぶつ</span></label>
+                  <label class="flex items-center gap-1"><input type="radio" v-model="iconSet" value="none" /> <span class="text-sm">なし</span></label>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <button @click="goBack" class="ml-auto px-3 py-2 border rounded">もどる</button>
             </div>
         </div>
     </div>
 
     <script>
         const { createApp } = Vue;
-        createApp({ data(){ return { levels: [1,2,3,4,5,6,7,8,9,10,11,12,13], instant: true } },
+        createApp({ data(){ return { levels: [1,2,3,4,5,6,7,8,9,10,11,12,13], instant: true, iconSet: 'animals' } },
             methods:{
                 selectLevel(l){
                     localStorage.setItem('selectedLevel', String(l));
                     localStorage.setItem('instant', this.instant ? '1' : '0');
+                    localStorage.setItem('iconSet', this.iconSet || 'animals');
                     window.location.href = 'chord_check.html';
                 },
                 goBack(){ window.location.href = 'index.html'; }
@@ -44,6 +53,13 @@
                 const stored = localStorage.getItem('instant');
                 if (stored === '1') this.instant = true;
                 else if (stored === '0') this.instant = false;
+                const storedIcon = localStorage.getItem('iconSet');
+                if (storedIcon) this.iconSet = storedIcon;
+            },
+            watch: {
+              iconSet(newVal){
+                localStorage.setItem('iconSet', newVal || 'animals');
+              }
             }
         }).mount('#app');
     </script>

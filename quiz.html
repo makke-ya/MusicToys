@@ -83,6 +83,9 @@ function renderChoiceButtons(sounds, level){
     const parts = f.split('_');
     return parts.length>1 ? parts[1].split('.')[0] : f;
   });
+  // map color -> representative filename (first occurrence)
+  const colorToFile = {};
+  sounds.forEach(f => { const parts = f.split('_'); const raw = parts.length>1 ? parts[1].split('.')[0] : f; if (!colorToFile[raw]) colorToFile[raw] = f; });
   // allow number of choices equal to number of sound files for the level
   const unique = Array.from(new Set(colors)).slice(0, Math.max(6, sounds.length));
   unique.forEach((raw) => {
@@ -114,7 +117,30 @@ function renderChoiceButtons(sounds, level){
       cssColor = raw.toLowerCase();
     }
     swatch.style.background = cssColor;
-    swatch.style.border = '32px solid rgba(0,0,0,0.06)';
+    // swatch.style.border = '32px solid rgba(0,0,0,0.06)';
+
+    // overlay image if iconSet selected
+    try{
+      const iconSet = localStorage.getItem('iconSet') || 'animals';
+      if (iconSet && iconSet !== 'none'){
+        swatch.style.position = 'relative';
+        swatch.style.overflow = 'visible';
+        // swatch.style.border = '6px solid rgba(0,0,0,0.06)';
+        const img = document.createElement('img');
+        const imgFile = (colorToFile[raw] || '').replace('.mp3', '.png');
+        img.src = `static/images/${iconSet}/${imgFile}`;
+        img.alt = label;
+        img.style.position = 'absolute';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'contain';
+        img.style.pointerEvents = 'none';
+        img.style.opacity = '0.95';
+        img.style.zIndex = '2';
+        img.style.top = '50%'; img.style.left = '50%'; img.style.transform = 'translate(-50%, -50%)';
+        swatch.appendChild(img);
+      }
+    }catch(e){}
 
     btn.appendChild(swatch);
     btn.appendChild(lbl);

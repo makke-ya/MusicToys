@@ -70,7 +70,31 @@
             cssColor = raw.toLowerCase();
           }
           swatch.style.background = cssColor;
-          swatch.style.border = '32px solid rgba(0,0,0,0.06)';
+          // swatch.style.border = '32px solid rgba(0,0,0,0.06)';
+
+          // overlay image if iconSet is selected
+          try{
+            const iconSet = localStorage.getItem('iconSet') || 'animals';
+            if (iconSet && iconSet !== 'none'){
+              swatch.style.position = 'relative';
+              swatch.style.overflow = 'visible';
+              // reduce border to make room for image
+              swatch.style.border = '6px solid rgba(0,0,0,0.06)';
+              const img = document.createElement('img');
+              const imgFile = fname.replace('.mp3', '.png');
+              img.src = `static/images/${iconSet}/${imgFile}`;
+              img.alt = label;
+              img.style.position = 'absolute';
+              img.style.width = '100%';
+              img.style.height = '100%';
+              img.style.objectFit = 'contain';
+              img.style.pointerEvents = 'none';
+              img.style.opacity = '0.95';
+              img.style.zIndex = '2';
+              img.style.top = '50%'; img.style.left = '50%'; img.style.transform = 'translate(-50%, -50%)';
+              swatch.appendChild(img);
+            }
+          }catch(e){}
 
           const lbl = document.createElement('div');
           lbl.textContent = label;
