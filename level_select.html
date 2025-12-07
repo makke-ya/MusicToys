@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,13 +9,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 </head>
+
 <body class="bg-gray-50 min-h-screen flex items-center justify-center">
     <div id="app" class="w-full max-w-2xl p-6">
         <div class="bg-white rounded-xl shadow p-6">
-            <h1 class="text-xl font-bold mb-4">れべるをえらんでね</h1>
+            <div class="flex justify-between items-center mb-4">
+                <h1 class="text-xl font-bold">れべるをえらんでね</h1>
+                <span id="welcomeName" class="text-sm text-gray-600 font-medium"></span>
+            </div>
 
             <div class="grid gap-3 mb-4" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));">
-                <button v-for="lvl in levels" :key="lvl" @click="selectLevel(lvl)" class="btn-large rounded-lg bg-indigo-600 text-white hover:bg-indigo-700" style="white-space: nowrap; display: flex; align-items: center; justify-content: center; padding: 0.75rem 0.5rem; font-size: 0.95rem;">
+                <button v-for="lvl in levels" :key="lvl" @click="selectLevel(lvl)"
+                    class="btn-large rounded-lg bg-indigo-600 text-white hover:bg-indigo-700"
+                    style="white-space: nowrap; display: flex; align-items: center; justify-content: center; padding: 0.75rem 0.5rem; font-size: 0.95rem;">
                     <span v-text="'れべる' + lvl" style="white-space: nowrap;"></span>
                 </button>
             </div>
@@ -25,43 +32,52 @@
                     <span class="text-sm">すぐにこたえをみる</span>
                 </label>
                 <div class="ml-auto flex items-center gap-3">
-                  <label class="text-sm">イラスト: </label>
-                  <label class="flex items-center gap-1"><input type="radio" v-model="iconSet" value="animals" /> <span class="text-sm">どうぶつ</span></label>
-                  <label class="flex items-center gap-1"><input type="radio" v-model="iconSet" value="none" /> <span class="text-sm">なし</span></label>
+                    <label class="text-sm">イラスト: </label>
+                    <label class="flex items-center gap-1"><input type="radio" v-model="iconSet" value="animals" />
+                        <span class="text-sm">どうぶつ</span></label>
+                    <label class="flex items-center gap-1"><input type="radio" v-model="iconSet" value="custom" />
+                        <span class="text-sm">カスタム</span></label>
+                    <label class="flex items-center gap-1"><input type="radio" v-model="iconSet" value="none" /> <span
+                            class="text-sm">なし</span></label>
                 </div>
             </div>
 
             <div class="flex items-center gap-4">
-              <button @click="goBack" class="ml-auto px-3 py-2 border rounded">もどる</button>
+                <button @click="goBack" class="ml-auto px-3 py-2 border rounded">もどる</button>
             </div>
         </div>
     </div>
 
     <script>
         const { createApp } = Vue;
-        createApp({ data(){ return { levels: [1,2,3,4,5,6,7,8,9,10,11,12,13], instant: true, iconSet: 'animals' } },
-            methods:{
-                selectLevel(l){
+        createApp({
+            data() { return { levels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], instant: true, iconSet: 'animals' } },
+            methods: {
+                selectLevel(l) {
                     localStorage.setItem('selectedLevel', String(l));
                     localStorage.setItem('instant', this.instant ? '1' : '0');
                     localStorage.setItem('iconSet', this.iconSet || 'animals');
                     window.location.href = 'chord_check.html';
                 },
-                goBack(){ window.location.href = 'index.html'; }
+                goBack() { window.location.href = 'index.html'; }
             },
-            mounted(){
+            mounted() {
                 const stored = localStorage.getItem('instant');
                 if (stored === '1') this.instant = true;
                 else if (stored === '0') this.instant = false;
                 const storedIcon = localStorage.getItem('iconSet');
                 if (storedIcon) this.iconSet = storedIcon;
+
+                const name = localStorage.getItem('username');
+                if (name) document.getElementById('welcomeName').textContent = `ようこそ ${name} さん`;
             },
             watch: {
-              iconSet(newVal){
-                localStorage.setItem('iconSet', newVal || 'animals');
-              }
+                iconSet(newVal) {
+                    localStorage.setItem('iconSet', newVal || 'animals');
+                }
             }
         }).mount('#app');
     </script>
 </body>
+
 </html>

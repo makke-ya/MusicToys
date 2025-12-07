@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,9 +15,18 @@
     <div class="w-full max-w-md bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-lg text-center">
       <h1 class="text-2xl font-semibold mb-6">おとで あそぼう</h1>
 
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2">おなまえ</label>
+        <input v-model="username" type="text"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center"
+          placeholder="おなまえをいれてね">
+      </div>
+
       <div class="flex justify-center gap-4">
-  <button @click="onStart" class="btn-action bg-indigo-600 px-6 py-3 text-white rounded-lg shadow hover:bg-indigo-700">はじめる</button>
-  <button @click="onPast" class="btn-action bg-white border px-6 py-3 border-gray-200 rounded-lg shadow hover:bg-gray-50">かこのけっか</button>
+        <button @click="onStart"
+          class="btn-action bg-indigo-600 px-6 py-3 text-white rounded-lg shadow hover:bg-indigo-700">はじめる</button>
+        <button onclick="location.href='stats.html'"
+          class="btn-action bg-white border px-6 py-3 border-gray-200 rounded-lg shadow hover:bg-gray-50 text-indigo-700">グラフをみる</button>
       </div>
     </div>
   </div>
@@ -28,18 +38,31 @@
   <script>
     const { createApp } = Vue;
     createApp({
+      data() {
+        return {
+          username: ''
+        }
+      },
+      mounted() {
+        this.username = localStorage.getItem('username') || '';
+      },
+      watch: {
+        username(newVal) {
+          localStorage.setItem('username', newVal);
+        }
+      },
       methods: {
         async unlockAudio() {
           const a = new Audio('static/sounds/dummy.mp3');
-          try { await a.play(); } catch(e){}
+          try { await a.play(); } catch (e) { }
         },
-        async onStart(){
+        async onStart() {
           await this.unlockAudio();
           setTimeout(() => { window.location.href = 'level_select.html'; }, 150);
-        },
-        onPast(){ window.location.href = 'past_results.html'; }
+        }
       }
     }).mount('#app');
   </script>
 </body>
+
 </html>

@@ -1,32 +1,85 @@
-# pipe host to wsl
+# 実行方法
 
-netsh.exe interface portproxy add v4tov4 listenaddress=192.168.3.2 listenport=8080 connectaddress=172.18.36.58 connectport=8080
-netsh.exe interface portproxy show v4tov4
+```bash
+npx http-server -p 8080
+# ブラウザで `http://localhost:8080/` を開く
+```
 
-## GitHub Pages で公開する方法 (静的サイト化済み)
+- WSLで実行する場合、以下のコマンドを実行する（要管理者権限）
 
-このリポジトリは Python サーバなしで動作するよう、ルートに静的 HTML を追加しています。
-トップページは `index.html` で、静的アセットは `static/` に置かれています。
+```bash
+netsh.exe interface portproxy add v4tov4 listenaddress=[host ip_addr] listenport=8080 connectaddress=[wsl ip_addr] connectport=8080
+```
 
-手順:
+## AWS S3へのデプロイ方法
 
-- リポジトリを GitHub に push します（`main` ブランチ）
-- GitHub リポジトリの Settings → Pages に移動します
-- Source を `main` ブランチ、Folder を `/ (root)` に設定します
-- 保存すると数分以内にサイトが公開されます。公開 URL が表示されます。
+AWS S3を使用すると、この静的サイトをインターネット上に公開できます。
 
-ローカルで動作確認する場合:
+### 前提条件: AWS CLIのインストール
 
-- Python がある場合（簡易）:
-	```powershell
-	python -m http.server 8000
-	```
-	ブラウザで `http://localhost:8000/` を開く
+まだインストールしていない場合は、公式サイトからAWS CLIをインストールしてください。
+https://aws.amazon.com/jp/cli/
 
-- Node がある場合:
-	```powershell
-	npx http-server -p 8000
-	```
+### 手順1: IAMユーザーとアクセスキーの作成
 
-注意:
-- 既存の `app.py`（FastAPI）は放置されています。不要なら削除しても構いませんが、消す前にバックアップしてください。
+1. [AWSマネジメントコンソール](https://console.aws.amazon.com/)にログインします。
+2. 検索バーで「IAM」を検索し、IAMダッシュボードを開きます。
+3. 左メニューから「ユーザー」→「ユーザーの作成」をクリックします。
+4. ユーザー名（例: `deploy-user`）を入力します。
+5. 「許可のオプション」で「ポリシーを直接アタッチする」を選択します。
+6. リストから `AmazonS3FullAccess` を検索してチェックを入れます（本番環境ではより制限された権限が推奨されますが、手始めにはこれで十分です）。
+7. ユーザーを作成後、そのユーザーの詳細画面を開きます。
+8. 「セキュリティ認証情報」タブ → 「アクセスキー」セクション → 「アクセスキーを作成」をクリックします。
+9. 「CLI (コマンドラインインターフェイス)」を選択し、作成します。
+10. 表示される **アクセスキー** と **シークレットアクセスキー** をメモします（この画面を閉じると二度と表示されません）。
+
+### 手順2: ローカル環境の設定
+
+ターミナル（PowerShellやコマンドプロンプト）を開き、以下のコマンドを実行します。
+
+```bash
+aws configure
+```
+
+プロンプトに従って入力します：
+- `AWS Access Key ID`: 手順1で取得したアクセスキー
+- `AWS Secret Access Key`: 手順1で取得したシークレットキー
+- `Default region name`: `ap-northeast-1` （東京リージョンを使う場合）
+- `Default output format`: `json` (そのままEnter)
+
+### 手順3: S3バケットの作成
+
+1. AWSコンソールのS3を開き、「バケットを作成」をクリックします。
+2. バケット名を入力します（世界で一意である必要があります。例: `my-chord-quiz-2025`）。
+3. 「パブリックアクセスのブロック」設定で、**「パブリックアクセスをすべて ブロック」のチェックを外します**（静的サイトとして公開するため）。
+    - 警告チェックボックスにチェックを入れます。
+4. バケットを作成します。
+5. 作成したバケットを開き、「プロパティ」タブ → 「静的ウェブサイトホスティング」を編集し、「有効」にします。
+    - インデックスドキュメント: `index.html`
+6. 「アクセス許可」タブ → 「バケットポリシー」を編集し、以下を入力します（`YOUR_BUCKET_NAME`を自分のバケット名に書き換えてください）。
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/*"
+        }
+    ]
+}
+```
+
+### 手順4: デプロイ（アップロード）
+
+サイトのルートディレクトリで以下のコマンドを実行します。これにより、変更されたファイルだけが自動的にアップロードされます。
+
+```bash
+# バケット名は自分のものに置き換えてください
+./scripts/aws_sync.sh
+```
+
+完了後、S3の「プロパティ」タブにある「バケットウェブサイトエンドポイント」のURLにアクセスすると、サイトが表示されます。

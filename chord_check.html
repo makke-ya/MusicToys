@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,123 +10,72 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
   <script src="static/site.js"></script>
 </head>
+
 <body class="bg-gray-50 min-h-screen flex items-center justify-center">
   <div id="app" class="w-full max-w-3xl p-6">
-    <div class="bg-white rounded-xl shadow p-6">
+    <div class="bg-white rounded-xl shadow p-6 relative">
+      <div id="fileCount" class="absolute top-4 right-6 text-gray-500 font-bold text-lg"></div>
       <h1 class="text-xl font-bold mb-4">わおん の かくにん</h1>
       <p id="info" class="text-sm text-gray-600 mb-4"></p>
 
-  <div id="chords" class="grid grid-cols-4 gap-6 mb-4"></div>
+      <div id="chords" class="grid grid-cols-4 gap-6 mb-4"></div>
 
       <div class="flex gap-3">
         <button id="startQuizBtn" class="btn-action px-6 py-3 bg-indigo-600 text-white rounded">スタート</button>
-        <a href="level_select.html" class="btn-action px-6 py-3 inline-block border rounded text-center bg-white">もどる</a>
+        <a href="level_select.html"
+          class="btn-action px-6 py-3 inline-block border rounded text-center bg-white">もどる</a>
       </div>
     </div>
   </div>
 
   <script>
-    (async function(){
-      const level = Number(localStorage.getItem('selectedLevel') || 1);
-      const instant = localStorage.getItem('instant') === '1';
-      document.getElementById('info').textContent = `れべる ${level} — ${instant ? 'すぐにこたえをみる' : 'あとでこたえをみる'}`;
+    (async function () {
+      try {
+        if (typeof Site === 'undefined') {
+          throw new Error('Site object is not loaded. Check site.js');
+        }
+        const level = Number(localStorage.getItem('selectedLevel') || 1);
+        const instant = localStorage.getItem('instant') === '1';
+        document.getElementById('info').textContent = `れべる ${level} — ${instant ? 'すぐにこたえをみる' : 'あとでこたえをみる'}`;
+        document.getElementById('fileCount').textContent = `ぜんぶで ${Site.QUESTION_COUNT || 10} もん`;
 
-      const colorMap = {
-        red: 'あか', yellow: 'きいろ', blue: 'あお', black: 'くろ', green: 'みどり', orange: 'おれんじ', purple: 'むらさき', pink: 'ぴんく', brown: 'ちゃいろ', beige: 'べーじゅ', lavender: 'らべんだー', gray: 'ぐれー', lightblue: 'みずいろ', yellowgreen: 'きみどり'
-      };
+        const colorMap = Site.colorMap;
+        const noteMap = Site.noteMap;
 
-      const noteMap = {
-        red: 'ドミソ', yellow: 'ドファラ', blue: 'シレソ', black: 'ラドファ', green: 'レソシ', orange: 'ミソド', purple: 'ファラド', pink: 'ソシレ', brown: 'ソドミ', beige: 'レフィスラ', lavender: 'ミギスシ', gray: 'ベーレファ', lightblue: 'エスソベー', yellowgreen: 'ラチスミ'
-      };
+        const previewAudio = new Audio();
+        let playingBtn = null;
 
-      const previewAudio = new Audio();
-      let playingBtn = null;
-
-      try{
         const sounds = await Site.getSoundsForLevel(level);
         const container = document.getElementById('chords');
         if (!sounds.length) { container.textContent = '音ファイルがありません'; return; }
 
-        const iconMap = { red:'trumpet', yellow:'trumpet', blue:'guitar', black:'drum', green:'flute', orange:'xylophone', purple:'harp', pink:'sax', brown:'banjo', beige:'triangle', lavender:'maraca', gray:'piano', lightblue:'ukulele', yellowgreen:'ocarina' };
-
         sounds.forEach((fname) => {
-          const parts = fname.split('_');
-          const raw = parts.length > 1 ? parts[1].split('.')[0] : fname;
-          const label = (colorMap[raw]) || raw;
-
-          const btn = document.createElement('button');
-          btn.className = 'flex flex-col items-center justify-center gap-2 btn-large rounded-lg shadow-lg focus:outline-none w-full';
-          btn.dataset.file = fname;
-
-          const swatch = document.createElement('div');
-          swatch.className = 'swatch';
-          swatch.style.borderRadius = '9999px';
-          swatch.style.boxShadow = '0 2px 6px rgba(0,0,0,0.12)';
-          swatch.style.display = 'flex';
-          swatch.style.alignItems = 'center';
-          swatch.style.justifyContent = 'center';
-          swatch.style.marginBottom = '4px';
-          let cssColor = '#f3f4f6';
-          if (raw && /^[a-z0-9]+$/.test(raw)){
-            cssColor = raw.toLowerCase();
-          }
-          swatch.style.background = cssColor;
-
-          // overlay image if iconSet is selected
-          try{
-            const iconSet = localStorage.getItem('iconSet') || 'animals';
-            if (iconSet && iconSet !== 'none'){
-              swatch.style.position = 'relative';
-              swatch.style.overflow = 'visible';
-              // reduce border to make room for image
-              swatch.style.border = '6px solid rgba(0,0,0,0)';
-              const img = document.createElement('img');
-              const imgFile = fname.replace('.mp3', '.png');
-              img.src = `static/images/${iconSet}/${imgFile}`;
-              img.alt = label;
-              img.style.position = 'absolute';
-              img.style.width = '100%';
-              img.style.height = '100%';
-              img.style.objectFit = 'contain';
-              img.style.pointerEvents = 'none';
-              img.style.opacity = '0.95';
-              img.style.zIndex = '2';
-              img.style.top = '50%'; img.style.left = '50%'; img.style.transform = 'translate(-50%, -50%)';
-              swatch.appendChild(img);
+          const btn = Site.createChordButton(fname, {
+            extraClasses: 'btn-large focus:outline-none',
+            labelClass: 'text-xl font-bold',
+            onClick: () => {
+              if (!previewAudio.paused) { previewAudio.pause(); previewAudio.currentTime = 0; }
+              if (playingBtn && playingBtn !== btn) { playingBtn.style.boxShadow = 'none'; }
+              previewAudio.src = `static/sounds/${fname}`;
+              previewAudio.play().catch(() => { });
+              playingBtn = btn;
+              btn.style.boxShadow = '0 0 12px rgba(0,0,0,0.18)';
+              previewAudio.onended = () => { if (playingBtn) { playingBtn.style.boxShadow = 'none'; playingBtn = null; } };
             }
-          }catch(e){}
-
-          const lbl = document.createElement('div');
-          lbl.textContent = label;
-          lbl.className = 'text-xl font-bold';
-
-          const noteLbl = document.createElement('div');
-          noteLbl.textContent = noteMap[raw] || '';
-          noteLbl.className = 'text-sm text-gray-500';
-
-          btn.appendChild(swatch);
-          btn.appendChild(lbl);
-          btn.appendChild(noteLbl);
-
-          btn.addEventListener('click', () => {
-            if (!previewAudio.paused) { previewAudio.pause(); previewAudio.currentTime = 0; }
-            if (playingBtn && playingBtn !== btn) { playingBtn.style.boxShadow = 'none'; }
-            previewAudio.src = `static/sounds/${fname}`;
-            previewAudio.play().catch(() => {});
-            playingBtn = btn;
-            btn.style.boxShadow = '0 0 12px rgba(0,0,0,0.18)';
-            previewAudio.onended = () => { if (playingBtn) { playingBtn.style.boxShadow = 'none'; playingBtn = null; } };
           });
-
           container.appendChild(btn);
         });
-      }catch(e){ document.getElementById('chords').textContent = '音ファイルの取得に失敗しました'; }
 
-      document.getElementById('startQuizBtn').addEventListener('click', () => {
-        localStorage.setItem('instant', instant ? '1' : '0');
-        window.location.href = 'quiz.html';
-      });
+        document.getElementById('startQuizBtn').addEventListener('click', () => {
+          localStorage.setItem('instant', instant ? '1' : '0');
+          window.location.href = 'quiz.html';
+        });
+      } catch (e) {
+        console.error(e);
+        document.getElementById('chords').innerHTML = `<div class="col-span-4 text-red-500 font-bold">エラーが発生しました: ${e.message}</div>`;
+      }
     })();
   </script>
 </body>
+
 </html>

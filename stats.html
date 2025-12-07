@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>せいせき ぐらふ</title>
+    <link href="static/style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="static/config.js"></script>
+    <script src="static/site.js"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <div id="app" class="w-full max-w-4xl p-6">
+        <div class="bg-white rounded-xl shadow p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold">せいせき ぐらふ</h1>
+                <button onclick="location.href='index.html'"
+                    class="btn-action px-4 py-2 border rounded hover:bg-gray-50">タイトルへ</button>
+            </div>
+
+            <div v-if="loading" class="text-center py-10">
+                <p class="text-gray-500">データをよみこみちゅう...</p>
+            </div>
+
+            <div v-else-if="error" class="text-center py-10 text-red-500">
+                <p>{{ error }}</p>
+            </div>
+
+            <div v-else>
+                <div class="mb-6 h-96 relative">
+                    <canvas id="scoreChart"></canvas>
+                </div>
+
+                <div class="text-center text-sm text-gray-500 mb-4">
+                    ※ さいしんの 100けん まで ひょうじ されます
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="px-4 py-2 border-b">ひづけ</th>
+                                <th class="px-4 py-2 border-b">れべる</th>
+                                <th class="px-4 py-2 border-b">てんすう</th>
+                                <th class="px-4 py-2 border-b">せいかいりつ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in history" :key="item.timestamp" class="hover:bg-indigo-50">
+                                <td class="px-4 py-2 border-b">{{ formatDate(item.timestamp) }}</td>
+                                <td class="px-4 py-2 border-b">{{ item.level }}</td>
+                                <td class="px-4 py-2 border-b">{{ item.score }} / {{ item.total }}</td>
+                                <td class="px-4 py-2 border-b">{{ item.rate }}%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+        // Replace API_ENDPOINT with the same URL used in result.html
+        // In a real app, this should be in a config file.
+        const API_ENDPOINT = window.Config ? window.Config.API_ENDPOINT : '';
+
+        createApp({
+            data() {
+                return {
+                    history: [],
+                    loading: true,
+                    error: null,
+                    chart: null
+                }
+            },
+            async mounted() {
+                await this.fetchData();
+            },
+            methods: {
+                async fetchData() {
+                    try {
+                        const userId = Site.getUserId();
+                        const url = `${API_ENDPOINT}?userId=${userId}`;
+                        const res = await fetch(url);
+                        if (!res.ok) throw new Error('データの取得に失敗しました');
+
+                        const data = await res.json();
+                        // Data is sorted by date ascending usually, but let's confirm
+                        this.history = data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)); // Show table desc
+                    } catch (e) {
+                        console.error(e);
+                        this.error = 'データがありません (またはしゅとくエラー)';
+                    } finally {
+                        this.loading = false;
+                        // Wait for DOM update so canvas exists
+                        Vue.nextTick(() => {
+                            if (!this.error && this.history.length > 0) {
+                                this.renderChart(this.history.slice().sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp)));
+                            }
+                        });
+                    }
+                },
+                formatDate(iso) {
+                    const d = new Date(iso);
+                    return `${d.getMonth() + 1}/${d.getDate()} ${d.getHours()}:${String(d.getMinutes()).padStart(2, '0')}`;
+                },
+                renderChart(data) {
+                    const ctx = document.getElementById('scoreChart').getContext('2d');
+
+                    // Group data by level for datasets
+                    const levels = [...new Set(data.map(d => d.level))].sort((a, b) => a - b);
+
+                    const datasets = levels.map((lvl, index) => {
+                        const lvlData = data.filter(d => d.level === lvl);
+                        const color = this.getColor(index);
+
+                        return {
+                            label: `れべる ${lvl}`,
+                            data: lvlData.map(d => ({ x: new Date(d.timestamp), y: d.score })), // Store full object if needed, but x/y works
+                            borderColor: color,
+                            backgroundColor: color,
+                            tension: 0.3,
+                            pointRadius: 4
+                        };
+                    });
+
+                    // Prepare common labels (dates) - Chart.js handles time scale better if we pass x as Date
+                    // but for simple line chart, we might need consistent X axis?
+                    // Let's use 'time' scale if possible, but requires an adapter usually.
+                    // To keep it simple without moment.js adapter, we can use simple labels if points align,
+                    // but points are sparse properly.
+                    // Alternative: Just plot points on a linear index? 
+                    // Best: use 'type: linear' for x axis or just 'category' with formatted date string labels
+                    // if we assume we just map logical progression.
+                    // User asked "Horizontal axis is Date".
+
+                    // Let's trying mapping all unique timestamps to labels
+                    const labels = data.map(d => this.formatDate(d.timestamp));
+
+                    // But simply:
+                    if (this.chart) this.chart.destroy();
+
+                    this.chart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: labels, // This might duplicate labels if multiple attempts same time.
+                            datasets: datasets.map(ds => ({
+                                ...ds,
+                                data: data.map(d => (d.level === parseInt(ds.label.split(' ')[1])) ? d.score : null), // Sparse data
+                                spanGaps: true
+                            }))
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    max: 10, // Assuming 10 questions
+                                    title: { display: true, text: 'てんすう' }
+                                },
+                                x: {
+                                    title: { display: true, text: 'ひづけ' }
+                                }
+                            }
+                        }
+                    });
+                },
+                getColor(i) {
+                    const colors = ['#f87171', '#fb923c', '#facc15', '#4ade80', '#60a5fa', '#a78bfa', '#e879f9'];
+                    return colors[i % colors.length];
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>

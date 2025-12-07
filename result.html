@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,62 +8,123 @@
   <link href="static/style.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script src="static/config.js"></script>
+  <script src="static/site.js"></script>
 </head>
+
 <body class="bg-gray-50 min-h-screen flex items-center justify-center">
   <div class="w-full max-w-3xl p-6">
     <div class="bg-white rounded-xl shadow p-6">
-  <h1 class="text-xl font-bold mb-4">けっか</h1>
-  <div id="summary" class="mb-4 text-lg"></div>
+      <div class="flex justify-between items-center mb-4">
+        <h1 class="text-xl font-bold">けっか</h1>
+        <span id="resultName" class="text-sm text-gray-600 font-medium"></span>
+      </div>
+      <div id="summary" class="mb-4 text-lg"></div>
       <div id="table" class="mb-4"></div>
 
       <div class="flex gap-3">
-  <button onclick="location.href='level_select.html'" class="btn-action px-4 py-2 border rounded">もういちど</button>
-  <button onclick="location.href='index.html'" class="btn-action px-4 py-2 border rounded">タイトルへ</button>
-  <button onclick="location.href='past_results.html'" class="btn-action px-4 py-2 border rounded">過去の結果</button>
+        <button onclick="location.href='chord_check.html'" class="btn-action px-4 py-2 border rounded">もういちど</button>
+        <button onclick="location.href='index.html'" class="btn-action px-4 py-2 border rounded">タイトルへ</button>
+        <button onclick="location.href='stats.html'"
+          class="btn-action px-4 py-2 border rounded bg-indigo-50 text-indigo-700">グラフをみる</button>
       </div>
     </div>
   </div>
 
   <script>
-  const lastAnswers = JSON.parse(localStorage.getItem('lastAnswers') || '[]');
-  const score = lastAnswers.filter(a => a.correct).length;
-  const total = lastAnswers.length || 10;
-  const rate = Math.round(score / total * 100);
+    const lastAnswers = JSON.parse(localStorage.getItem('lastAnswers') || '[]');
+    const score = lastAnswers.filter(a => a.correct).length;
+    const total = lastAnswers.length || 10;
+    const rate = Math.round(score / total * 100);
 
-  let msg = "";
-  if (rate < 40) msg = "レベルを さげてみよう";
-  else if (rate < 80) msg = "もういちど やってみよう";
-  else msg = "レベルを あげてみよう！";
+    let msg = "";
+    if (rate < 40) msg = "レベルを さげてみよう";
+    else if (rate < 80) msg = "もういちど やってみよう";
+    else msg = "レベルを あげてみよう！";
 
-  document.getElementById('summary').innerHTML = `
+    document.getElementById('summary').innerHTML = `
     <p class="font-medium">せいかいりつ: ${rate}% (${score}/${total})</p>
     <p class="text-sm text-gray-600">${msg}</p>
   `;
 
-  if (lastAnswers.length){
-    const table = document.createElement('table');
-    table.className = 'min-w-full text-left border-collapse';
-    const thead = table.createTHead();
-    const hdr = thead.insertRow();
-    ['No','選択','正誤','ファイル'].forEach(h => { const th = document.createElement('th'); th.textContent = h; th.className='px-3 py-2 border-b'; hdr.appendChild(th); });
-    const tbody = table.createTBody();
-    lastAnswers.forEach((a, i) => {
-      const r = tbody.insertRow();
-      r.insertCell().textContent = (i+1);
-      r.insertCell().textContent = a.choice;
-      r.insertCell().textContent = a.correct ? '○' : '×';
-      r.insertCell().textContent = a.file;
-      Array.from(r.cells).forEach(c => c.className='px-3 py-2 border-b');
-    });
-    document.getElementById('table').appendChild(table);
-  }
+    const name = localStorage.getItem('username');
+    if (name) document.getElementById('resultName').textContent = `${name} さんのけっか`;
 
-  try{
-    const past = JSON.parse(localStorage.getItem('pastResults') || '[]');
-    past.unshift({date: new Date().toISOString(), score: score, total: total, rate: rate});
-    localStorage.setItem('pastResults', JSON.stringify(past.slice(0, 20)));
-  }catch(e){}
+    if (lastAnswers.length) {
+      const table = document.createElement('table');
+      table.className = 'min-w-full text-left border-collapse';
+      const thead = table.createTHead();
+      const hdr = thead.insertRow();
+      ['ばんごう', 'えらんだいろ', 'せいかい'].forEach(h => { const th = document.createElement('th'); th.textContent = h; th.className = 'px-3 py-2 border-b'; hdr.appendChild(th); });
+      const tbody = table.createTBody();
+      lastAnswers.forEach((a, i) => {
+        const r = tbody.insertRow();
+        r.insertCell().textContent = (i + 1);
+        r.insertCell().textContent = Site.colorMap[a.choice] || a.choice;
+        r.insertCell().textContent = a.correct ? '○' : '×';
+        Array.from(r.cells).forEach(c => c.className = 'px-3 py-2 border-b');
+      });
+      document.getElementById('table').appendChild(table);
+    }
+
+    // AWS API Endpoint URL from config.js
+    const API_ENDPOINT = window.Config ? window.Config.API_ENDPOINT : '';
+
+    async function sendResultToAws() {
+      const name = localStorage.getItem('username');
+      if (!name) return;
+
+      // Check if already sent (to avoid duplicates on reload)
+      // We can use a simple session flag or just check if the latest result matches current timestamp?
+      // For now, let's just send. The user might want to see it recorded.
+
+      // To prevent spamming on reload, we could check if we just sent this result.
+      // relying on the specific result page load.
+
+      try {
+        const payload = {
+          userId: Site.getUserId(),
+          name: name,
+          level: Number(localStorage.getItem('selectedLevel') || 1),
+          score: score,
+          total: total,
+          rate: rate,
+          timestamp: new Date().toISOString(),
+          settings: {
+            instant: localStorage.getItem('instant') === '1',
+            iconSet: localStorage.getItem('iconSet') || 'animals'
+          }
+        };
+
+        console.log('Sending result to AWS:', payload);
+
+        const res = await fetch(API_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          console.log('Successfully saved to AWS');
+        } else {
+          console.error('Failed to save to AWS', await res.text());
+        }
+      } catch (e) {
+        console.error('Error sending result:', e);
+      }
+    }
+
+    // Save locally
+    try {
+      const past = JSON.parse(localStorage.getItem('pastResults') || '[]');
+      past.unshift({ date: new Date().toISOString(), score: score, total: total, rate: rate });
+      localStorage.setItem('pastResults', JSON.stringify(past.slice(0, 20)));
+    } catch (e) { }
+
+    // Send to AWS
+    sendResultToAws();
   </script>
 
 </body>
+
 </html>

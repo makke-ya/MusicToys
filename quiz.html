@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,222 +10,219 @@
   <script src="static/site.js"></script>
   <title>クイズ</title>
 </head>
+
 <body class="bg-slate-50 min-h-screen flex items-center justify-center">
-<div id="app" class="w-full max-w-3xl p-6">
-  <div class="bg-white rounded-xl shadow p-6">
-  <h1 id="status">おとをきいてね！</h1>
+  <div id="app" class="w-full max-w-3xl p-6">
+    <div class="bg-white rounded-xl shadow p-6 relative">
+      <div id="questionCounter" class="absolute top-4 right-6 text-gray-500 font-bold text-lg"></div>
+      <h1 id="status" class="text-xl font-bold text-center mb-8 mt-2 min-h-[1.5em]">おとをきいてね！</h1>
 
-  <div id="buttons" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4 opacity-0 transition-opacity duration-700"></div>
+      <div id="buttons" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4 opacity-0 transition-opacity duration-700">
+      </div>
 
-  <div class="flex justify-center gap-4 mt-4">
-    <button id="nextBtn" class="opacity-50 px-6 py-3 rounded-lg bg-green-500 text-white" disabled>つぎへ</button>
-    <button id="replayBtn" class="px-6 py-3 rounded-lg bg-gray-200">もういちどきく</button>
+      <div class="flex justify-center gap-4 mt-4">
+        <button id="nextBtn" class="opacity-50 px-6 py-3 rounded-lg bg-green-500 text-white font-bold"
+          disabled>これでけってい</button>
+        <button id="replayBtn" class="px-6 py-3 rounded-lg bg-gray-200">もういちどきく</button>
+      </div>
+
+      <audio id="audio"></audio>
+    </div>
   </div>
 
-  <audio id="audio"></audio>
-  </div>
-</div>
+  <script>
+    let quiz = [];
+    let index = 0;
+    let instant = true; // 即時採点ON/OFF
+    const audio = document.getElementById('audio');
+    let answers = [];
+    let answered = false;
+    let currentSelection = null;
+    let currentLevel = 1;
 
-<script>
-let quiz = [];
-let index = 0;
-let instant = true; // 即時採点ON/OFF
-const audio = document.getElementById('audio');
-let answers = [];
-let answered = false;
-let currentSelection = null;
-let currentLevel = 1;
+    // Reset history on load to prevent accumulation
+    localStorage.removeItem('lastAnswers');
 
-const colorMap = { red:'あか', yellow:'きいろ', blue:'あお', black:'くろ', green:'みどり', orange:'おれんじ', purple:'むらさき', pink:'ぴんく', brown:'ちゃいろ', beige:'べーじゅ', lavender:'らべんだー', gray:'ぐれー', lightblue:'みずいろ', yellowgreen:'きみどり' };
+    const colorMap = Site.colorMap;
+    const noteMap = Site.noteMap;
 
-const noteMap = {
-  red: 'ドミソ', yellow: 'ドファラ', blue: 'シレソ', black: 'ラドファ', green: 'レソシ', orange: 'ミソド', purple: 'ファラド', pink: 'ソシレ', brown: 'ソドミ', beige: 'レフィスラ', lavender: 'ミギスシ', gray: 'ベーレファ', lightblue: 'エスソベー', yellowgreen: 'ラチスミ'
-};
-
-async function loadQuiz(level) {
-  currentLevel = level;
-  quiz = await Site.generateQuiz(level);
-  answers = [];
-  const sounds = await Site.getSoundsForLevel(level);
-  renderChoiceButtons(sounds || [], level);
-  playQuestion();
-}
-
-function playQuestion() {
-  if (index >= quiz.length) {
-    localStorage.setItem('lastAnswers', JSON.stringify(answers));
-    const score = answers.filter(a => a.correct).length;
-    localStorage.setItem('score', String(score));
-    window.location.href = "result.html";
-    return;
-  }
-  const note = quiz[index];
-  audio.src = `static/sounds/${note}`;
-  audio.pause();
-  audio.currentTime = 0;
-  document.getElementById('buttons').classList.add('opacity-0');
-  document.getElementById('nextBtn').disabled = true;
-  document.getElementById('status').textContent = '再生中...';
-
-  audio.play().then(() => {
-    setTimeout(() => {
-      document.getElementById('buttons').classList.remove('opacity-0');
-      document.getElementById('status').textContent = 'おとをきいたらボタンを押してね';
-      answered = false;
-      setChoiceButtonsDisabled(false);
-    }, 2000);
-  }).catch(e => console.log(e));
-}
-
-function renderChoiceButtons(sounds, level){
-  const container = document.getElementById('buttons');
-  container.innerHTML = '';
-  const colors = sounds.map(f => {
-    const parts = f.split('_');
-    return parts.length>1 ? parts[1].split('.')[0] : f;
-  });
-  // map color -> representative filename (first occurrence)
-  const colorToFile = {};
-  sounds.forEach(f => { const parts = f.split('_'); const raw = parts.length>1 ? parts[1].split('.')[0] : f; if (!colorToFile[raw]) colorToFile[raw] = f; });
-  // allow number of choices equal to number of sound files for the level
-  const unique = Array.from(new Set(colors)).slice(0, Math.max(6, sounds.length));
-  unique.forEach((raw) => {
-    const label = colorMap[raw] || raw;
-    const btn = document.createElement('button');
-    btn.className = 'flex flex-col items-center justify-center gap-2 p-3 rounded-lg shadow-lg w-full';
-    btn.dataset.label = raw;
-
-    const swatch = document.createElement('div');
-    swatch.className = 'swatch';
-    swatch.style.borderRadius = '9999px';
-    swatch.style.boxShadow = '0 2px 6px rgba(0,0,0,0.12)';
-    swatch.style.display = 'flex';
-    swatch.style.alignItems = 'center';
-    swatch.style.justifyContent = 'center';
-    swatch.style.marginBottom = '4px';
-
-    const lbl = document.createElement('div');
-    lbl.textContent = label;
-    lbl.style.fontSize = '18px';
-
-    const noteLbl = document.createElement('div');
-    noteLbl.textContent = noteMap[raw] || '';
-    noteLbl.style.fontSize = '0.875rem';
-    noteLbl.style.color = '#9ca3af';
-
-    let cssColor = '#f3f4f6';
-    if (raw && /^[a-z0-9]+$/.test(raw)){
-      cssColor = raw.toLowerCase();
+    async function loadQuiz(level) {
+      currentLevel = level;
+      quiz = await Site.generateQuiz(level, Site.QUESTION_COUNT);
+      answers = [];
+      const sounds = await Site.getSoundsForLevel(level);
+      renderChoiceButtons(sounds || [], level);
+      playQuestion();
     }
-    swatch.style.background = cssColor;
 
-    // overlay image if iconSet selected
-    try{
-      const iconSet = localStorage.getItem('iconSet') || 'animals';
-      if (iconSet && iconSet !== 'none'){
-        swatch.style.position = 'relative';
-        swatch.style.overflow = 'visible';
-        swatch.style.border = '6px solid rgba(0,0,0,0)';
-        const img = document.createElement('img');
-        const imgFile = (colorToFile[raw] || '').replace('.mp3', '.png');
-        img.src = `static/images/${iconSet}/${imgFile}`;
-        img.alt = label;
-        img.style.position = 'absolute';
-        img.style.width = '100%';
-        img.style.height = '100%';
-        img.style.objectFit = 'contain';
-        img.style.pointerEvents = 'none';
-        img.style.opacity = '0.95';
-        img.style.zIndex = '2';
-        img.style.top = '50%'; img.style.left = '50%'; img.style.transform = 'translate(-50%, -50%)';
-        swatch.appendChild(img);
+    function playQuestion() {
+      if (index >= quiz.length) {
+        localStorage.setItem('lastAnswers', JSON.stringify(answers));
+        const score = answers.filter(a => a.correct).length;
+        localStorage.setItem('score', String(score));
+        window.location.href = "result.html";
+        return;
       }
-    }catch(e){}
+      const note = quiz[index];
+      audio.src = `static/sounds/${note}`;
+      audio.pause();
+      audio.currentTime = 0;
+      document.getElementById('buttons').classList.add('opacity-0');
+      document.getElementById('nextBtn').disabled = true;
+      document.getElementById('status').textContent = `さいせいちゅう...`;
+      document.getElementById('questionCounter').textContent = `${index + 1} / ${Site.QUESTION_COUNT}`;
 
-    btn.appendChild(swatch);
-    btn.appendChild(lbl);
-    btn.appendChild(noteLbl);
-    btn.disabled = true;
-    btn.style.opacity = '0.6';
-    btn.addEventListener('click', (e) => {
-      e.preventDefault(); e.stopPropagation();
-      if (instant) {
-        if (!btn.disabled) { btn.disabled = true; btn.style.opacity = '0.6'; }
-        answer(raw);
-      } else {
-        currentSelection = raw;
-        Array.from(container.querySelectorAll('button')).forEach(b => {
-          b.style.outline = (b.dataset.label === raw) ? '3px solid rgba(0,0,0,0.4)' : 'none';
+      // Reset button styles
+      Array.from(document.getElementById('buttons').querySelectorAll('button')).forEach(b => {
+        b.style.boxShadow = 'none';
+        b.classList.remove('bg-green-200', 'bg-red-200'); // Remove old classes if any remained
+      });
+
+      audio.play().then(() => {
+        setTimeout(() => {
+          document.getElementById('buttons').classList.remove('opacity-0');
+          document.getElementById('status').textContent = `おとをきいたらボタンをおしてね`;
+          answered = false;
+          setChoiceButtonsDisabled(false);
+        }, 2000);
+      }).catch(e => console.log(e));
+    }
+
+    function renderChoiceButtons(sounds, level) {
+      const container = document.getElementById('buttons');
+      container.innerHTML = '';
+      const colors = sounds.map(f => {
+        const parts = f.split('_');
+        return parts.length > 1 ? parts[1].split('.')[0] : f;
+      });
+      // map color -> representative filename (first occurrence)
+      const colorToFile = {};
+      sounds.forEach(f => { const parts = f.split('_'); const raw = parts.length > 1 ? parts[1].split('.')[0] : f; if (!colorToFile[raw]) colorToFile[raw] = f; });
+      // allow number of choices equal to number of sound files for the level
+      const unique = Array.from(new Set(colors)).slice(0, Math.max(6, sounds.length));
+      unique.forEach((raw) => {
+        // Find representative file for this color
+        const soundFile = colorToFile[raw];
+        if (!soundFile) return;
+
+        const btn = Site.createChordButton(soundFile, {
+          disabled: true,
+          onPointerDown: (e) => {
+            e.preventDefault(); e.stopPropagation();
+            if (instant) {
+              if (!btn.disabled) { btn.disabled = true; btn.style.opacity = '0.6'; }
+              answer(raw);
+            } else {
+              currentSelection = raw;
+              Array.from(container.querySelectorAll('button')).forEach(b => {
+                b.style.outline = (b.dataset.label === raw) ? '3px solid rgba(0,0,0,0.4)' : 'none';
+              });
+              document.getElementById('status').textContent = `あなたの　えらんだおと: ${Site.colorMap[raw] || raw}`;
+              document.getElementById('nextBtn').disabled = false;
+              document.getElementById('nextBtn').classList.remove('opacity-50');
+            }
+          }
         });
-        document.getElementById('status').textContent = `あなたの　えらんだおと: ${label}`;
+
+        container.appendChild(btn);
+      });
+    }
+
+    function answer(ans) {
+      if (answered) return;
+      answered = true;
+      setChoiceButtonsDisabled(true);
+      const file = quiz[index];
+      const correct = file.toLowerCase().includes(ans.toLowerCase());
+      answers.push({ choice: ans, correct: correct, file: file });
+      const statusEl = document.getElementById('status');
+
+      // Highlighting logic
+      const container = document.getElementById('buttons');
+      Array.from(container.querySelectorAll('button')).forEach(b => {
+        // Remove existing outlines
+        b.style.outline = 'none';
+
+        const bRaw = b.dataset.label;
+        const bIsCorrect = file.toLowerCase().includes(bRaw);
+        const bIsSelected = (bRaw === ans);
+
+        if (bIsCorrect) {
+          // Correct answer: Green shadow
+          b.style.boxShadow = '0 0 15px 5px rgba(74, 222, 128, 0.9)'; // Green-400
+          b.style.opacity = '1';
+        }
+        if (!correct && bIsSelected) {
+          // Wrong selection: Red shadow
+          b.style.boxShadow = '0 0 15px 5px rgba(248, 113, 113, 0.9)'; // Red-400
+          b.style.opacity = '1';
+        }
+      });
+
+      if (instant) {
+        if (correct) {
+          statusEl.textContent = 'やったね！せいかい！';
+          try { new Audio('static/sounds/correct.mp3').play(); } catch (e) { }
+        } else {
+          const raw = file.split('_')[1] ? file.split('_')[1].split('.')[0] : file;
+          const label = (Site.colorMap[raw]) || raw;
+          statusEl.textContent = `ちがうよ。こたえは ${label} だよ`;
+          try { new Audio('static/sounds/wrong.mp3').play(); } catch (e) { }
+        }
+        // Auto advance
+        setTimeout(() => {
+          index++;
+          playQuestion();
+        }, 1500);
+      } else {
+        statusEl.textContent = `あなたの　えらんだおと: ${(colorMap[ans] || ans)}`;
+        // No auto-advance in normal mode
+        document.getElementById('nextBtn').textContent = 'これでけってい'; // Ensure text is correct if logic changes
         document.getElementById('nextBtn').disabled = false;
         document.getElementById('nextBtn').classList.remove('opacity-50');
       }
-    });
-    container.appendChild(btn);
-  });
-}
-
-function answer(ans) {
-  if (answered) return;
-  answered = true;
-  setChoiceButtonsDisabled(true);
-  const file = quiz[index];
-  const correct = file.toLowerCase().includes(ans.toLowerCase());
-  answers.push({choice: ans, correct: correct, file: file});
-  const statusEl = document.getElementById('status');
-  if (instant) {
-    if (correct) {
-      statusEl.textContent = 'やったね！せいかい！';
-      try { new Audio('static/sounds/correct.mp3').play(); } catch(e){}
-    } else {
-      const raw = file.split('_')[1] ? file.split('_')[1].split('.')[0] : file;
-      const label = ( { red:'あか', yellow:'きいろ', blue:'あお', black:'くろ', green:'みどり', orange:'おれんじ', purple:'むらさき', pink:'ぴんく', brown:'ちゃいろ', beige:'べーじゅ', lavender:'らべんだー', gray:'ぐれー', lightblue:'みずいろ', yellowgreen:'きみどり' }[raw] ) || raw;
-      statusEl.textContent = `ちがうよ。こたえは ${label} だよ`;
-      try { new Audio('static/sounds/wrong.mp3').play(); } catch(e){}
     }
-    setTimeout(() => { document.getElementById('status').textContent = 'つぎへ'; }, 1600);
-  } else {
-    statusEl.textContent = `あなたの　えらんだおと: ${ (colorMap[ans] || ans) }`;
-    setTimeout(() => { document.getElementById('status').textContent = 'つぎへ'; }, 1200);
-  }
 
-  document.getElementById('nextBtn').disabled = false;
-  document.getElementById('nextBtn').classList.remove('opacity-50');
-}
+    function setChoiceButtonsDisabled(disabled) {
+      const container = document.getElementById('buttons');
+      Array.from(container.querySelectorAll('button')).forEach(b => {
+        b.disabled = disabled;
+        b.style.opacity = disabled ? '0.6' : '1';
+      });
+    }
 
-function setChoiceButtonsDisabled(disabled){
-  const container = document.getElementById('buttons');
-  Array.from(container.querySelectorAll('button')).forEach(b => {
-    b.disabled = disabled;
-    b.style.opacity = disabled ? '0.6' : '1';
-  });
-}
+    document.getElementById('nextBtn').addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      if (!instant) {
+        const file = quiz[index];
+        const choice = currentSelection || '';
+        const correct = file.toLowerCase().includes(choice.toLowerCase());
+        answers.push({ choice: choice, correct: correct, file: file });
+        currentSelection = null;
+        Array.from(document.getElementById('buttons').querySelectorAll('button')).forEach(b => { b.style.outline = 'none'; });
+      }
+      index++;
+      playQuestion();
+    });
 
-document.getElementById('nextBtn').onclick = () => {
-  if (!instant) {
-    const file = quiz[index];
-    const choice = currentSelection || '';
-    const correct = file.toLowerCase().includes(choice.toLowerCase());
-    answers.push({choice: choice, correct: correct, file: file});
-    currentSelection = null;
-    Array.from(document.getElementById('buttons').querySelectorAll('button')).forEach(b => { b.style.outline = 'none'; });
-  }
-  index++;
-  playQuestion();
-};
+    document.getElementById('replayBtn').addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      audio.pause();
+      audio.currentTime = 0;
+      audio.play();
+    });
 
-document.getElementById('replayBtn').onclick = () => {
-  audio.pause();
-  audio.currentTime = 0;
-  audio.play();
-};
+    const storedLevel = Number(localStorage.getItem('selectedLevel') || 1);
+    const storedInstant = localStorage.getItem('instant');
+    if (storedInstant === '1') instant = true;
+    else if (storedInstant === '0') instant = false;
 
-const storedLevel = Number(localStorage.getItem('selectedLevel') || 1);
-const storedInstant = localStorage.getItem('instant');
-if (storedInstant === '1') instant = true;
-else if (storedInstant === '0') instant = false;
-loadQuiz(storedLevel);
-</script>
+    if (instant) {
+      document.getElementById('nextBtn').style.display = 'none';
+    }
+
+    loadQuiz(storedLevel);
+  </script>
 </body>
+
 </html>
