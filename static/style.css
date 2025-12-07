@@ -10,6 +10,20 @@ body {
   font-size: 18px;
   margin: 0;
   padding: 0;
+  /* Prevent text selection and touch interactions for children */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  /* Prevent accidental copy/paste */
+  -webkit-user-drag: none;
+}
+
+/* Prevent double-tap zoom globally */
+* {
+  touch-action: manipulation;
 }
 
 h1 {

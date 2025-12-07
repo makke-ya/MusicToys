@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="static/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
@@ -56,6 +56,7 @@
     }
 
     function playQuestion() {
+      // CRITICAL: Guard against re-entry while transitioning
       if (index >= quiz.length) {
         localStorage.setItem('lastAnswers', JSON.stringify(answers));
         const score = answers.filter(a => a.correct).length;
@@ -63,6 +64,10 @@
         window.location.href = "result.html";
         return;
       }
+
+      // Reset state for new question
+      answered = false;
+
       const note = quiz[index];
       audio.src = `static/sounds/${note}`;
       audio.pause();
@@ -72,7 +77,8 @@
       document.getElementById('status').textContent = `さいせいちゅう...`;
       document.getElementById('questionCounter').textContent = `${index + 1} / ${Site.QUESTION_COUNT}`;
 
-      // Reset button styles
+      // Reset button styles and DISABLE immediately
+      setChoiceButtonsDisabled(true);
       Array.from(document.getElementById('buttons').querySelectorAll('button')).forEach(b => {
         b.style.boxShadow = 'none';
         b.classList.remove('bg-green-200', 'bg-red-200'); // Remove old classes if any remained
@@ -80,10 +86,12 @@
 
       audio.play().then(() => {
         setTimeout(() => {
-          document.getElementById('buttons').classList.remove('opacity-0');
-          document.getElementById('status').textContent = `おとをきいたらボタンをおしてね`;
-          answered = false;
-          setChoiceButtonsDisabled(false);
+          // Only enable if we haven't already answered (shouldn't happen, but defensive)
+          if (!answered) {
+            document.getElementById('buttons').classList.remove('opacity-0');
+            document.getElementById('status').textContent = `おとをきいたらボタンをおしてね`;
+            setChoiceButtonsDisabled(false);
+          }
         }, 2000);
       }).catch(e => console.log(e));
     }
@@ -182,8 +190,11 @@
         }
         // Auto advance
         setTimeout(() => {
-          index++;
-          playQuestion();
+          // CRITICAL: Guard against advancing beyond quiz length
+          if (index < quiz.length) {
+            index++;
+            playQuestion();
+          }
         }, 1500);
       } else {
         statusEl.textContent = `あなたの　えらんだおと: ${(colorMap[ans] || ans)}`;
@@ -213,8 +224,11 @@
         currentSelection = null;
         Array.from(document.getElementById('buttons').querySelectorAll('button')).forEach(b => { b.style.outline = 'none'; });
       }
-      index++;
-      playQuestion();
+      // CRITICAL: Guard against advancing beyond quiz length
+      if (index < quiz.length) {
+        index++;
+        playQuestion();
+      }
     });
 
     document.getElementById('replayBtn').addEventListener('pointerdown', (e) => {
