@@ -110,7 +110,6 @@
           onPointerDown: (e) => {
             e.preventDefault(); e.stopPropagation();
             if (instant) {
-              if (!btn.disabled) { btn.disabled = true; btn.style.opacity = '0.6'; }
               answer(raw);
             } else {
               currentSelection = raw;
@@ -136,9 +135,13 @@
     }
 
     function answer(ans) {
+      // CRITICAL: Set answered flag FIRST to prevent race conditions from rapid clicking
       if (answered) return;
       answered = true;
+
+      // Immediately disable all buttons to prevent any further clicks
       setChoiceButtonsDisabled(true);
+
       const file = quiz[index];
       const correctKey = getKeyFromFile(file);
       const correct = (correctKey === ans);
