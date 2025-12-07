@@ -128,12 +128,21 @@
       });
     }
 
+    // Helper to extract key (color name) from filename
+    function getKeyFromFile(file) {
+      if (!file) return '';
+      const parts = file.split('_');
+      return parts.length > 1 ? parts[1].split('.')[0] : file;
+    }
+
     function answer(ans) {
       if (answered) return;
       answered = true;
       setChoiceButtonsDisabled(true);
       const file = quiz[index];
-      const correct = file.toLowerCase().includes(ans.toLowerCase());
+      const correctKey = getKeyFromFile(file);
+      const correct = (correctKey === ans);
+
       answers.push({ choice: ans, correct: correct, file: file });
       const statusEl = document.getElementById('status');
 
@@ -144,7 +153,7 @@
         b.style.outline = 'none';
 
         const bRaw = b.dataset.label;
-        const bIsCorrect = file.toLowerCase().includes(bRaw);
+        const bIsCorrect = (bRaw === correctKey);
         const bIsSelected = (bRaw === ans);
 
         if (bIsCorrect) {
@@ -164,8 +173,7 @@
           statusEl.textContent = 'やったね！せいかい！';
           try { new Audio('static/sounds/correct.mp3').play(); } catch (e) { }
         } else {
-          const raw = file.split('_')[1] ? file.split('_')[1].split('.')[0] : file;
-          const label = (Site.colorMap[raw]) || raw;
+          const label = (Site.colorMap[correctKey]) || correctKey;
           statusEl.textContent = `ちがうよ。こたえは ${label} だよ`;
           try { new Audio('static/sounds/wrong.mp3').play(); } catch (e) { }
         }
@@ -196,7 +204,8 @@
       if (!instant) {
         const file = quiz[index];
         const choice = currentSelection || '';
-        const correct = file.toLowerCase().includes(choice.toLowerCase());
+        const correctKey = getKeyFromFile(file);
+        const correct = (correctKey === choice);
         answers.push({ choice: choice, correct: correct, file: file });
         currentSelection = null;
         Array.from(document.getElementById('buttons').querySelectorAll('button')).forEach(b => { b.style.outline = 'none'; });
