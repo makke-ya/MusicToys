@@ -10,6 +10,7 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
   <script src="static/config.js"></script>
   <script src="static/site.js"></script>
+  <script src="static/ui-lock.js"></script>
 </head>
 
 <body class="bg-gray-50 min-h-screen flex items-center justify-center">
@@ -22,11 +23,13 @@
       <div id="summary" class="mb-4 text-lg"></div>
       <div id="table" class="mb-4"></div>
 
-      <div class="flex gap-3">
+      <div class="flex flex-wrap gap-3">
         <button onclick="location.href='chord_check.html'" class="btn-action px-4 py-2 border rounded">もういちど</button>
+        <button onclick="location.href='level_select.html'"
+          class="btn-action px-4 py-2 border rounded bg-indigo-50 text-indigo-700">レベルをえらぶ</button>
         <button onclick="location.href='index.html'" class="btn-action px-4 py-2 border rounded">タイトルへ</button>
         <button onclick="location.href='stats.html'"
-          class="btn-action px-4 py-2 border rounded bg-indigo-50 text-indigo-700">グラフをみる</button>
+          class="btn-action px-4 py-2 border rounded bg-white text-gray-700">グラフをみる</button>
       </div>
     </div>
   </div>
