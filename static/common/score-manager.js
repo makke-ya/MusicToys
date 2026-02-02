@@ -159,9 +159,60 @@ window.ScoreManager = (function() {
         document.body.appendChild(modal);
     }
 
+    /**
+     * Show a modal to input user name.
+     * @returns {Promise<string>} The entered name.
+     */
+    function showNameInputModal() {
+        return new Promise((resolve) => {
+            const existing = document.getElementById('name-input-modal');
+            if (existing) existing.remove();
+
+            const storedName = localStorage.getItem('userName') || '';
+
+            const modal = document.createElement('div');
+            modal.id = 'name-input-modal';
+            modal.className = 'fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[60] p-4';
+            
+            const content = document.createElement('div');
+            content.className = 'bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden transform transition-all p-6 text-center border-4 border-indigo-400';
+            
+            content.innerHTML = `
+                <h3 class="text-2xl font-black text-indigo-600 mb-4">おなまえをおしえてね</h3>
+                <p class="text-gray-500 mb-6 text-sm">ランキングにのるよ！</p>
+                <input type="text" id="score-username-input" value="${storedName}" placeholder="おなまえ" class="w-full text-2xl font-bold text-center p-3 border-2 border-gray-300 rounded-xl mb-6 focus:border-indigo-500 focus:outline-none" maxlength="10">
+                <button id="score-username-submit" class="w-full bg-indigo-500 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-indigo-600 transition-transform active:scale-95 text-xl">
+                    OK
+                </button>
+            `;
+            
+            modal.appendChild(content);
+            document.body.appendChild(modal);
+
+            const input = document.getElementById('score-username-input');
+            const btn = document.getElementById('score-username-submit');
+
+            // Focus input
+            setTimeout(() => input.focus(), 100);
+
+            const submit = () => {
+                const name = input.value.trim() || '名無しさん';
+                localStorage.setItem('userName', name);
+                modal.remove();
+                resolve(name);
+            };
+
+            btn.onclick = submit;
+            input.onkeydown = (e) => {
+                if (e.key === 'Enter') submit();
+            };
+        });
+    }
+
     return {
         postScore,
         getLeaderboard,
-        showLeaderboardModal
+        showLeaderboardModal,
+        showNameInputModal
     };
 })();

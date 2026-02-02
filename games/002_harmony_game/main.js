@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     async function initGame() {
         const urlParams = new URLSearchParams(window.location.search);
         const debugLevel = urlParams.get('level');
+        const paramDifficulty = urlParams.get('difficulty'); // New param
+
         // Debug mode skips difficulty selection
         if (debugLevel) {
             level = parseInt(debugLevel, 10);
@@ -106,8 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const leaderboardBtn = document.getElementById('leaderboard-btn');
         if (leaderboardBtn) {
             leaderboardBtn.addEventListener('click', () => {
-                // Show 'normal' leaderboard by default or create a tabbed modal (ScoreManager doesn't support tabs yet, so just normal)
-                // Or maybe show a picker? For now, show Normal.
                 if (window.ScoreManager) {
                      window.ScoreManager.showLeaderboardModal('002_harmony_game_normal');
                 }
@@ -127,17 +127,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const instructionsStartButton = document.getElementById('instructions-start-button');
             const instructionsPopup = document.getElementById('instructions-popup');
             
-            // Initial Flow: Instructions -> Difficulty Select -> Game
+            // Initial Flow: Instructions -> Difficulty Select (or Start) -> Game
             if (instructionsStartButton && instructionsPopup) {
                 instructionsPopup.classList.remove('hidden'); // Ensure visible
                 instructionsStartButton.addEventListener('click', () => {
                     instructionsPopup.classList.add('hidden');
-                    // Show Difficulty Popup
-                    difficultyPopupEl.classList.remove('hidden');
+                    
+                    if (paramDifficulty && ['easy', 'normal', 'hard'].includes(paramDifficulty)) {
+                        // Difficulty already selected via URL
+                        startGame(paramDifficulty);
+                    } else {
+                        // Show Difficulty Popup
+                        difficultyPopupEl.classList.remove('hidden');
+                    }
                 });
             } else {
                 // Fallback
-                difficultyPopupEl.classList.remove('hidden');
+                if (paramDifficulty) {
+                    startGame(paramDifficulty);
+                } else {
+                    difficultyPopupEl.classList.remove('hidden');
+                }
             }
         } catch (e) {
             console.error("Failed to load game data:", e);
@@ -505,37 +515,31 @@ document.addEventListener('DOMContentLoaded', () => {
             if (lives <= 0) {
                  // GAME OVER
                  setTimeout(async () => {
-                    alert('ゲームオーバー！\nランキングにとうろくするよ！');
-                    
                     if (window.ScoreManager) {
-                        const gameId = `002_harmony_game_${currentDifficulty}`;
                         try {
+                            // 0. Input Name
+                            await window.ScoreManager.showNameInputModal();
+
+                            const gameId = `002_harmony_game_${currentDifficulty}`;
+                            
                             // 1. Post Score
                             await window.ScoreManager.postScore(gameId, score, level);
+                            
                             // 2. Show Leaderboard
                             await window.ScoreManager.showLeaderboardModal(gameId, { score, level });
                             
-                            // 3. Reset after leaderboard (Hook into modal close if possible, or just wait for user action)
-                            // Since we can't easily hook into the close event of the current ScoreManager implementation without modifying it,
-                            // we'll rely on the user manually navigating or reloading. 
-                            // But better UX: When they close the leaderboard, maybe reload?
-                            // For now, let's just leave the modal open. The user can close it.
-                            
                             // Reset local storage for next run
                             localStorage.setItem('harmonyGameLevel', 1);
-                            
-                            // Add a "To Title" button? The modal has "Close".
-                            // Ideally closing the modal should bring back the difficulty screen.
-                            // But for now, user can reload.
                             
                         } catch (err) {
                             console.error('Score upload failed', err);
                             location.reload();
                         }
                     } else {
+                        alert('ゲームオーバー！');
                         location.reload();
                     }
-                 }, 2000);
+                 }, 1000); // Slightly faster than 2000ms
                  return;
             }
 
