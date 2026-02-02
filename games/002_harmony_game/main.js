@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let gameLogic = null; 
     let animationFrameId = null; 
     let intervalCounts = {};
+    let currentDifficulty = 'normal'; // easy, normal, hard
     
     // For integration tests
     window.gameStates = {
@@ -31,19 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
         volumeSliderEl, introPopupEl, introContentEl, introLevelEl, introIntervalEl,
         introTimbreEl, introToleranceEl, introDescriptionEl, feedbackPopupEl, feedbackContentEl,
         feedbackIconEl, feedbackMessageEl, nextProblemButtonEl,
-        postAnswerControlsEl, replayButtonEl, mainNextButtonEl;
+        postAnswerControlsEl, replayButtonEl, mainNextButtonEl,
+        difficultyPopupEl;
 
     async function initGame() {
         const urlParams = new URLSearchParams(window.location.search);
         const debugLevel = urlParams.get('level');
+        // Debug mode skips difficulty selection
         if (debugLevel) {
             level = parseInt(debugLevel, 10);
             console.log(`Debug: Starting at Level ${level}`);
-        } else {
-            const savedLevel = localStorage.getItem('harmonyGameLevel');
-            if (savedLevel) {
-                level = parseInt(savedLevel, 10);
-            }
+            startGame('normal', level); // Direct start
+            return;
         }
         
         intervalCounts = {};
@@ -71,16 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
         feedbackContentEl = feedbackPopupEl.querySelector('.feedback-content');
         feedbackIconEl = document.getElementById('feedback-icon');
         feedbackMessageEl = document.getElementById('feedback-popup-message');
-        nextProblemButtonEl = document.getElementById('next-problem-button'); // Button inside popup
+        nextProblemButtonEl = document.getElementById('next-problem-button');
 
         postAnswerControlsEl = document.getElementById('post-answer-controls');
         replayButtonEl = document.getElementById('replay-button');
         mainNextButtonEl = document.getElementById('main-next-button');
+        
+        difficultyPopupEl = document.getElementById('difficulty-popup');
 
         answerButtonEl.addEventListener('click', checkAnswer);
         nextProblemButtonEl.addEventListener('click', nextProblem);
         
-        // Replay button enables interactive review mode
         replayButtonEl.addEventListener('click', () => {
             isGameReady = true;
             isPlaying = true;
@@ -93,6 +94,26 @@ document.addEventListener('DOMContentLoaded', () => {
             HarmonyGame.setVolume(parseFloat(e.target.value));
         });
 
+        // Initialize Difficulty Buttons
+        document.querySelectorAll('.difficulty-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const diff = e.target.dataset.difficulty;
+                startGame(diff);
+            });
+        });
+
+        // Leaderboard Button in Difficulty Screen
+        const leaderboardBtn = document.getElementById('leaderboard-btn');
+        if (leaderboardBtn) {
+            leaderboardBtn.addEventListener('click', () => {
+                // Show 'normal' leaderboard by default or create a tabbed modal (ScoreManager doesn't support tabs yet, so just normal)
+                // Or maybe show a picker? For now, show Normal.
+                if (window.ScoreManager) {
+                     window.ScoreManager.showLeaderboardModal('002_harmony_game_normal');
+                }
+            });
+        }
+
         try {
             const [levelRes, notesRes] = await Promise.all([
                 fetch('level_design.json'),
@@ -104,19 +125,46 @@ document.addEventListener('DOMContentLoaded', () => {
             startAnimationLoop();
             
             const instructionsStartButton = document.getElementById('instructions-start-button');
-            if (instructionsStartButton) {
+            const instructionsPopup = document.getElementById('instructions-popup');
+            
+            // Initial Flow: Instructions -> Difficulty Select -> Game
+            if (instructionsStartButton && instructionsPopup) {
+                instructionsPopup.classList.remove('hidden'); // Ensure visible
                 instructionsStartButton.addEventListener('click', () => {
-                    const popup = document.getElementById('instructions-popup');
-                    if (popup) popup.classList.add('hidden');
-                    nextProblem();
+                    instructionsPopup.classList.add('hidden');
+                    // Show Difficulty Popup
+                    difficultyPopupEl.classList.remove('hidden');
                 });
             } else {
-                nextProblem();
+                // Fallback
+                difficultyPopupEl.classList.remove('hidden');
             }
         } catch (e) {
             console.error("Failed to load game data:", e);
             alert("データの読み込みに失敗しました。");
         }
+    }
+
+    function startGame(difficulty, startLevel = 1) {
+        currentDifficulty = difficulty;
+        level = startLevel;
+        score = 0;
+        questionNumber = 0;
+        intervalCounts = {};
+        
+        // Difficulty Settings (Always 3 lives as requested to revert balance changes)
+        lives = 3;
+        
+        // Hide popup
+        difficultyPopupEl.classList.add('hidden');
+        
+        // Reset stored level if starting fresh game (Leaderboard runs should start at 1)
+        if (startLevel === 1) {
+             localStorage.setItem('harmonyGameLevel', 1);
+        }
+
+        updateUI();
+        nextProblem();
     }
 
     async function nextProblem() {
@@ -139,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let currentInterval = currentLevelConfig.interval;
         if (currentInterval === 'Random') {
-            // Use all available intervals sorted by LCM
             const intervals = [
                 'Perfect 1st', 'Perfect 8th', 'Perfect 5th', 'Perfect 4th', 
                 'Major 6th', 'Major 3rd', 'minor 3rd', 'minor 6th', 
@@ -148,10 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
             currentInterval = intervals[Math.floor(Math.random() * intervals.length)];
         }
 
-        // Increment count for this interval
         intervalCounts[currentInterval] = (intervalCounts[currentInterval] || 0) + 1;
 
-        // --- Instrument Selection Logic ---
         let baseInstrument = currentLevelConfig.timbre || 'Sawtooth Wave';
         let targetInstrument = baseInstrument;
 
@@ -165,14 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
             targetInstrument = baseInstrument;
         }
 
-        // Mix instruments condition:
-        // 1. Level >= 50 (Always active)
-        // 2. Level >= 30 AND Interval Count > 10 (High familiarity)
         const currentCount = intervalCounts[currentInterval] || 0;
         if (level >= 30 && currentCount > 10) {
-             // 50% chance to mix instruments
              if (Math.random() < 0.5) {
-                 // Ensure target instrument is different from base instrument
                  const otherInstruments = availableInstruments.filter(i => i !== baseInstrument);
                  if (otherInstruments.length > 0) {
                      targetInstrument = otherInstruments[Math.floor(Math.random() * otherInstruments.length)];
@@ -185,9 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let baseFreq = noteToFreq(randomNote);
 
-        // Level 50+: Randomly vary base frequency by up to ±50 cents (1/4 tone)
         if (level >= 50) {
-            const randomCents = (Math.random() * 100) - 50; // -50 to +50
+            const randomCents = (Math.random() * 100) - 50; 
             baseFreq = baseFreq * Math.pow(2, randomCents / 1200);
         }
 
@@ -197,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- Tolerance Calculation Logic ---
         // Base 20c, decrease by 1c every 5 levels. Min 3c.
         let calculatedTolerance = Math.max(3, 20 - Math.floor((level - 1) / 5));
-
+        
         const correctSliderValue = Math.floor(Math.random() * 17) - 8; 
 
         gameLogic = new HarmonyGameLogic({
@@ -205,21 +244,19 @@ document.addEventListener('DOMContentLoaded', () => {
             correctSliderValue: correctSliderValue,
             interval: currentInterval,
             dynamics: currentLevelConfig.dynamics,
-            timbre: baseInstrument // Use base instrument for logic (oscillator type etc)
+            timbre: baseInstrument
         });
 
         currentProblem = {
             baseNote: { note: randomNote, freq: baseFreq, id: 'base_note', instrument: baseInstrument },
             targetNote: { note: randomNote, freq: targetBaseFreq, id: 'target_note', instrument: targetInstrument },
-            instrument: baseInstrument, // Main instrument for reference
+            instrument: baseInstrument,
             interval: currentInterval
         };
 
-        // Preload all used instruments
         const instrumentsToLoad = [...new Set([baseInstrument, targetInstrument])];
         await HarmonyGame.preloadAudioForGame(instrumentsToLoad);
 
-        // Update popup display
         const displayTimbre = (baseInstrument === targetInstrument) 
             ? baseInstrument 
             : `${baseInstrument} & ${targetInstrument}`;
@@ -230,11 +267,9 @@ document.addEventListener('DOMContentLoaded', () => {
             level: level 
         }, currentInterval);
 
-        
         updateUI();
         createSlider(); 
         
-        // 2秒後に自動再生
         setTimeout(() => {
             hideIntroPopup();
             isGameReady = true;
@@ -247,6 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 
+    // ... (Keep existing maps: instrumentDisplayMap, intervalDisplayMap, intervalDescriptions) ...
     const instrumentDisplayMap = {
         'Sawtooth Wave': '🎹 でんしおん1',
         'Sine Wave': '〰️ でんしおん2',
@@ -298,6 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Tritone': 'あやしくて、ちょっとこわい音だよ。'
     };
 
+    // ... (Keep existing helpers: showIntroPopup, hideIntroPopup, createSlider, updateSoundFreq, togglePlayback, playSounds, playCorrectSound) ...
     function showIntroPopup(config, interval) {
         introLevelEl.textContent = level;
         
@@ -306,7 +343,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         let displayTimbre = config.timbre;
         if (displayTimbre.includes('&')) {
-            // "Violin & Flute" -> "🎻 ばいおりん & 🪈 ふるーと"
             const parts = displayTimbre.split(' & ');
             const localizedParts = parts.map(p => instrumentDisplayMap[p] || p);
             introTimbreEl.textContent = localizedParts.join(' & ');
@@ -368,9 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
         HarmonyGame.updateFrequency(currentProblem.targetNote.id, newFreq);
     }
 
-    function togglePlayback() {
-        // 廃止されたが、念のため残しておくか検討
-    }
+    function togglePlayback() { }
 
     function playSounds() {
         if (!isGameReady || !gameLogic || typeof gameLogic.calculateFrequency !== 'function') return;
@@ -429,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => HarmonyGame.stopAllSounds(), 4000);
     }
 
-    function checkAnswer() {
+    async function checkAnswer() {
         if (!isGameReady || !gameLogic || typeof gameLogic.isCorrect !== 'function') return;
 
         HarmonyGame.stopAllSounds();
@@ -469,11 +503,38 @@ document.addEventListener('DOMContentLoaded', () => {
             feedbackMessageEl.className = 'text-5xl font-black mb-6 text-red-500';
             
             if (lives <= 0) {
-                 setTimeout(() => {
-                    alert('ゲームオーバー！');
-                    level = 1; 
-                    localStorage.setItem('harmonyGameLevel', level);
-                    location.reload(); 
+                 // GAME OVER
+                 setTimeout(async () => {
+                    alert('ゲームオーバー！\nランキングにとうろくするよ！');
+                    
+                    if (window.ScoreManager) {
+                        const gameId = `002_harmony_game_${currentDifficulty}`;
+                        try {
+                            // 1. Post Score
+                            await window.ScoreManager.postScore(gameId, score, level);
+                            // 2. Show Leaderboard
+                            await window.ScoreManager.showLeaderboardModal(gameId, { score, level });
+                            
+                            // 3. Reset after leaderboard (Hook into modal close if possible, or just wait for user action)
+                            // Since we can't easily hook into the close event of the current ScoreManager implementation without modifying it,
+                            // we'll rely on the user manually navigating or reloading. 
+                            // But better UX: When they close the leaderboard, maybe reload?
+                            // For now, let's just leave the modal open. The user can close it.
+                            
+                            // Reset local storage for next run
+                            localStorage.setItem('harmonyGameLevel', 1);
+                            
+                            // Add a "To Title" button? The modal has "Close".
+                            // Ideally closing the modal should bring back the difficulty screen.
+                            // But for now, user can reload.
+                            
+                        } catch (err) {
+                            console.error('Score upload failed', err);
+                            location.reload();
+                        }
+                    } else {
+                        location.reload();
+                    }
                  }, 2000);
                  return;
             }
@@ -487,6 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ... (Keep existing showFeedbackOnSlider, updateUI, noteToFreq, startAnimationLoop) ...
     function showFeedbackOnSlider(userValue) {
         const wrapper = slidersContainerEl.querySelector('.w-full.max-w-lg'); 
         if (!wrapper) return;
@@ -567,14 +629,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const slider = document.getElementById('frequency-slider');
             const sliderValue = slider ? parseInt(slider.value, 10) : 0;
             
-            // 視覚補助（キャラクターの揺れ）の強度計算
-            // ヒントの減少ロジック: 出現回数に応じて「動かない範囲（デッドゾーン）」を広げる
             const currentCount = (currentProblem && currentProblem.interval) 
                 ? (intervalCounts[currentProblem.interval] || 1) 
                 : 1;
             
-            // Count 1 -> DeadZone 0
-            // Count 11 -> DeadZone 5 (Max)
             const deadZone = Math.min(5, (currentCount - 1) * 0.5);
             
             if (window.gameStates) {
@@ -585,13 +643,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (gameLogic && typeof gameLogic.correctSliderValue === 'number') {
                 const diff = Math.abs(sliderValue - gameLogic.correctSliderValue);
                 if (diff > deadZone) {
-                    // デッドゾーンを超えた分だけ揺れる
                     intensity = (diff - deadZone) * 0.1; 
                 }
-            }
-            
-            if (Math.random() < 0.01) {
-                console.log('Animation Loop:', { sliderValue, intensity, visualAidScale });
             }
             
             const time = (Date.now() - startTime) / 1000;
