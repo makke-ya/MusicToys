@@ -14,17 +14,14 @@ def lambda_handler(event, context):
     origin = headers_in.get('origin') or headers_in.get('Origin')
     
     # Define allowed origins
-    allowed_origins = [
-        'http://127.0.0.1:8080',  # VSCode Live Server
-        'http://chord-quiz-bucket.s3-website-ap-northeast-1.amazonaws.com',
-        'https://makke-ya.github.io',
-    ]
+    # For a public educational tool, we might want to allow all origins or specific ones.
+    # Allowing * for now to support various local/classroom environments.
+    allow_origin = '*'
     
-    if origin in allowed_origins:
-        allow_origin = origin
-    else:
-        allow_origin = 'https://makke-ya.github.io'
-
+    # If specific restriction is needed later:
+    # allowed_origins = [ ... ]
+    # if origin in allowed_origins: allow_origin = origin
+    
     # CORS headers
     headers = {
         "Access-Control-Allow-Origin": allow_origin,

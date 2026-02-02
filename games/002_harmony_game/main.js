@@ -155,9 +155,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function startGame(difficulty, startLevel = 1) {
+    function startGame(difficulty, startLevel = null) {
         currentDifficulty = difficulty;
-        level = startLevel;
+        
+        // Set start level based on difficulty if not explicitly provided (e.g. via debug param)
+        if (startLevel === null) {
+            if (currentDifficulty === 'easy') level = 1;
+            else if (currentDifficulty === 'normal') level = 15;
+            else if (currentDifficulty === 'hard') level = 30;
+            else level = 1;
+        } else {
+            level = startLevel;
+        }
+
         score = 0;
         questionNumber = 0;
         intervalCounts = {};
@@ -168,10 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hide popup
         difficultyPopupEl.classList.add('hidden');
         
-        // Reset stored level if starting fresh game (Leaderboard runs should start at 1)
-        if (startLevel === 1) {
-             localStorage.setItem('harmonyGameLevel', 1);
-        }
+        // Update stored level
+        localStorage.setItem('harmonyGameLevel', level);
 
         updateUI();
         nextProblem();
@@ -525,14 +533,34 @@ document.addEventListener('DOMContentLoaded', () => {
                             // 1. Post Score
                             await window.ScoreManager.postScore(gameId, score, level);
                             
-                            // 2. Show Leaderboard
-                            await window.ScoreManager.showLeaderboardModal(gameId, { score, level });
+                            // 2. Show Leaderboard with actions and tabs
+                            await window.ScoreManager.showLeaderboardModal(gameId, { score, level, name: localStorage.getItem('userName') }, [
+                                {
+                                    label: 'もういちど',
+                                    primary: true,
+                                    onClick: () => {
+                                        location.reload();
+                                    }
+                                },
+                                {
+                                    label: 'なんいどをえらぶ',
+                                    primary: false,
+                                    onClick: () => {
+                                        window.location.href = 'level_select.html';
+                                    }
+                                }
+                            ], [
+                                { label: 'かんたん', gameId: '002_harmony_game_easy' },
+                                { label: 'ふつう', gameId: '002_harmony_game_normal' },
+                                { label: 'むずかしい', gameId: '002_harmony_game_hard' }
+                            ]);
                             
                             // Reset local storage for next run
                             localStorage.setItem('harmonyGameLevel', 1);
                             
                         } catch (err) {
                             console.error('Score upload failed', err);
+                            alert('ランキングのとうろくに しっぱいしました。\nインターネットにつながっているか 確認してね。');
                             location.reload();
                         }
                     } else {
