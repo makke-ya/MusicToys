@@ -212,11 +212,30 @@ function showComboEffect(combo) {
     setTimeout(() => popup.remove(), 1000);
 }
 
-function endGame() {
+async function endGame() {
     isPlaying = false;
     clearInterval(timerInterval);
     const res = document.getElementById('result-screen');
     if (res) res.classList.remove('hidden');
     const fs = document.getElementById('final-score');
     if (fs) fs.textContent = gameLogic.currentScore;
+
+    // Leaderboard Integration
+    if (window.ScoreManager) {
+        let difficulty = 'normal';
+        if (selectedLevel === 1) difficulty = 'easy';
+        else if (selectedLevel === 30) difficulty = 'hard';
+        
+        const gameId = `003_sound_updown_${difficulty}`;
+        
+        try {
+            await window.ScoreManager.postScore(gameId, gameLogic.currentScore, gameLogic.level);
+            // Wait a bit before showing leaderboard to let user see "Time's Up" or Score first
+            setTimeout(() => {
+                window.ScoreManager.showLeaderboardModal(gameId, { score: gameLogic.currentScore, level: gameLogic.level });
+            }, 1000);
+        } catch (e) {
+            console.error('Leaderboard error:', e);
+        }
+    }
 }
