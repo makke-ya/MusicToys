@@ -1,1 +1,38 @@
+# Dependencies
+node_modules/
+
+# Local configuration
+# static/config.js (Commented out to allow deployment to GitHub Pages)
+!static/config.sample.js
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.jest/
+
+# Custom Assets
 static/images/custom/*
+
+# GitHub Pages (Jekyll)
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
