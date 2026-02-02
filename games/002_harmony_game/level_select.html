@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>レベルをえらんでね - ハーモニーをさがせ！</title>
+    <link href="/static/common/style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/static/common/ui-lock.js"></script>
+</head>
+<body class="bg-sky-100 flex items-center justify-center min-h-screen">
+
+    <div class="container mx-auto p-4 max-w-2xl w-full">
+        <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-center">
+
+            <h1 class="text-3xl md:text-4xl font-bold text-indigo-600 mb-6">
+                レベルをえらんでね
+            </h1>
+
+            <div class="flex flex-col md:flex-row gap-4 md:gap-6 justify-center">
+                <!-- Level 1 -->
+                <button onclick="selectLevel(1)" class="level-button bg-green-500 hover:bg-green-600">
+                    <span class="level-title">レベル 1</span>
+                    <span class="level-description">ここからはじめる<br>(かんたん)</span>
+                </button>
+
+                <!-- Level 15 -->
+                <button onclick="selectLevel(15)" class="level-button bg-blue-500 hover:bg-blue-600">
+                    <span class="level-title">レベル 15</span>
+                    <span class="level-description">なれてきたら<br>(ふつう)</span>
+                </button>
+
+                <!-- Level 30 -->
+                <button onclick="selectLevel(30)" class="level-button bg-red-500 hover:bg-red-600">
+                    <span class="level-title">レベル 30</span>
+                    <span class="level-description">ちょうせん！<br>(むずかしい)</span>
+                </button>
+            </div>
+            
+            <div class="mt-8 flex flex-col items-center gap-4">
+                <button onclick="showHelp()" class="bg-indigo-100 text-indigo-700 px-6 py-3 rounded-full font-bold hover:bg-indigo-200 transition-colors flex items-center gap-2">
+                    <span class="text-xl">📖</span> くわしいせつめい
+                </button>
+                <a href="/" class="text-gray-600 hover:text-indigo-600 transition-colors text-sm">ゲームをえらぶ画面にもどる</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto flex flex-col">
+            <div class="p-6 border-b sticky top-0 bg-white z-10 flex justify-between items-center rounded-t-2xl">
+                <h2 class="text-2xl font-bold text-indigo-700">あそびかた</h2>
+                <button onclick="closeHelp()" class="text-gray-400 hover:text-gray-600 text-3xl font-bold leading-none">&times;</button>
+            </div>
+            <div class="p-6 text-left space-y-6 text-gray-700 leading-relaxed">
+                <section>
+                    <h3 class="font-bold text-lg text-indigo-600 mb-2">🎵 どんなゲーム？</h3>
+                    <p>ながれている音に合わせて、スライダーをうごかして、きれいなハーモニーをつくるゲームだよ。</p>
+                </section>
+                
+                <section>
+                    <h3 class="font-bold text-lg text-emerald-600 mb-2">🎮 どうやってあそぶの？</h3>
+                    <ol class="list-decimal list-inside space-y-2 marker:text-emerald-500 marker:font-bold">
+                        <li>ゲームがはじまると、2つの音がなるよ。</li>
+                        <li>1つは「きじゅんの音」、もう1つはあなたが操作する音だよ。</li>
+                        <li>画面のスライダーを左右にうごかして、2つの音がきれいに重なる場所をさがそう。</li>
+                        <li>音がにごって聞こえるときは、まだ合っていないよ。「ワンワンワン…」といううなりがなくなる場所が正解！</li>
+                        <li>「これだ！」ボタンをおして、こたえあわせしよう。</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-lg text-amber-600 mb-2">🎹 いろんな楽器と音程</h3>
+                    <p>レベルがあがると、いろいろな楽器の音がでてくるよ。むずかしい音程（和音）もでてくるから、耳をすませてきいてみてね。</p>
+                </section>
+            </div>
+            <div class="p-4 border-t bg-gray-50 rounded-b-2xl sticky bottom-0">
+                <button onclick="closeHelp()" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition-colors">
+                    わかった！
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .level-button {
+            @apply text-white font-bold rounded-lg p-6 shadow-lg transition-transform hover:scale-105 flex flex-col items-center justify-center w-full md:w-48 h-48;
+        }
+        .level-title {
+            @apply text-2xl mb-2;
+        }
+        .level-description {
+            @apply text-base;
+        }
+        
+        #help-modal:not(.hidden) {
+            opacity: 1;
+        }
+    </style>
+
+    <script>
+        function selectLevel(level) {
+            // 選択したレベルをlocalStorageに保存して、ゲーム画面に遷移
+            localStorage.setItem('harmonyGameLevel', level);
+            window.location.href = 'index.html';
+        }
+
+        const modal = document.getElementById('help-modal');
+        
+        function showHelp() {
+            modal.classList.remove('hidden');
+            // Trigger reflow
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+        }
+
+        function closeHelp() {
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+        
+        // Close on background click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeHelp();
+        });
+    </script>
+
+</body>
+</html>

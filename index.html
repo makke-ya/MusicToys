@@ -1,71 +1,61 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>和音当てクイズ</title>
-  <link href="static/style.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-  <script src="static/ui-lock.js"></script>
-  <script src="static/site.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲームせんたく</title>
+    <link href="/static/common/style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
-<body class="bg-gradient-to-br from-sky-50 to-indigo-50 min-h-screen">
-  <div id="app" class="flex items-center justify-center min-h-screen">
-    <div class="w-full max-w-md bg-white/80 backdrop-blur-md rounded-2xl p-8 shadow-lg text-center">
-      <h1 class="text-2xl font-semibold mb-6">おとで あそぼう</h1>
-
-      <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2">なまえ</label>
-        <input v-model="username" type="text"
-          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center"
-          placeholder="なまえをいれてね">
-      </div>
-
-      <div class="flex justify-center gap-4">
-        <button @click="onStart" :disabled="!username.trim()"
-          class="btn-action bg-indigo-600 px-6 py-3 text-white rounded-lg shadow hover:bg-indigo-700">はじめる</button>
-        <button onclick="location.href='stats.html'"
-          class="btn-action bg-white border px-6 py-3 border-gray-200 rounded-lg shadow hover:bg-gray-50 text-indigo-700">グラフをみる</button>
-      </div>
-
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-10">ゲームを えらんでね</h1>
+        <div id="game-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Games will be loaded here -->
+        </div>
     </div>
-  </div>
 
-  <div style="position:fixed;left:0;right:0;bottom:8px;text-align:center;font-size:0.9rem;">
-    効果音提供　<a href="https://otologic.jp" target="_blank" rel="noopener" class="text-indigo-600 underline">オトロジック</a>
-  </div>
+    <script>
+        (async function () {
+            const gameDirectories = ['001_chord_quiz', '002_harmony_game', '003_sound_updown'];
+            const gameListContainer = document.getElementById('game-list');
 
-  <script>
-    const { createApp } = Vue;
-    createApp({
-      data() {
-        return {
-          username: ''
-        }
-      },
-      mounted() {
-        this.username = localStorage.getItem('username') || '';
-      },
-      watch: {
-        username(newVal) {
-          localStorage.setItem('username', newVal);
-        }
-      },
-      methods: {
-        async unlockAudio() {
-          const a = new Audio('static/sounds/dummy.mp3');
-          try { await a.play(); } catch (e) { }
-        },
-        async onStart() {
-          await this.unlockAudio();
-          setTimeout(() => { window.location.href = 'level_select.html'; }, 150);
-        }
-      }
-    }).mount('#app');
-  </script>
+            for (const dir of gameDirectories) {
+                try {
+                    const response = await fetch(`/games/${dir}/game.json`);
+                    if (!response.ok) {
+                        throw new Error(`Game not found: ${dir}`);
+                    }
+                    const game = await response.json();
+
+                    const card = document.createElement('div');
+                    card.className = 'bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 cursor-pointer';
+                    
+                    const thumbnailUrl = game.thumbnail ? `/games/${dir}/${game.thumbnail}` : 'https://via.placeholder.com/400x300.png?text=No+Image';
+
+                    card.innerHTML = `
+                        <img src="${thumbnailUrl}" alt="${game.name}" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x300.png?text=No+Image'; this.onerror=null;">
+                        <div class="p-6">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-2">${game.name}</h2>
+                            <p class="text-gray-600">${game.description}</p>
+                        </div>
+                    `;
+
+                    card.addEventListener('click', () => {
+                        window.location.href = `/games/${dir}/${game.entry_point}`;
+                    });
+
+                    gameListContainer.appendChild(card);
+                } catch (error) {
+                    console.error('Failed to load game:', dir, error);
+                    // Optionally, display an error card
+                    const errorCard = document.createElement('div');
+                    errorCard.className = 'bg-white rounded-xl shadow-lg p-6';
+                    errorCard.innerHTML = `<h2 class="text-xl font-bold text-red-500">Failed to load: ${dir}</h2>`;
+                    gameListContainer.appendChild(errorCard);
+                }
+            }
+        })();
+    </script>
 </body>
-
 </html>

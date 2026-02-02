@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>和音確認</title>
+  <link href="/static/common/style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <script src="/static/common/site.js"></script>
+  <script src="/static/common/ui-lock.js"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+  <div id="app" class="w-full max-w-3xl p-6">
+    <div class="bg-white rounded-xl shadow p-6 relative">
+
+      <div id="fileCount" class="absolute top-4 right-6 text-gray-500 font-bold text-lg"></div>
+      <h1 class="text-xl font-bold mb-4">わおん の かくにん</h1>
+      <p id="info" class="text-sm text-gray-600 mb-4"></p>
+
+      <div id="chords" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4"></div>
+
+      <div class="flex gap-3">
+        <button id="startQuizBtn" class="btn-action px-6 py-3 bg-indigo-600 text-white rounded">スタート</button>
+        <a href="level_select.html"
+          class="btn-action px-6 py-3 inline-block border rounded text-center bg-white">もどる</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="check.js" defer></script>
+</body>
+
+</html>

@@ -5,11 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>レベル選択</title>
-    <link href="static/style.css" rel="stylesheet" />
+    <link href="/static/common/style.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-    <script src="static/ui-lock.js"></script>
-    <script src="static/site.js"></script>
+    <script src="/static/common/ui-lock.js"></script>
+    <script src="/static/common/site.js"></script>
 </head>
 
 <body class="bg-gray-50 min-h-screen flex items-center justify-center">
@@ -59,9 +59,9 @@
                     localStorage.setItem('selectedLevel', String(l));
                     localStorage.setItem('instant', this.instant ? '1' : '0');
                     localStorage.setItem('iconSet', this.iconSet || 'animals');
-                    window.location.href = 'chord_check.html';
+                    window.location.href = 'check.html';
                 },
-                goBack() { window.location.href = 'index.html'; }
+                goBack() { window.location.href = '/index.html'; }
             },
             mounted() {
                 const stored = localStorage.getItem('instant');

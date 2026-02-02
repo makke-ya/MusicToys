@@ -7,7 +7,7 @@ window.Site = (function () {
   async function initSounds() {
     if (ALL_CHORD_FILES) return;
     try {
-      const res = await fetch('static/sounds.json');
+      const res = await fetch('/static/sounds.json');
       const data = await res.json();
       ALL_CHORD_FILES = data.filter(f => /^\d+/.test(f)).slice().sort();
       for (let i = 1; i < 14; i++) {
@@ -100,7 +100,7 @@ window.Site = (function () {
         const imgFile = soundFile.replace('.mp3', '.png');
         // If the soundFile was just "red", createChordButton might need better logic if files don't match exactly.
         // But based on current logic, imgFile is derived from soundFile.
-        img.src = `static/images/${iconSet}/${imgFile}`;
+        img.src = `/static/images/${iconSet}/${imgFile}`;
         img.alt = label;
         img.style.position = 'absolute';
         img.style.width = '90%';

@@ -1,0 +1,25 @@
+.level-btn {
+    @apply flex flex-col items-center justify-center p-6 rounded-2xl shadow-xl transition-transform active:scale-95 text-white h-48;
+}
+
+@keyframes bounce-short {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.animate-bounce-short {
+    animation: bounce-short 0.3s ease-in-out;
+}
+
+@keyframes flash {
+    0% { opacity: 0.8; }
+    100% { opacity: 0; }
+}
+
+.animate-flash {
+    animation: flash 0.5s ease-out forwards;
+}
+
+.scale-110 {
+    transform: scale(1.1);
+}

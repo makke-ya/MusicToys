@@ -1,0 +1,6 @@
+{
+  "name": "ハーモニーをさがせ！",
+  "description": "スライダーをうごかして、きれいなハーモニーをみつけてね！",
+  "entry_point": "level_select.html",
+  "thumbnail": ""
+}

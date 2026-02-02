@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>結果発表！ - ハーモニーをさがせ！</title>
+  <link href="/static/common/style.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/static/common/ui-lock.js"></script>
+</head>
+
+<body class="bg-sky-100 flex items-center justify-center min-h-screen">
+
+  <div class="container mx-auto p-4 max-w-2xl w-full">
+    <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-8 text-center">
+
+      <h1 class="text-3xl md:text-4xl font-bold text-indigo-600 mb-6">
+        ゲームおわり！
+      </h1>
+
+      <div class="mb-8">
+        <p class="text-xl md:text-2xl text-gray-700">あなたのスコアは</p>
+        <p id="final-score" class="text-5xl md:text-6xl font-extrabold text-red-500 my-4">0</p>
+        <p class="text-xl md:text-2xl text-gray-700">問せいかいでした！</p>
+      </div>
+
+      <!-- スコア分布グラフ -->
+      <div class="mt-8 mb-8">
+        <h2 class="text-2xl font-bold text-indigo-600 mb-4">みんなのスコア</h2>
+        <canvas id="score-chart"></canvas>
+      </div>
+
+      <!-- ランキングリスト -->
+      <div class="mt-8 mb-8">
+        <h2 class="text-2xl font-bold text-indigo-600 mb-4">ランキング</h2>
+        <ul id="ranking-list" class="list-none p-0">
+          <!-- Ranking items will be inserted here by JS -->
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-4 mt-8">
+        <button onclick="retryGame()"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform hover:scale-105">
+          もういちど挑戦！
+        </button>
+        <button onclick="selectLevelAgain()"
+          class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform hover:scale-105">
+          レベルをえらびなおす
+        </button>
+        <a href="/"
+          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-6 rounded-lg shadow-lg transition-transform hover:scale-105 inline-block">
+          ほかのゲームをえらぶ
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const finalScoreEl = document.getElementById('final-score');
+      const score = localStorage.getItem('harmonyGameScore');
+      if (score) {
+        finalScoreEl.textContent = score;
+      } else {
+        finalScoreEl.textContent = '--';
+      }
+    });
+
+    function retryGame() {
+      // 現在のレベルでゲームを再開
+      window.location.href = 'index.html';
+    }
+
+    function selectLevelAgain() {
+      // レベル選択画面に戻る
+      localStorage.removeItem('harmonyGameLevel'); // 現在のレベル情報をクリア
+      window.location.href = 'level_select.html';
+    }
+
+    // AWSからランキングデータを取得して表示
+    async function fetchAndDisplayRanking() {
+      const API_ENDPOINT = window.Config.API_ENDPOINT;
+      const level = localStorage.getItem('harmonyGameLevel');
+      if (!API_ENDPOINT || !level) {
+        console.error('API Endpoint or Level not configured.');
+        return;
+      }
+
+      try {
+        // ランキングデータを取得
+        const response = await fetch(`${API_ENDPOINT}?game_id=002_harmony_game&level=${level}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        const scores = data.scores || [];
+        const rankingListEl = document.getElementById('ranking-list');
+        const scoreChartCanvas = document.getElementById('score-chart');
+
+        // スコア分布グラフの描画
+        if (scoreChartCanvas) {
+          const scoreCounts = {};
+          scores.forEach(s => {
+            scoreCounts[s.score] = (scoreCounts[s.score] || 0) + 1;
+          });
+
+          const labels = Object.keys(scoreCounts).sort((a, b) => parseInt(a) - parseInt(b));
+          const dataValues = labels.map(label => scoreCounts[label]);
+
+          new Chart(scoreChartCanvas, {
+            type: 'bar',
+            data: {
+              labels: labels,
+              datasets: [{
+                label: 'スコア分布',
+                data: dataValues,
+                backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  title: {display: true, text: '人数'}
+                },
+                x: {
+                  title: {display: true, text: 'スコア'}
+                }
+              }
+            }
+          });
+        }
+
+        // ランキングリストの表示（トップ5）
+        if (rankingListEl) {
+          rankingListEl.innerHTML = '';
+          scores.sort((a, b) => b.score - a.score); // スコア降順にソート
+          scores.slice(0, 5).forEach((item, index) => {
+            const li = document.createElement('li');
+            li.className = 'bg-gray-50 p-2 my-1 rounded-md shadow-sm text-gray-800';
+            li.textContent = `${index + 1}. スコア: ${item.score} (レベル: ${item.level}, 日付: ${new Date(item.timestamp).toLocaleDateString()})`;
+            rankingListEl.appendChild(li);
+          });
+        }
+
+      } catch (error) {
+        console.error('Error fetching ranking data:', error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const finalScoreEl = document.getElementById('final-score');
+      const score = localStorage.getItem('harmonyGameScore');
+      if (score) {
+        finalScoreEl.textContent = score;
+      } else {
+        finalScoreEl.textContent = '--';
+      }
+      fetchAndDisplayRanking(); // ランキング表示を呼び出し
+    });
+
+    function retryGame() {
+      // 現在のレベルでゲームを再開
+      window.location.href = 'index.html';
+    }
+
+    function selectLevelAgain() {
+      // レベル選択画面に戻る
+      localStorage.removeItem('harmonyGameLevel'); // 現在のレベル情報をクリア
+      window.location.href = 'level_select.html';
+    }
+  </script>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>おと・アップダウン</title>
+    <link href="/static/common/style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/static/common/ui-lock.js"></script>
+</head>
+<body class="bg-gray-100 overflow-hidden select-none touch-none">
+
+    <!-- 簡易説明ポップアップ -->
+    <div id="instructions-popup" class="fixed inset-0 flex items-center justify-center bg-black/70 z-[100] hidden">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-lg w-full mx-4 transform transition-all duration-300 text-center border-4 border-yellow-400">
+            <h2 class="text-4xl font-black text-yellow-500 mb-6 drop-shadow-md">あそびかた</h2>
+            <div class="space-y-6 text-lg text-gray-700 font-bold leading-relaxed">
+                <p>
+                    <span class="text-2xl">🎵</span> 2つの音が なります。<br>
+                    あとの音が <span class="text-indigo-600">あがった</span> か<br>
+                    <span class="text-red-500">さがった</span> かを あててね！
+                </p>
+                <div class="bg-blue-50 p-4 rounded-xl border-2 border-blue-200">
+                    <p class="mb-2">
+                        <span class="text-2xl">🐸</span> カエルさんが うたうよ！<br>
+                        うえボタン ☝️ ＝ たかい<br>
+                        したボタン 👇 ＝ ひくい
+                    </p>
+                </div>
+            </div>
+            <button id="instructions-start-button" onclick="startGame()" class="mt-8 bg-gradient-to-b from-yellow-400 to-yellow-600 text-white font-black text-2xl py-3 px-10 rounded-full shadow-lg transform transition hover:scale-105 active:scale-95 border-b-4 border-yellow-700">
+                スタート！
+            </button>
+        </div>
+    </div>
+
+    <!-- ゲーム画面 -->
+    <div id="game-screen" class="relative w-full h-screen flex flex-col hidden">
+        
+        <!-- 上エリア (高い) -->
+        <div id="area-up" class="flex-1 bg-sky-200 active:bg-sky-300 transition-colors flex items-center justify-center relative cursor-pointer">
+            <div class="pointer-events-none text-center">
+                <span class="text-6xl md:text-8xl block mb-2 opacity-50">☝️</span>
+                <span class="text-4xl md:text-6xl font-black text-sky-600 drop-shadow-md">たかい！</span>
+            </div>
+            <!-- エフェクト用レイヤー -->
+            <div id="effect-up" class="absolute inset-0 pointer-events-none hidden bg-white/30"></div>
+        </div>
+
+        <!-- 中央情報バー -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full max-w-md pointer-events-none">
+            <div class="bg-white/90 backdrop-blur rounded-full shadow-xl px-8 py-4 flex justify-between items-center border-4 border-yellow-400">
+                <div class="flex flex-col items-center">
+                    <span class="text-xs text-gray-500 font-bold">のこり</span>
+                    <span id="timer" class="text-3xl font-black text-gray-800">60</span>
+                </div>
+                
+                <div class="flex flex-col items-center mx-4">
+                    <div id="character" class="text-5xl transition-transform duration-200">🐸</div>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <span class="text-xs text-gray-500 font-bold">スコア</span>
+                    <span id="score" class="text-3xl font-black text-indigo-600">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 下エリア (低い) -->
+        <div id="area-down" class="flex-1 bg-emerald-200 active:bg-emerald-300 transition-colors flex items-center justify-center relative cursor-pointer">
+            <div class="pointer-events-none text-center">
+                <span class="text-4xl md:text-6xl font-black text-emerald-600 drop-shadow-md">ひくい！</span>
+                <span class="text-6xl md:text-8xl block mt-2 opacity-50">👇</span>
+            </div>
+            <!-- エフェクト用レイヤー -->
+            <div id="effect-down" class="absolute inset-0 pointer-events-none hidden bg-white/30"></div>
+        </div>
+    </div>
+
+    <!-- スタート/レベル選択画面 -->
+    <div id="start-screen" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-4 overflow-y-auto">
+        <h1 class="text-4xl md:text-6xl font-black text-indigo-600 mb-6 text-center leading-tight">
+            おと<br><span class="text-yellow-500">アップ</span><span class="text-gray-400">・</span><span class="text-blue-500">ダウン</span>
+        </h1>
+        
+        <!-- 楽器選択 -->
+        <div class="mb-8 w-full max-w-2xl bg-gray-50 p-4 rounded-xl">
+            <h3 class="text-center font-bold text-gray-600 mb-3">がっきを えらんでね</h3>
+            <div class="flex justify-center gap-4">
+                <label class="cursor-pointer">
+                    <input type="radio" name="instrument" value="Flute" checked class="peer sr-only">
+                    <div class="p-3 rounded-lg border-2 border-gray-200 peer-checked:border-indigo-500 peer-checked:bg-indigo-50 transition-all text-center w-24">
+                        <div class="text-3xl">🪈</div>
+                        <div class="text-xs font-bold text-gray-600">フルート</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="instrument" value="Violin" class="peer sr-only">
+                    <div class="p-3 rounded-lg border-2 border-gray-200 peer-checked:border-indigo-500 peer-checked:bg-indigo-50 transition-all text-center w-24">
+                        <div class="text-3xl">🎻</div>
+                        <div class="text-xs font-bold text-gray-600">バイオリン</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="instrument" value="Cello" class="peer sr-only">
+                    <div class="p-3 rounded-lg border-2 border-gray-200 peer-checked:border-indigo-500 peer-checked:bg-indigo-50 transition-all text-center w-24">
+                        <div class="text-3xl">🎻</div>
+                        <div class="text-xs font-bold text-gray-600">チェロ</div>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl mb-8">
+            <button onclick="showInstructions(1)" class="level-btn bg-green-400 hover:bg-green-500 border-b-8 border-green-600">
+                <span class="text-3xl">🐣</span>
+                <span class="text-xl font-bold mt-2">レベル 1</span>
+                <span class="text-sm">かんたん</span>
+            </button>
+            <button onclick="showInstructions(15)" class="level-btn bg-blue-400 hover:bg-blue-500 border-b-8 border-blue-600">
+                <span class="text-3xl">🐇</span>
+                <span class="text-xl font-bold mt-2">レベル 15</span>
+                <span class="text-sm">ふつう</span>
+            </button>
+            <button onclick="showInstructions(30)" class="level-btn bg-red-400 hover:bg-red-500 border-b-8 border-red-600">
+                <span class="text-3xl">🦅</span>
+                <span class="text-xl font-bold mt-2">レベル 30</span>
+                <span class="text-sm">むずかしい</span>
+            </button>
+        </div>
+
+        <div class="flex gap-6">
+            <button onclick="showHelp()" class="text-indigo-500 hover:text-indigo-700 font-bold flex items-center gap-2">
+                <span>📖</span> くわしいせつめい
+            </button>
+            <a href="/" class="text-gray-500 hover:text-gray-700 font-bold">もどる</a>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto flex flex-col">
+            <div class="p-6 border-b sticky top-0 bg-white z-10 flex justify-between items-center rounded-t-2xl">
+                <h2 class="text-2xl font-bold text-indigo-700">あそびかた</h2>
+                <button onclick="closeHelp()" class="text-gray-400 hover:text-gray-600 text-3xl font-bold leading-none">&times;</button>
+            </div>
+            <div class="p-6 text-left space-y-6 text-gray-700 leading-relaxed">
+                <section>
+                    <h3 class="font-bold text-lg text-indigo-600 mb-2">🎵 どんなゲーム？</h3>
+                    <p>つづけてなる2つの音をきいて、音が「あがった」か「さがった」かをあてるゲームだよ。</p>
+                </section>
+                <section>
+                    <h3 class="font-bold text-lg text-emerald-600 mb-2">🎮 操作ほうほう</h3>
+                    <p>画面の上が「たかい」、下が「ひくい」ボタンになっているよ。</p>
+                    <p>ポン、ポン♪ と音がなったら、2つめの音が高いか低いかをおしてね。</p>
+                </section>
+                <section>
+                    <h3 class="font-bold text-lg text-amber-600 mb-2">🔥 コンボでむずかしくなる！</h3>
+                    <p>せいかいしつづけると「コンボ」がつながるよ。コンボがふえると、だんだん音のちがいが小さくなって、むずかしくなるよ！まちがえるとリセットされちゃうから気をつけてね。</p>
+                </section>
+            </div>
+            <div class="p-4 border-t bg-gray-50 rounded-b-2xl sticky bottom-0">
+                <button onclick="closeHelp()" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition-colors">
+                    わかった！
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 結果画面 -->
+    <div id="result-screen" class="fixed inset-0 bg-black/80 z-50 flex flex-col items-center justify-center p-4 hidden text-white">
+        <h2 class="text-4xl font-bold mb-4">おしまい！</h2>
+        <div class="text-2xl mb-8">
+            スコア: <span id="final-score" class="text-6xl font-black text-yellow-400">0</span>
+        </div>
+        <button onclick="location.reload()" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-4 px-12 rounded-full shadow-lg text-2xl">
+            もういちど
+        </button>
+    </div>
+
+    <script src="/static/config.js?v=2"></script>
+    <script src="game_logic.js?v=2"></script>
+    <script src="game.js?v=2"></script>
+    <script src="main.js?v=2"></script>
+</body>
+</html>

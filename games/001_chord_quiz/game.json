@@ -1,0 +1,6 @@
+{
+  "name": "わおんあてクイズ",
+  "description": "ながれてくる わおん を ききわけて、ただしいボタンをおしてね！",
+  "entry_point": "level_select.html",
+  "thumbnail": "images/thumbnail.png"
+}

@@ -6,7 +6,7 @@ from boto3.dynamodb.conditions import Key
 
 # Initialize DynamoDB client
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('ChordQuizDB')
+table = dynamodb.Table('MusicToysDB')
 
 def lambda_handler(event, context):
     # Get the origin from the request
@@ -84,7 +84,48 @@ def lambda_handler(event, context):
 
             # Normal User Query logic
             user_id = params.get('userId')
+            query_type = params.get('type')
+
+            # Leaderboard Query
+            if query_type == 'leaderboard':
+                game_id = params.get('gameId')
+                if not game_id:
+                    return {
+                        'statusCode': 400,
+                        'headers': headers,
+                        'body': json.dumps({'message': 'Missing gameId parameter for leaderboard'})
+                    }
+                
+                try:
+                    # Query GSI: LeaderboardIndex (PK: gameId, SK: score)
+                    response = table.query(
+                        IndexName='LeaderboardIndex',
+                        KeyConditionExpression=Key('gameId').eq(game_id),
+                        ScanIndexForward=False, # Descending order (High score first)
+                        Limit=10
+                    )
+                    items = response.get('Items', [])
+                    
+                    # Convert Decimal
+                    for item in items:
+                        for k, v in item.items():
+                            if isinstance(v, Decimal):
+                                item[k] = float(v) if v % 1 else int(v)
+                                
+                    return {
+                        'statusCode': 200,
+                        'headers': headers,
+                        'body': json.dumps(items)
+                    }
+                except Exception as e:
+                    print(f"Leaderboard query error: {e}")
+                    return {
+                        'statusCode': 500,
+                        'headers': headers,
+                        'body': json.dumps({'message': 'Leaderboard query failed', 'error': str(e)})
+                    }
             
+            # User History Query
             if not user_id:
                 return {
                     'statusCode': 400,
@@ -132,9 +173,10 @@ def lambda_handler(event, context):
             item = {
                 'userId': body.get('userId'), # PK (Browser ID)
                 'timestamp': body.get('timestamp'), # SK
-                'name': body.get('name', 'Unknown'), # Just a label
+                'gameId': body.get('gameId', '001_chord_quiz'), # GSI PK (Default to 001 for backward compatibility)
+                'name': body.get('name', 'Unknown'), 
                 'level': body.get('level'),
-                'score': body.get('score'),
+                'score': body.get('score', 0), # GSI SK
                 'total': body.get('total'),
                 'rate': body.get('rate'),
                 'settings': body.get('settings', {})

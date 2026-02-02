@@ -1,0 +1,702 @@
+[
+  {
+    "level": 1,
+    "timbre": "Sawtooth Wave",
+    "interval": "Perfect 8th",
+    "tolerance": 20,
+    "dynamics": "none"
+  },
+  {
+    "level": 2,
+    "timbre": "Sawtooth Wave",
+    "interval": "Perfect 1st",
+    "tolerance": 20,
+    "dynamics": "none"
+  },
+  {
+    "level": 3,
+    "timbre": "Sawtooth Wave",
+    "interval": "Perfect 1st",
+    "tolerance": 20,
+    "dynamics": "none"
+  },
+  {
+    "level": 4,
+    "timbre": "Sawtooth Wave",
+    "interval": "Perfect 8th",
+    "tolerance": 20,
+    "dynamics": "none"
+  },
+  {
+    "level": 5,
+    "timbre": "Sawtooth Wave",
+    "interval": "Perfect 1st",
+    "tolerance": 20,
+    "dynamics": "none"
+  },
+  {
+    "level": 6,
+    "timbre": "Flute",
+    "interval": "Perfect 5th",
+    "tolerance": 19,
+    "dynamics": "none"
+  },
+  {
+    "level": 7,
+    "timbre": "Flute",
+    "interval": "Perfect 8th",
+    "tolerance": 19,
+    "dynamics": "none"
+  },
+  {
+    "level": 8,
+    "timbre": "Flute",
+    "interval": "Perfect 5th",
+    "tolerance": 19,
+    "dynamics": "none"
+  },
+  {
+    "level": 9,
+    "timbre": "Flute",
+    "interval": "Perfect 8th",
+    "tolerance": 19,
+    "dynamics": "none"
+  },
+  {
+    "level": 10,
+    "timbre": "Violin",
+    "interval": "Perfect 4th",
+    "tolerance": 19,
+    "dynamics": "none"
+  },
+  {
+    "level": 11,
+    "timbre": "Violin",
+    "interval": "Perfect 4th",
+    "tolerance": 18,
+    "dynamics": "none"
+  },
+  {
+    "level": 12,
+    "timbre": "Violin",
+    "interval": "Perfect 1st",
+    "tolerance": 18,
+    "dynamics": "none"
+  },
+  {
+    "level": 13,
+    "timbre": "Violin",
+    "interval": "Perfect 1st",
+    "tolerance": 18,
+    "dynamics": "none"
+  },
+  {
+    "level": 14,
+    "timbre": "Violin",
+    "interval": "Perfect 5th",
+    "tolerance": 18,
+    "dynamics": "none"
+  },
+  {
+    "level": 15,
+    "timbre": "Clarinet",
+    "interval": "Perfect 1st",
+    "tolerance": 18,
+    "dynamics": "none"
+  },
+  {
+    "level": 16,
+    "timbre": "Clarinet",
+    "interval": "Perfect 8th",
+    "tolerance": 17,
+    "dynamics": "none"
+  },
+  {
+    "level": 17,
+    "timbre": "Clarinet",
+    "interval": "Perfect 4th",
+    "tolerance": 17,
+    "dynamics": "none"
+  },
+  {
+    "level": 18,
+    "timbre": "Clarinet",
+    "interval": "Perfect 4th",
+    "tolerance": 17,
+    "dynamics": "none"
+  },
+  {
+    "level": 19,
+    "timbre": "Clarinet",
+    "interval": "Major 6th",
+    "tolerance": 17,
+    "dynamics": "none"
+  },
+  {
+    "level": 20,
+    "timbre": "Cello",
+    "interval": "Perfect 8th",
+    "tolerance": 17,
+    "dynamics": "none"
+  },
+  {
+    "level": 21,
+    "timbre": "Cello",
+    "interval": "Perfect 8th",
+    "tolerance": 16,
+    "dynamics": "none"
+  },
+  {
+    "level": 22,
+    "timbre": "Cello",
+    "interval": "Perfect 8th",
+    "tolerance": 16,
+    "dynamics": "none"
+  },
+  {
+    "level": 23,
+    "timbre": "Cello",
+    "interval": "Perfect 4th",
+    "tolerance": 16,
+    "dynamics": "none"
+  },
+  {
+    "level": 24,
+    "timbre": "Cello",
+    "interval": "Perfect 4th",
+    "tolerance": 16,
+    "dynamics": "none"
+  },
+  {
+    "level": 25,
+    "timbre": "Bassoon",
+    "interval": "minor 3rd",
+    "tolerance": 16,
+    "dynamics": "none"
+  },
+  {
+    "level": 26,
+    "timbre": "Bassoon",
+    "interval": "minor 3rd",
+    "tolerance": 15,
+    "dynamics": "none"
+  },
+  {
+    "level": 27,
+    "timbre": "Bassoon",
+    "interval": "Major 6th",
+    "tolerance": 15,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 28,
+    "timbre": "Bassoon",
+    "interval": "Major 3rd",
+    "tolerance": 15,
+    "dynamics": "none"
+  },
+  {
+    "level": 29,
+    "timbre": "Bassoon",
+    "interval": "minor 3rd",
+    "tolerance": 15,
+    "dynamics": "none"
+  },
+  {
+    "level": 30,
+    "timbre": "Flute",
+    "interval": "minor 3rd",
+    "tolerance": 15,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 31,
+    "timbre": "Cello",
+    "interval": "Perfect 1st",
+    "tolerance": 14,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 32,
+    "timbre": "Piccolo",
+    "interval": "Major 6th",
+    "tolerance": 14,
+    "dynamics": "none"
+  },
+  {
+    "level": 33,
+    "timbre": "Cello",
+    "interval": "minor 3rd",
+    "tolerance": 14,
+    "dynamics": "none"
+  },
+  {
+    "level": 34,
+    "timbre": "Sawtooth Wave",
+    "interval": "minor 3rd",
+    "tolerance": 14,
+    "dynamics": "none"
+  },
+  {
+    "level": 35,
+    "timbre": "Sawtooth Wave",
+    "interval": "Perfect 1st",
+    "tolerance": 14,
+    "dynamics": "none"
+  },
+  {
+    "level": 36,
+    "timbre": "Sawtooth Wave",
+    "interval": "Perfect 8th",
+    "tolerance": 13,
+    "dynamics": "none"
+  },
+  {
+    "level": 37,
+    "timbre": "Piccolo",
+    "interval": "Perfect 1st",
+    "tolerance": 13,
+    "dynamics": "none"
+  },
+  {
+    "level": 38,
+    "timbre": "Flute",
+    "interval": "Perfect 8th",
+    "tolerance": 13,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 39,
+    "timbre": "Violin",
+    "interval": "Major 3rd",
+    "tolerance": 13,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 40,
+    "timbre": "Contrabass",
+    "interval": "Major 6th",
+    "tolerance": 13,
+    "dynamics": "none"
+  },
+  {
+    "level": 41,
+    "timbre": "Violin",
+    "interval": "Major 6th",
+    "tolerance": 12,
+    "dynamics": "none"
+  },
+  {
+    "level": 42,
+    "timbre": "Viola",
+    "interval": "Perfect 1st",
+    "tolerance": 12,
+    "dynamics": "none"
+  },
+  {
+    "level": 43,
+    "timbre": "Viola",
+    "interval": "Perfect 8th",
+    "tolerance": 12,
+    "dynamics": "none"
+  },
+  {
+    "level": 44,
+    "timbre": "Cello",
+    "interval": "Perfect 8th",
+    "tolerance": 12,
+    "dynamics": "none"
+  },
+  {
+    "level": 45,
+    "timbre": "Horn",
+    "interval": "Perfect 1st",
+    "tolerance": 12,
+    "dynamics": "none"
+  },
+  {
+    "level": 46,
+    "timbre": "Bassoon",
+    "interval": "minor 7th",
+    "tolerance": 11,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 47,
+    "timbre": "Oboe",
+    "interval": "minor 7th",
+    "tolerance": 11,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 48,
+    "timbre": "Saxophone",
+    "interval": "minor 6th",
+    "tolerance": 11,
+    "dynamics": "none"
+  },
+  {
+    "level": 49,
+    "timbre": "Oboe",
+    "interval": "minor 6th",
+    "tolerance": 11,
+    "dynamics": "none"
+  },
+  {
+    "level": 50,
+    "timbre": "Piccolo",
+    "interval": "Major 7th",
+    "tolerance": 11,
+    "dynamics": "none"
+  },
+  {
+    "level": 51,
+    "timbre": "Horn",
+    "interval": "minor 2nd",
+    "tolerance": 10,
+    "dynamics": "none"
+  },
+  {
+    "level": 52,
+    "timbre": "Violin",
+    "interval": "minor 6th",
+    "tolerance": 10,
+    "dynamics": "none"
+  },
+  {
+    "level": 53,
+    "timbre": "Horn",
+    "interval": "minor 3rd",
+    "tolerance": 10,
+    "dynamics": "none"
+  },
+  {
+    "level": 54,
+    "timbre": "Cello",
+    "interval": "minor 3rd",
+    "tolerance": 10,
+    "dynamics": "none"
+  },
+  {
+    "level": 55,
+    "timbre": "Trumpet",
+    "interval": "Perfect 8th",
+    "tolerance": 10,
+    "dynamics": "none"
+  },
+  {
+    "level": 56,
+    "timbre": "Contrabass",
+    "interval": "Major 6th",
+    "tolerance": 9,
+    "dynamics": "none"
+  },
+  {
+    "level": 57,
+    "timbre": "Viola",
+    "interval": "Perfect 1st",
+    "tolerance": 9,
+    "dynamics": "none"
+  },
+  {
+    "level": 58,
+    "timbre": "Violin",
+    "interval": "Perfect 5th",
+    "tolerance": 9,
+    "dynamics": "none"
+  },
+  {
+    "level": 59,
+    "timbre": "Saxophone",
+    "interval": "minor 6th",
+    "tolerance": 9,
+    "dynamics": "none"
+  },
+  {
+    "level": 60,
+    "timbre": "Oboe",
+    "interval": "Random",
+    "tolerance": 9,
+    "dynamics": "none"
+  },
+  {
+    "level": 61,
+    "timbre": "Horn",
+    "interval": "Random",
+    "tolerance": 8,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 62,
+    "timbre": "Saxophone",
+    "interval": "Random",
+    "tolerance": 8,
+    "dynamics": "none"
+  },
+  {
+    "level": 63,
+    "timbre": "Viola",
+    "interval": "Random",
+    "tolerance": 8,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 64,
+    "timbre": "Piccolo",
+    "interval": "Random",
+    "tolerance": 8,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 65,
+    "timbre": "Flute",
+    "interval": "Random",
+    "tolerance": 8,
+    "dynamics": "none"
+  },
+  {
+    "level": 66,
+    "timbre": "Trombone",
+    "interval": "Random",
+    "tolerance": 7,
+    "dynamics": "none"
+  },
+  {
+    "level": 67,
+    "timbre": "Trumpet",
+    "interval": "Random",
+    "tolerance": 7,
+    "dynamics": "none"
+  },
+  {
+    "level": 68,
+    "timbre": "Flute",
+    "interval": "Random",
+    "tolerance": 7,
+    "dynamics": "none"
+  },
+  {
+    "level": 69,
+    "timbre": "Trumpet",
+    "interval": "Random",
+    "tolerance": 7,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 70,
+    "timbre": "Violin",
+    "interval": "Random",
+    "tolerance": 7,
+    "dynamics": "none"
+  },
+  {
+    "level": 71,
+    "timbre": "Sawtooth Wave",
+    "interval": "Random",
+    "tolerance": 6,
+    "dynamics": "none"
+  },
+  {
+    "level": 72,
+    "timbre": "Violin",
+    "interval": "Random",
+    "tolerance": 6,
+    "dynamics": "none"
+  },
+  {
+    "level": 73,
+    "timbre": "Piccolo",
+    "interval": "Random",
+    "tolerance": 6,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 74,
+    "timbre": "Saxophone",
+    "interval": "Random",
+    "tolerance": 6,
+    "dynamics": "none"
+  },
+  {
+    "level": 75,
+    "timbre": "Violin",
+    "interval": "Random",
+    "tolerance": 6,
+    "dynamics": "none"
+  },
+  {
+    "level": 76,
+    "timbre": "Trumpet",
+    "interval": "Random",
+    "tolerance": 5,
+    "dynamics": "none"
+  },
+  {
+    "level": 77,
+    "timbre": "Cello",
+    "interval": "Random",
+    "tolerance": 5,
+    "dynamics": "none"
+  },
+  {
+    "level": 78,
+    "timbre": "Saxophone",
+    "interval": "Random",
+    "tolerance": 5,
+    "dynamics": "none"
+  },
+  {
+    "level": 79,
+    "timbre": "Violin",
+    "interval": "Random",
+    "tolerance": 5,
+    "dynamics": "none"
+  },
+  {
+    "level": 80,
+    "timbre": "Saxophone",
+    "interval": "Random",
+    "tolerance": 5,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 81,
+    "timbre": "Clarinet",
+    "interval": "Random",
+    "tolerance": 4,
+    "dynamics": "none"
+  },
+  {
+    "level": 82,
+    "timbre": "Sawtooth Wave",
+    "interval": "Random",
+    "tolerance": 4,
+    "dynamics": "none"
+  },
+  {
+    "level": 83,
+    "timbre": "Cello",
+    "interval": "Random",
+    "tolerance": 4,
+    "dynamics": "none"
+  },
+  {
+    "level": 84,
+    "timbre": "Bassoon",
+    "interval": "Random",
+    "tolerance": 4,
+    "dynamics": "none"
+  },
+  {
+    "level": 85,
+    "timbre": "Trumpet",
+    "interval": "Random",
+    "tolerance": 4,
+    "dynamics": "none"
+  },
+  {
+    "level": 86,
+    "timbre": "Flute",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 87,
+    "timbre": "Trombone",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "none"
+  },
+  {
+    "level": 88,
+    "timbre": "Bassoon",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "none"
+  },
+  {
+    "level": 89,
+    "timbre": "Flute",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "none"
+  },
+  {
+    "level": 90,
+    "timbre": "Piccolo",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "none"
+  },
+  {
+    "level": 91,
+    "timbre": "Oboe",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "none"
+  },
+  {
+    "level": 92,
+    "timbre": "Clarinet",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "none"
+  },
+  {
+    "level": 93,
+    "timbre": "Viola",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 94,
+    "timbre": "Horn",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "Swell"
+  },
+  {
+    "level": 95,
+    "timbre": "Tuba",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "none"
+  },
+  {
+    "level": 96,
+    "timbre": "Violin",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "none"
+  },
+  {
+    "level": 97,
+    "timbre": "Horn",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "none"
+  },
+  {
+    "level": 98,
+    "timbre": "Horn",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "none"
+  },
+  {
+    "level": 99,
+    "timbre": "Piccolo",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "none"
+  },
+  {
+    "level": 100,
+    "timbre": "Saxophone",
+    "interval": "Random",
+    "tolerance": 3,
+    "dynamics": "none"
+  }
+]

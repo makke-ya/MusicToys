@@ -5,6 +5,7 @@
         }
     },
     "queryStringParameters": {
-        "userId": "test_user_music_toys"
+        "type": "leaderboard",
+        "gameId": "002_harmony_game"
     }
 }
