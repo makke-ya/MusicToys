@@ -87,6 +87,7 @@
       try {
         const payload = {
           userId: Site.getUserId(),
+          gameId: '001_chord_quiz', // Identify this game
           name: name,
           level: Number(localStorage.getItem('selectedLevel') || 1),
           score: score,

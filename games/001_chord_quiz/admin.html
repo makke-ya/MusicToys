@@ -147,7 +147,7 @@
                     // Group by userId
                     const userMap = {};
 
-                    data.forEach(item => {
+                    data.filter(d => !d.gameId || d.gameId === '001_chord_quiz').forEach(item => {
                         const uid = item.userId || 'unknown';
                         if (!userMap[uid]) {
                             userMap[uid] = {

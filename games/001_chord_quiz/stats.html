@@ -86,7 +86,10 @@
                         const res = await fetch(url);
                         if (!res.ok) throw new Error('データの取得に失敗しました');
 
-                        const data = await res.json();
+                        const rawData = await res.json();
+                        // Filter for Game 001 (legacy items have no gameId, or explicitly '001_chord_quiz')
+                        const data = rawData.filter(d => !d.gameId || d.gameId === '001_chord_quiz');
+                        
                         // Data is sorted by date ascending usually, but let's confirm
                         this.history = data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)); // Show table desc
                     } catch (e) {
