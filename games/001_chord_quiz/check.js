@@ -23,7 +23,7 @@
             onClick: () => {
               if (!previewAudio.paused) { previewAudio.pause(); previewAudio.currentTime = 0; }
               if (playingBtn && playingBtn !== btn) { playingBtn.style.boxShadow = 'none'; }
-              previewAudio.src = `/static/sounds/${fname}`;
+              previewAudio.src = `../../static/sounds/${fname}`;
               previewAudio.play().catch(() => { });
               playingBtn = btn;
               btn.style.boxShadow = '0 0 12px rgba(0,0,0,0.18)';
