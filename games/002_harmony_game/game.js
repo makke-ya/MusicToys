@@ -10,6 +10,14 @@ const HarmonyGame = (function() {
     const loadedSamples = {};     
     const loadedEffects = {};
 
+    // Helper to resolve paths for GitHub Pages (subdirectory hosting)
+    function resolvePath(path) {
+        if (path.startsWith('/static/')) {
+            return '../../' + path.substring(1); // Remove leading slash, prepend ../../
+        }
+        return path;
+    }
+
     function initAudio() {
         if (!audioContext) {
             try {
@@ -53,7 +61,7 @@ const HarmonyGame = (function() {
 
             return Object.entries(instrumentConfig).map(async ([note, sampleInfo]) => {
                 try {
-                    const response = await fetch(sampleInfo.file);
+                    const response = await fetch(resolvePath(sampleInfo.file));
                     const arrayBuffer = await response.arrayBuffer();
                     loadedSamples[name][note] = await audioContext.decodeAudioData(arrayBuffer);
                 } catch (error) {
@@ -73,7 +81,7 @@ const HarmonyGame = (function() {
         };
         const effectPromises = Object.entries(effectsToLoad).map(async ([name, path]) => {
             try {
-                const response = await fetch(path);
+                const response = await fetch(resolvePath(path));
                 const arrayBuffer = await response.arrayBuffer();
                 loadedEffects[name] = await audioContext.decodeAudioData(arrayBuffer);
             } catch (error) {

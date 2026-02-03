@@ -8,6 +8,14 @@ const SoundGame = (function() {
     const DEFAULT_OSC_TYPE = 'triangle';
     let currentInstrument = 'Flute';
 
+    // Helper to resolve paths for GitHub Pages (subdirectory hosting)
+    function resolvePath(path) {
+        if (path.startsWith('/static/')) {
+            return '../../' + path.substring(1); // Remove leading slash, prepend ../../
+        }
+        return path;
+    }
+
     function initAudio() {
         try {
             if (!audioContext) {
@@ -48,7 +56,7 @@ const SoundGame = (function() {
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 2000);
                 
-                const response = await fetch(info.file, { signal: controller.signal });
+                const response = await fetch(resolvePath(info.file), { signal: controller.signal });
                 clearTimeout(timeoutId);
 
                 if (!response.ok) throw new Error('Not found');
