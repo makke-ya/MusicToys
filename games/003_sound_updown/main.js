@@ -78,13 +78,15 @@ let canAnswer = false;
 let selectedInstrument = 'Flute';
 let selectedLevel = 1;
 let isStarting = false;
+let currentProblemNotes = null; // Store for replay
 
 document.addEventListener('DOMContentLoaded', () => {
     gameLogic = new GameLogic();
     
-    // Bind UI Events (multiple event types for compatibility)
+    // Bind UI Events
     const areaUp = document.getElementById('area-up');
     const areaDown = document.getElementById('area-down');
+    const infoBar = document.getElementById('info-bar');
     
     const upEvents = ['pointerdown', 'mousedown', 'touchstart'];
     const downEvents = ['pointerdown', 'mousedown', 'touchstart'];
@@ -101,6 +103,14 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             handleInput(false, e);
         }, { passive: false }));
+    }
+
+    if (infoBar) {
+        infoBar.addEventListener('click', () => {
+            if (isPlaying && currentProblemNotes) {
+                SoundGame.playProblem(currentProblemNotes.base, currentProblemNotes.target);
+            }
+        });
     }
 });
 
@@ -121,6 +131,7 @@ function updateTimer() {
 function nextProblem() {
     if (!isPlaying) return;
     const problem = gameLogic.generateProblem();
+    currentProblemNotes = { base: problem.baseNote, target: problem.targetNote };
     canAnswer = false;
     
     if (gameLogic.level < 15) {
