@@ -31,7 +31,8 @@
                     const card = document.createElement('div');
                     card.className = 'bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300 cursor-pointer';
                     
-                    const thumbnailUrl = game.thumbnail ? `games/${dir}/${game.thumbnail}` : 'https://via.placeholder.com/400x300.png?text=No+Image';
+                    // Prioritize thumbnails in static/thumbnails/ directory named as {dir}.jpg
+                    const thumbnailUrl = `static/thumbnails/${dir}.jpg`;
 
                     card.innerHTML = `
                         <img src="${thumbnailUrl}" alt="${game.name}" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/400x300.png?text=No+Image'; this.onerror=null;">
