@@ -4,6 +4,12 @@
 window.showInstructions = function(level) {
     selectedLevel = level;
     
+    // Save difficulty for ranking button default
+    let difficulty = 'normal';
+    if (level === 1) difficulty = 'easy';
+    else if (level === 30) difficulty = 'hard';
+    localStorage.setItem('soundUpdownDifficulty', difficulty);
+    
     const radios = document.getElementsByName('instrument');
     for (const radio of radios) {
         if (radio.checked) {
@@ -216,9 +222,10 @@ async function endGame() {
     isPlaying = false;
     clearInterval(timerInterval);
     const res = document.getElementById('result-screen');
-    if (res) res.classList.remove('hidden');
-    const fs = document.getElementById('final-score');
-    if (fs) fs.textContent = gameLogic.currentScore;
+    // Hide default result screen initially to show name input/leaderboard first
+    // if (res) res.classList.remove('hidden'); 
+    // const fs = document.getElementById('final-score');
+    // if (fs) fs.textContent = gameLogic.currentScore;
 
     // Leaderboard Integration
     if (window.ScoreManager) {
@@ -229,13 +236,42 @@ async function endGame() {
         const gameId = `003_sound_updown_${difficulty}`;
         
         try {
+            // 0. Input Name
+            await window.ScoreManager.showNameInputModal();
+
+            // 1. Post Score
             await window.ScoreManager.postScore(gameId, gameLogic.currentScore, gameLogic.level);
-            // Wait a bit before showing leaderboard to let user see "Time's Up" or Score first
-            setTimeout(() => {
-                window.ScoreManager.showLeaderboardModal(gameId, { score: gameLogic.currentScore, level: gameLogic.level });
-            }, 1000);
+            
+            // 2. Show Leaderboard with actions and tabs
+            await window.ScoreManager.showLeaderboardModal(gameId, { score: gameLogic.currentScore, level: gameLogic.level, name: localStorage.getItem('userName') }, [
+                {
+                    label: 'もういちど',
+                    primary: true,
+                    onClick: () => {
+                        location.reload();
+                    }
+                },
+                {
+                    label: 'タイトルへもどる',
+                    primary: false,
+                    onClick: () => {
+                        location.reload(); // Simplest way to title for now
+                    }
+                }
+            ], [
+                { label: 'かんたん', gameId: '003_sound_updown_easy' },
+                { label: 'ふつう', gameId: '003_sound_updown_normal' },
+                { label: 'むずかしい', gameId: '003_sound_updown_hard' }
+            ]);
         } catch (e) {
             console.error('Leaderboard error:', e);
+            alert('ランキングのとうろくに しっぱいしました。');
+            location.reload();
         }
+    } else {
+        // Fallback if ScoreManager missing
+        if (res) res.classList.remove('hidden');
+        const fs = document.getElementById('final-score');
+        if (fs) fs.textContent = gameLogic.currentScore;
     }
 }

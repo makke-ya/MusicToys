@@ -1,6 +1,18 @@
 window.ScoreManager = (function() {
     const API_ENDPOINT = window.Config ? window.Config.API_ENDPOINT : null;
 
+    function getUserId() {
+        if (window.Site && typeof window.Site.getUserId === 'function') {
+            return window.Site.getUserId();
+        }
+        let id = localStorage.getItem('userId');
+        if (!id) {
+            id = 'user_' + Math.random().toString(36).substring(2, 11) + Date.now().toString(36);
+            localStorage.setItem('userId', id);
+        }
+        return id;
+    }
+
     /**
      * Post a game score to the backend.
      * @param {string} gameId - The ID of the game (e.g., '002_harmony_game').
@@ -15,7 +27,7 @@ window.ScoreManager = (function() {
             return null;
         }
 
-        const userId = window.Site ? window.Site.getUserId() : 'unknown_user';
+        const userId = getUserId();
         const timestamp = new Date().toISOString();
         
         // Retrieve user name if saved, else default
