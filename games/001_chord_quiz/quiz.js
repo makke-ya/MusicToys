@@ -29,7 +29,7 @@ function playQuestion() {
     localStorage.setItem('lastAnswers', JSON.stringify(answers));
     const score = answers.filter(a => a.correct).length;
     localStorage.setItem('score', String(score));
-    window.location.href = "/result.html";
+    window.location.href = "result.html";
     return;
   }
 
@@ -38,7 +38,7 @@ function playQuestion() {
   waitingForNext = false; // Reset waiting state
 
   const note = quiz[index];
-  audio.src = `/static/sounds/${note}`;
+  audio.src = `../../static/sounds/${note}`;
   audio.pause();
   audio.currentTime = 0;
   document.getElementById('buttons').classList.add('opacity-0');
@@ -160,11 +160,11 @@ function answer(ans) {
   if (instant) {
     if (correct) {
       statusEl.textContent = 'やったね！せいかい！';
-      try { new Audio('/static/sounds/correct.mp3').play(); } catch (e) { }
+      try { new Audio('../../static/sounds/correct.mp3').play(); } catch (e) { }
     } else {
       const label = (Site.colorMap[correctKey]) || correctKey;
       statusEl.textContent = `ちがうよ。こたえは ${label} だよ`;
-      try { new Audio('/static/sounds/wrong.mp3').play(); } catch (e) { }
+      try { new Audio('../../static/sounds/wrong.mp3').play(); } catch (e) { }
     }
     // Auto advance
     setTimeout(() => {
@@ -219,11 +219,11 @@ document.getElementById('nextBtn').addEventListener('pointerdown', (e) => {
     const statusEl = document.getElementById('status');
     if (correct) {
       statusEl.textContent = 'やったね！せいかい！';
-      try { new Audio('/static/sounds/correct.mp3').play(); } catch (e) { }
+      try { new Audio('../../static/sounds/correct.mp3').play(); } catch (e) { }
     } else {
       const label = (Site.colorMap[correctKey]) || correctKey;
       statusEl.textContent = `ちがうよ。こたえは ${label} だよ`;
-      try { new Audio('/static/sounds/wrong.mp3').play(); } catch (e) { }
+      try { new Audio('../../static/sounds/wrong.mp3').play(); } catch (e) { }
     }
 
     // Highlight
