@@ -112,6 +112,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Keyboard support
+    document.addEventListener('keydown', (e) => {
+        if (!isPlaying || !canAnswer) return;
+        if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            handleInput(true, e);
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            handleInput(false, e);
+        }
+    });
 });
 
 function startTimer() {
