@@ -1,0 +1,151 @@
+/* games/004_rhythm_tap/style.css */
+
+.level-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.level-btn:active {
+    transform: translateY(4px);
+}
+
+/* Taiko Drum Pad */
+.taiko-drum {
+    position: relative;
+    width: min(68vw, 300px);
+    height: min(68vw, 300px);
+    border-radius: 9999px;
+    background: radial-gradient(circle at 35% 35%, #fff7ed 0%, #fed7aa 70%, #fdba74 100%);
+    border: 14px solid #dc2626;
+    box-shadow:
+        0 14px 0 #991b1b,
+        0 20px 30px rgba(0, 0, 0, 0.25),
+        inset 0 0 25px rgba(217, 119, 6, 0.25);
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.taiko-drum:active:not(.taiko-disabled),
+.taiko-drum.drum-hit {
+    transform: scale(0.93) translateY(6px);
+    box-shadow:
+        0 6px 0 #991b1b,
+        0 10px 15px rgba(0, 0, 0, 0.2),
+        inset 0 0 35px rgba(234, 88, 12, 0.45);
+}
+
+/* Grayed-out disabled state during demo playback */
+.taiko-drum.taiko-disabled {
+    background: radial-gradient(circle at 35% 35%, #f3f4f6 0%, #d1d5db 70%, #9ca3af 100%);
+    border-color: #6b7280;
+    box-shadow:
+        0 10px 0 #4b5563,
+        0 14px 20px rgba(0, 0, 0, 0.18),
+        inset 0 0 20px rgba(75, 85, 99, 0.25);
+    filter: grayscale(85%);
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.taiko-drum.taiko-disabled.drum-demo-pulse {
+    transform: scale(0.96);
+}
+
+/* Inner decorative ring on Taiko head */
+.taiko-inner-ring {
+    position: absolute;
+    inset: 14px;
+    border-radius: 9999px;
+    border: 3px dashed rgba(220, 38, 38, 0.35);
+    pointer-events: none;
+}
+
+/* Ripple effect on tap */
+@keyframes taiko-ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(0.2);
+        opacity: 0.85;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.4);
+        opacity: 0;
+    }
+}
+
+.tap-ripple {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 9999px;
+    border: 6px solid #f59e0b;
+    background: rgba(251, 191, 36, 0.25);
+    pointer-events: none;
+    animation: taiko-ripple 0.55s ease-out forwards;
+}
+
+/* Guide Dots */
+.guide-dot {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background-color: #e5e7eb;
+    border: 3px solid #9ca3af;
+    transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.guide-dot.guide-dot-small {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-width: 2px;
+}
+
+.guide-dot.dot-demo-active {
+    background-color: #facc15;
+    border-color: #ca8a04;
+    transform: scale(1.35);
+    box-shadow: 0 0 16px rgba(250, 204, 21, 0.9);
+}
+
+.guide-dot.dot-tapped-perfect {
+    background-color: #34d399;
+    border-color: #059669;
+    transform: scale(1.2);
+}
+
+.guide-dot.dot-tapped-good {
+    background-color: #60a5fa;
+    border-color: #2563eb;
+    transform: scale(1.15);
+}
+
+.guide-dot.dot-tapped-miss {
+    background-color: #f87171;
+    border-color: #dc2626;
+}
+
+/* Star pop animation */
+@keyframes star-pop {
+    0% {
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.25) rotate(8deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.star-animate {
+    display: inline-block;
+    animation: star-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}

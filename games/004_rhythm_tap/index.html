@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>リズムにのろう！</title>
+    <link href="../../static/common/style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../static/common/ui-lock.js"></script>
+</head>
+<body class="bg-amber-50 overflow-hidden select-none touch-none">
+
+    <!-- 簡易説明ポップアップ (ゲーム開始前) -->
+    <section id="instructions-popup" class="fixed inset-0 flex items-center justify-center bg-black/70 z-[100] hidden" aria-label="あそびかた">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-lg w-full mx-4 text-center border-4 border-amber-400">
+            <h2 class="text-4xl font-black text-amber-500 mb-6 drop-shadow-md">あそびかた</h2>
+            <div class="space-y-5 text-lg text-gray-700 font-bold leading-relaxed">
+                <p>
+                    <span class="text-3xl">🎵</span> 最初に <span class="text-amber-600">おてほんのリズム</span> が なるよ！<br>
+                    よく きいてね。
+                </p>
+                <div class="bg-amber-50 p-4 rounded-xl border-2 border-amber-200">
+                    <p>
+                        <span class="text-3xl">🥁</span> 「たたいてね！」の 合図が でたら、<br>
+                        おなじ リズムで たいこを タップしよう！
+                    </p>
+                </div>
+            </div>
+            <button id="instructions-start-button" type="button" class="mt-8 bg-gradient-to-b from-amber-400 to-amber-600 text-white font-black text-2xl py-3 px-10 rounded-full shadow-lg transform transition hover:scale-105 active:scale-95 border-b-4 border-amber-700">
+                スタート！
+            </button>
+        </div>
+    </section>
+
+    <!-- レベル開始前 出題ポップアップ -->
+    <section id="level-intro-popup" class="fixed inset-0 flex items-center justify-center bg-black/60 z-[90] hidden" aria-label="レベル情報">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-md w-full mx-4 text-center border-4 border-orange-400 transform transition-all">
+            <p class="text-xl font-bold text-orange-500 mb-1">リズムに ちょうせん！</p>
+            <h2 id="intro-level" class="text-5xl font-black text-gray-800 mb-4">レベル 1</h2>
+            <div class="space-y-3 bg-orange-50 p-4 rounded-2xl border-2 border-orange-200">
+                <p id="intro-beats" class="text-2xl font-black text-indigo-600">2はくの リズム！</p>
+                <p id="intro-tempo" class="text-lg font-bold text-gray-700">はやさ: ゆっくり 🐢</p>
+                <p id="intro-label" class="text-xl font-black text-amber-600">「タン タン」</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 判定ポップアップ -->
+    <section id="judgment-popup" class="fixed inset-0 flex items-center justify-center bg-black/70 z-[95] hidden" aria-label="けっか">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-md w-full mx-4 text-center border-4 border-yellow-400">
+            <div id="judgment-stars" class="text-5xl mb-3 tracking-widest">⭐⭐⭐</div>
+            <h2 id="judgment-title" class="text-4xl font-black text-amber-500 mb-2">パーフェクト！</h2>
+            <p id="judgment-message" class="text-base font-bold text-gray-600 mb-4">リズムぴったんこ！すごいね！</p>
+
+            <div class="bg-amber-50 rounded-2xl p-4 mb-5 border-2 border-amber-200">
+                <p class="text-sm font-bold text-gray-500">こんかいの スコア</p>
+                <p id="judgment-score" class="text-4xl font-black text-indigo-600">+210</p>
+                <div id="judgment-details" class="flex justify-center gap-2 mt-3 flex-wrap"></div>
+            </div>
+
+            <div class="flex gap-3 justify-center">
+                <button id="retry-level-btn" type="button" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-black text-lg py-3 px-4 rounded-2xl border-b-4 border-gray-400 active:translate-y-1">
+                    🔄 もういちど
+                </button>
+                <button id="next-level-btn" type="button" class="flex-1 bg-gradient-to-b from-green-400 to-green-600 text-white font-black text-lg py-3 px-4 rounded-2xl border-b-4 border-green-700 active:translate-y-1">
+                    つぎへ！ ➡️
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ゲームプレイ画面 -->
+    <main id="game-screen" class="relative w-full h-screen flex flex-col justify-between p-4 hidden bg-gradient-to-b from-amber-100 via-orange-50 to-yellow-100">
+        <!-- 上部ヘッダー -->
+        <header class="w-full max-w-2xl mx-auto flex justify-between items-center bg-white/90 backdrop-blur rounded-2xl px-5 py-3 shadow-md border-2 border-amber-300">
+            <div class="flex items-center gap-4">
+                <div>
+                    <span class="text-xs font-bold text-gray-500 block">レベル</span>
+                    <span id="current-level" class="text-2xl font-black text-amber-600">1</span>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <span class="text-xs font-bold text-gray-500 block">スコア</span>
+                    <span id="score" class="text-2xl font-black text-indigo-600">0</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button id="replay-btn" type="button" class="bg-sky-500 hover:bg-sky-600 text-white font-bold text-sm md:text-base py-2 px-4 rounded-xl border-b-4 border-sky-700 active:translate-y-0.5 flex items-center gap-1">
+                    <span>🔊</span> もういちど きく
+                </button>
+                <button id="finish-btn" type="button" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold text-sm py-2 px-3 rounded-xl border-b-4 border-gray-400 active:translate-y-0.5">
+                    おわる
+                </button>
+            </div>
+        </header>
+
+        <!-- 状態メッセージ & リズムガイド表示 -->
+        <section class="text-center my-2" aria-live="polite">
+            <div id="phase-banner" class="inline-block bg-white/95 px-6 py-2 rounded-full shadow-md border-2 border-amber-400 text-xl md:text-2xl font-black text-amber-600">
+                🎵 おてほんを きいてね！
+            </div>
+            <p id="rhythm-hint-text" class="text-lg font-extrabold text-gray-600 mt-2">「タン タン」</p>
+        </section>
+
+        <!-- 中央 太鼓タップエリア -->
+        <section class="flex-1 flex items-center justify-center my-2">
+            <button id="taiko-pad" type="button" class="taiko-drum flex flex-col items-center justify-center focus:outline-none" aria-label="たいこをたたく">
+                <div class="taiko-inner-ring"></div>
+                <div id="ripple-container" class="absolute inset-0 pointer-events-none"></div>
+                <span id="taiko-character" class="text-6xl md:text-7xl select-none pointer-events-none transition-transform duration-150">🥁</span>
+                <span id="taiko-subtext" class="text-lg md:text-xl font-black text-red-700 mt-2 select-none pointer-events-none">ドン！</span>
+            </button>
+        </section>
+
+        <!-- 下部 ガイドドット列 -->
+        <footer class="w-full max-w-xl mx-auto pb-4 text-center">
+            <div id="guide-dots-container" class="flex items-center justify-center gap-3 min-h-[3.5rem] bg-white/80 rounded-2xl py-3 px-4 shadow-inner border border-amber-200">
+                <!-- JavaScriptで動的にドットを生成 -->
+            </div>
+            <p id="tap-counter-text" class="text-xs font-bold text-gray-500 mt-1">タップ: 0 / 2</p>
+        </footer>
+    </main>
+
+    <!-- スタート/レベル選択画面 -->
+    <main id="start-screen" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-4 overflow-y-auto">
+        <h1 class="text-4xl md:text-6xl font-black text-amber-500 mb-4 text-center leading-tight drop-shadow-sm">
+            🥁 リズムに<span class="text-red-500">のろう！</span>
+        </h1>
+        <p class="text-gray-600 font-bold mb-6 text-center">おてほんを きいて、おなじ リズムを たたいてみよう！</p>
+
+        <!-- 楽器（音色）選択 -->
+        <section class="mb-6 w-full max-w-2xl bg-amber-50 p-4 rounded-2xl border-2 border-amber-200" aria-label="おとをえらぶ">
+            <h2 class="text-center font-bold text-gray-700 mb-3 text-base">おとを えらんでね</h2>
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3">
+                <label class="cursor-pointer">
+                    <input type="radio" name="percussion-sound" value="auto" checked class="peer sr-only">
+                    <div class="p-2.5 rounded-xl border-2 border-gray-200 bg-white peer-checked:border-amber-500 peer-checked:bg-amber-100 transition-all text-center w-24">
+                        <div class="text-2xl">✨</div>
+                        <div class="text-xs font-bold text-gray-700 mt-1">おまかせ</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="percussion-sound" value="taiko" class="peer sr-only">
+                    <div class="p-2.5 rounded-xl border-2 border-gray-200 bg-white peer-checked:border-amber-500 peer-checked:bg-amber-100 transition-all text-center w-24">
+                        <div class="text-2xl">🥁</div>
+                        <div class="text-xs font-bold text-gray-700 mt-1">たいこ</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="percussion-sound" value="castanet" class="peer sr-only">
+                    <div class="p-2.5 rounded-xl border-2 border-gray-200 bg-white peer-checked:border-amber-500 peer-checked:bg-amber-100 transition-all text-center w-24">
+                        <div class="text-2xl">🔴</div>
+                        <div class="text-xs font-bold text-gray-700 mt-1">カスタネット</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="percussion-sound" value="tambourine" class="peer sr-only">
+                    <div class="p-2.5 rounded-xl border-2 border-gray-200 bg-white peer-checked:border-amber-500 peer-checked:bg-amber-100 transition-all text-center w-24">
+                        <div class="text-2xl">铃</div>
+                        <div class="text-xs font-bold text-gray-700 mt-1">タンバリン</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="percussion-sound" value="woodblock" class="peer sr-only">
+                    <div class="p-2.5 rounded-xl border-2 border-gray-200 bg-white peer-checked:border-amber-500 peer-checked:bg-amber-100 transition-all text-center w-24">
+                        <div class="text-2xl">🪵</div>
+                        <div class="text-xs font-bold text-gray-700 mt-1">ウッドブロック</div>
+                    </div>
+                </label>
+            </div>
+        </section>
+
+        <!-- 難易度選択ボタン -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl mb-8" aria-label="レベルせんたく">
+            <button id="level-easy-btn" type="button" data-level="1" class="level-select-btn level-btn bg-green-400 hover:bg-green-500 border-b-8 border-green-600 py-6">
+                <span class="text-4xl">🐣</span>
+                <span class="text-2xl font-black mt-2 text-white drop-shadow-md">かんたん</span>
+                <span class="text-xs font-bold text-green-900 mt-1">レベル 1 から</span>
+            </button>
+            <button id="level-normal-btn" type="button" data-level="15" class="level-select-btn level-btn bg-blue-400 hover:bg-blue-500 border-b-8 border-blue-600 py-6">
+                <span class="text-4xl">🐇</span>
+                <span class="text-2xl font-black mt-2 text-white drop-shadow-md">ふつう</span>
+                <span class="text-xs font-bold text-blue-900 mt-1">レベル 15 から</span>
+            </button>
+            <button id="level-hard-btn" type="button" data-level="30" class="level-select-btn level-btn bg-red-400 hover:bg-red-500 border-b-8 border-red-600 py-6">
+                <span class="text-4xl">🦅</span>
+                <span class="text-2xl font-black mt-2 text-white drop-shadow-md">むずかしい</span>
+                <span class="text-xs font-bold text-red-900 mt-1">レベル 30 から</span>
+            </button>
+        </section>
+
+        <nav class="flex gap-6 items-center">
+            <button id="open-ranking-btn" type="button" class="text-amber-600 hover:text-amber-800 font-bold flex items-center gap-2">
+                <span>🏆</span> ランキング
+            </button>
+            <button id="open-help-btn" type="button" class="text-amber-600 hover:text-amber-800 font-bold flex items-center gap-2">
+                <span>📖</span> くわしいせつめい
+            </button>
+            <a href="../../index.html" class="text-gray-500 hover:text-gray-700 font-bold">もどる</a>
+        </nav>
+    </main>
+
+    <!-- くわしいせつめいモーダル -->
+    <section id="help-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0" aria-label="くわしいせつめい">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto flex flex-col">
+            <header class="p-6 border-b sticky top-0 bg-white z-10 flex justify-between items-center rounded-t-2xl">
+                <h2 class="text-2xl font-bold text-amber-600">あそびかた</h2>
+                <button id="close-help-top-btn" type="button" class="text-gray-400 hover:text-gray-600 text-3xl font-bold leading-none">&times;</button>
+            </header>
+            <div class="p-6 text-left space-y-6 text-gray-700 leading-relaxed">
+                <section>
+                    <h3 class="font-bold text-lg text-amber-600 mb-2">🥁 どんなゲーム？</h3>
+                    <p>おてほんのリズムをきいて、おなじタイミングで画面のたいこをたたいてマネするゲームだよ。</p>
+                </section>
+                <section>
+                    <h3 class="font-bold text-lg text-emerald-600 mb-2">🎮 あそびかたのコツ</h3>
+                    <p>1つめのタップからリズムのカウントがはじまるよ！おてほんとおなじ間隔（テンポ）でポン・ポンとたたいてみよう。</p>
+                </section>
+                <section>
+                    <h3 class="font-bold text-lg text-indigo-600 mb-2">⭐ ほしを あつめよう！</h3>
+                    <p>タイミングがバッチリだと ⭐⭐⭐（パーフェクト）！ほし2つ以上でつぎのレベルにすすめるよ。</p>
+                </section>
+            </div>
+            <footer class="p-4 border-t bg-gray-50 rounded-b-2xl sticky bottom-0">
+                <button id="close-help-bottom-btn" type="button" class="w-full bg-amber-500 text-white font-bold py-3 rounded-xl hover:bg-amber-600 transition-colors">
+                    わかった！
+                </button>
+            </footer>
+        </div>
+    </section>
+
+    <!-- 最終結果画面 (フォールバック兼クリア画面) -->
+    <section id="result-screen" class="fixed inset-0 bg-black/80 z-50 flex flex-col items-center justify-center p-4 hidden text-white" aria-label="最終結果">
+        <h2 class="text-4xl font-bold mb-4">おしまい！</h2>
+        <div class="text-2xl mb-8">
+            スコア: <span id="final-score" class="text-6xl font-black text-yellow-400">0</span>
+        </div>
+        <button id="restart-game-btn" type="button" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-12 rounded-full shadow-lg text-2xl">
+            もういちど
+        </button>
+    </section>
+
+    <script src="../../static/config.js?v=2"></script>
+    <script src="../../static/common/score-manager.js"></script>
+    <script src="game_logic.js?v=1"></script>
+    <script src="game.js?v=1"></script>
+    <script src="main.js?v=1"></script>
+</body>
+</html>

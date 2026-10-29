@@ -1,0 +1,6 @@
+{
+  "name": "リズムにのろう！",
+  "description": "おてほんの リズムを きいて、おなじ リズムを たたいてみよう！",
+  "entry_point": "index.html",
+  "thumbnail": "images/thumbnail.png"
+}
