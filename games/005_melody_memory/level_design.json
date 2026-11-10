@@ -1,0 +1,4546 @@
+[
+  {
+    "level": 1,
+    "padCount": 3,
+    "noteDurationMs": 550,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "marimba",
+    "baseSong": "🌷 チューリップ（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🥖 あつあつパン（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🥖 あつあつパン（ちょい変え）",
+        "notes": [
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（でだし）",
+        "notes": [
+          0,
+          2,
+          1
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "padCount": 3,
+    "noteDurationMs": 544,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "marimba",
+    "baseSong": "🌷 チューリップ（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🥖 あつあつパン（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🥖 あつあつパン（ちょい変え）",
+        "notes": [
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（でだし）",
+        "notes": [
+          0,
+          2,
+          1
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "padCount": 3,
+    "noteDurationMs": 539,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "marimba",
+    "baseSong": "🌷 チューリップ（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🥖 あつあつパン（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🥖 あつあつパン（ちょい変え）",
+        "notes": [
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（でだし）",
+        "notes": [
+          0,
+          2,
+          1
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "padCount": 3,
+    "noteDurationMs": 533,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "marimba",
+    "baseSong": "🌷 チューリップ（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🥖 あつあつパン（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🥖 あつあつパン（ちょい変え）",
+        "notes": [
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（でだし）",
+        "notes": [
+          0,
+          2,
+          1
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 5,
+    "padCount": 3,
+    "noteDurationMs": 528,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "marimba",
+    "baseSong": "🐸 かえるのうた（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ちょい変え）",
+        "notes": [
+          2,
+          1,
+          0,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（おりかえし）",
+        "notes": [
+          0,
+          1,
+          2,
+          2
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 6,
+    "padCount": 3,
+    "noteDurationMs": 522,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "marimba",
+    "baseSong": "🐸 かえるのうた（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ちょい変え）",
+        "notes": [
+          2,
+          1,
+          0,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（おりかえし）",
+        "notes": [
+          0,
+          1,
+          2,
+          2
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 7,
+    "padCount": 3,
+    "noteDurationMs": 517,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "marimba",
+    "baseSong": "🐸 かえるのうた（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ちょい変え）",
+        "notes": [
+          2,
+          1,
+          0,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（おりかえし）",
+        "notes": [
+          0,
+          1,
+          2,
+          2
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 8,
+    "padCount": 3,
+    "noteDurationMs": 511,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "marimba",
+    "baseSong": "🐸 かえるのうた（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ちょい変え）",
+        "notes": [
+          2,
+          1,
+          0,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（おりかえし）",
+        "notes": [
+          0,
+          1,
+          2,
+          2
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 9,
+    "padCount": 5,
+    "noteDurationMs": 506,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "marimba",
+    "baseSong": "🦋 ちょうちょ（ほんもの）",
+    "notes": [
+      4,
+      2,
+      2,
+      3,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（ほんもの）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🦋 ちょうちょ（ちょい変え）",
+        "notes": [
+          4,
+          2,
+          2,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（後半ほんもの）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（後半ちょい変え）",
+        "notes": [
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（のぼりアレンジ）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "padCount": 5,
+    "noteDurationMs": 500,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "marimba",
+    "baseSong": "🦋 ちょうちょ（ほんもの）",
+    "notes": [
+      4,
+      2,
+      2,
+      3,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（ほんもの）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🦋 ちょうちょ（ちょい変え）",
+        "notes": [
+          4,
+          2,
+          2,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（後半ほんもの）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（後半ちょい変え）",
+        "notes": [
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（のぼりアレンジ）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 11,
+    "padCount": 5,
+    "noteDurationMs": 495,
+    "demoCount": 1,
+    "guideMode": "all",
+    "sound": "musicbox",
+    "baseSong": "🦋 ちょうちょ（ほんもの）",
+    "notes": [
+      4,
+      2,
+      2,
+      3,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（ほんもの）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🦋 ちょうちょ（ちょい変え）",
+        "notes": [
+          4,
+          2,
+          2,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（後半ほんもの）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（後半ちょい変え）",
+        "notes": [
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（のぼりアレンジ）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "padCount": 5,
+    "noteDurationMs": 489,
+    "demoCount": 1,
+    "guideMode": "all",
+    "sound": "musicbox",
+    "baseSong": "🦋 ちょうちょ（ほんもの）",
+    "notes": [
+      4,
+      2,
+      2,
+      3,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（ほんもの）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🦋 ちょうちょ（ちょい変え）",
+        "notes": [
+          4,
+          2,
+          2,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（後半ほんもの）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（後半ちょい変え）",
+        "notes": [
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（のぼりアレンジ）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 13,
+    "padCount": 5,
+    "noteDurationMs": 484,
+    "demoCount": 1,
+    "guideMode": "all",
+    "sound": "musicbox",
+    "baseSong": "🦋 ちょうちょ（ほんもの）",
+    "notes": [
+      4,
+      2,
+      2,
+      3,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（ほんもの）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🦋 ちょうちょ（ちょい変え）",
+        "notes": [
+          4,
+          2,
+          2,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（後半ほんもの）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（後半ちょい変え）",
+        "notes": [
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（のぼりアレンジ）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 14,
+    "padCount": 5,
+    "noteDurationMs": 478,
+    "demoCount": 1,
+    "guideMode": "all",
+    "sound": "musicbox",
+    "baseSong": "🦋 ちょうちょ（ほんもの）",
+    "notes": [
+      4,
+      2,
+      2,
+      3,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（ほんもの）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🦋 ちょうちょ（ちょい変え）",
+        "notes": [
+          4,
+          2,
+          2,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（後半ほんもの）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（後半ちょい変え）",
+        "notes": [
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（のぼりアレンジ）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 15,
+    "padCount": 5,
+    "noteDurationMs": 473,
+    "demoCount": 1,
+    "guideMode": "all",
+    "sound": "musicbox",
+    "baseSong": "🐸 かえるのうた（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      3,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🦋 ちょうちょ（ほんもの）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🦋 ちょうちょ（ちょい変え）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ソまでジャンプ）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          4
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 16,
+    "padCount": 5,
+    "noteDurationMs": 467,
+    "demoCount": 1,
+    "guideMode": "all",
+    "sound": "musicbox",
+    "baseSong": "🐸 かえるのうた（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      3,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🦋 ちょうちょ（ほんもの）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🦋 ちょうちょ（ちょい変え）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ソまでジャンプ）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          4
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 17,
+    "padCount": 5,
+    "noteDurationMs": 462,
+    "demoCount": 1,
+    "guideMode": "all",
+    "sound": "musicbox",
+    "baseSong": "🐸 かえるのうた（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      3,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🦋 ちょうちょ（ほんもの）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🦋 ちょうちょ（ちょい変え）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ソまでジャンプ）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          4
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 18,
+    "padCount": 5,
+    "noteDurationMs": 456,
+    "demoCount": 1,
+    "guideMode": "all",
+    "sound": "musicbox",
+    "baseSong": "🐸 かえるのうた（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      3,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🦋 ちょうちょ（ほんもの）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🦋 ちょうちょ（ちょい変え）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ソまでジャンプ）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          4
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 19,
+    "padCount": 5,
+    "noteDurationMs": 451,
+    "demoCount": 1,
+    "guideMode": "all",
+    "sound": "musicbox",
+    "baseSong": "🐸 かえるのうた（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      3,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🦋 ちょうちょ（ほんもの）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🦋 ちょうちょ（ちょい変え）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ソまでジャンプ）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          4
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 20,
+    "padCount": 5,
+    "noteDurationMs": 445,
+    "demoCount": 1,
+    "guideMode": "all",
+    "sound": "musicbox",
+    "baseSong": "🐸 かえるのうた（ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      3,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐸 かえるのうた（ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🦋 ちょうちょ（ほんもの）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🦋 ちょうちょ（ちょい変え）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ほんもの）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ソまでジャンプ）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          4
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 21,
+    "padCount": 8,
+    "noteDurationMs": 440,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "piano",
+    "baseSong": "⭐ きらきらぼし（でだし）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "⭐ きらきらぼし（でだし）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（ちょい変え）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🎵 よろこびのうた（ほんもの）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🎵 よろこびのうた（ちょい変え）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          5,
+          4
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🔔 ジングルベル（ほんもの）",
+        "notes": [
+          2,
+          2,
+          2,
+          4,
+          0,
+          1,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🔔 ジングルベル（ちょい変え）",
+        "notes": [
+          2,
+          2,
+          2,
+          4,
+          0,
+          1,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 22,
+    "padCount": 8,
+    "noteDurationMs": 434,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "piano",
+    "baseSong": "⭐ きらきらぼし（でだし）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "⭐ きらきらぼし（でだし）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（ちょい変え）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🎵 よろこびのうた（ほんもの）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🎵 よろこびのうた（ちょい変え）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          5,
+          4
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🔔 ジングルベル（ほんもの）",
+        "notes": [
+          2,
+          2,
+          2,
+          4,
+          0,
+          1,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🔔 ジングルベル（ちょい変え）",
+        "notes": [
+          2,
+          2,
+          2,
+          4,
+          0,
+          1,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 23,
+    "padCount": 8,
+    "noteDurationMs": 429,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "piano",
+    "baseSong": "⭐ きらきらぼし（でだし）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "⭐ きらきらぼし（でだし）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（ちょい変え）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🎵 よろこびのうた（ほんもの）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🎵 よろこびのうた（ちょい変え）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          5,
+          4
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🔔 ジングルベル（ほんもの）",
+        "notes": [
+          2,
+          2,
+          2,
+          4,
+          0,
+          1,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🔔 ジングルベル（ちょい変え）",
+        "notes": [
+          2,
+          2,
+          2,
+          4,
+          0,
+          1,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 24,
+    "padCount": 8,
+    "noteDurationMs": 423,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "piano",
+    "baseSong": "⭐ きらきらぼし（でだし）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "⭐ きらきらぼし（でだし）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（ちょい変え）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🎵 よろこびのうた（ほんもの）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🎵 よろこびのうた（ちょい変え）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          5,
+          4
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🔔 ジングルベル（ほんもの）",
+        "notes": [
+          2,
+          2,
+          2,
+          4,
+          0,
+          1,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🔔 ジングルベル（ちょい変え）",
+        "notes": [
+          2,
+          2,
+          2,
+          4,
+          0,
+          1,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 25,
+    "padCount": 8,
+    "noteDurationMs": 418,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "piano",
+    "baseSong": "⭐ きらきらぼし（でだし）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "⭐ きらきらぼし（でだし）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（ちょい変え）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🎵 よろこびのうた（ほんもの）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🎵 よろこびのうた（ちょい変え）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          5,
+          4
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🔔 ジングルベル（ほんもの）",
+        "notes": [
+          2,
+          2,
+          2,
+          4,
+          0,
+          1,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🔔 ジングルベル（ちょい変え）",
+        "notes": [
+          2,
+          2,
+          2,
+          4,
+          0,
+          1,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 26,
+    "padCount": 8,
+    "noteDurationMs": 412,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "piano",
+    "baseSong": "⭐ きらきらぼし（ほんもの）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "⭐ きらきらぼし（ほんもの）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（ちょい変え）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌰 どんぐりころころ（ほんもの）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌰 どんぐりころころ（ちょい変え）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌉 ロンドンばし（ほんもの）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌉 ロンドンばし（ちょい変え）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 27,
+    "padCount": 8,
+    "noteDurationMs": 407,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "piano",
+    "baseSong": "⭐ きらきらぼし（ほんもの）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "⭐ きらきらぼし（ほんもの）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（ちょい変え）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌰 どんぐりころころ（ほんもの）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌰 どんぐりころころ（ちょい変え）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌉 ロンドンばし（ほんもの）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌉 ロンドンばし（ちょい変え）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 28,
+    "padCount": 8,
+    "noteDurationMs": 401,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "piano",
+    "baseSong": "⭐ きらきらぼし（ほんもの）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "⭐ きらきらぼし（ほんもの）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（ちょい変え）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌰 どんぐりころころ（ほんもの）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌰 どんぐりころころ（ちょい変え）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌉 ロンドンばし（ほんもの）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌉 ロンドンばし（ちょい変え）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 29,
+    "padCount": 8,
+    "noteDurationMs": 396,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "piano",
+    "baseSong": "⭐ きらきらぼし（ほんもの）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "⭐ きらきらぼし（ほんもの）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（ちょい変え）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌰 どんぐりころころ（ほんもの）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌰 どんぐりころころ（ちょい変え）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌉 ロンドンばし（ほんもの）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌉 ロンドンばし（ちょい変え）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 30,
+    "padCount": 8,
+    "noteDurationMs": 390,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "piano",
+    "baseSong": "⭐ きらきらぼし（ほんもの）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "⭐ きらきらぼし（ほんもの）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（ちょい変え）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌰 どんぐりころころ（ほんもの）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌰 どんぐりころころ（ちょい変え）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌉 ロンドンばし（ほんもの）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌉 ロンドンばし（ちょい変え）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 31,
+    "padCount": 8,
+    "noteDurationMs": 385,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "synth",
+    "baseSong": "🌷 チューリップ（耳コピ・ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      4,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（耳コピ・ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（耳コピ・ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（レから移調アレンジ）",
+        "notes": [
+          1,
+          2,
+          3,
+          5,
+          3,
+          2,
+          1
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（ファから移調アレンジ）",
+        "notes": [
+          3,
+          4,
+          5,
+          6,
+          5,
+          4,
+          3
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🏠 家路・新世界より（ほんもの）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🏠 家路・新世界より（ちょい変え）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 32,
+    "padCount": 8,
+    "noteDurationMs": 379,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "synth",
+    "baseSong": "🌷 チューリップ（耳コピ・ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      4,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（耳コピ・ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（耳コピ・ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（レから移調アレンジ）",
+        "notes": [
+          1,
+          2,
+          3,
+          5,
+          3,
+          2,
+          1
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（ファから移調アレンジ）",
+        "notes": [
+          3,
+          4,
+          5,
+          6,
+          5,
+          4,
+          3
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🏠 家路・新世界より（ほんもの）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🏠 家路・新世界より（ちょい変え）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 33,
+    "padCount": 8,
+    "noteDurationMs": 374,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "synth",
+    "baseSong": "🌷 チューリップ（耳コピ・ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      4,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（耳コピ・ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（耳コピ・ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（レから移調アレンジ）",
+        "notes": [
+          1,
+          2,
+          3,
+          5,
+          3,
+          2,
+          1
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（ファから移調アレンジ）",
+        "notes": [
+          3,
+          4,
+          5,
+          6,
+          5,
+          4,
+          3
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🏠 家路・新世界より（ほんもの）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🏠 家路・新世界より（ちょい変え）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 34,
+    "padCount": 8,
+    "noteDurationMs": 368,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "synth",
+    "baseSong": "🌷 チューリップ（耳コピ・ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      4,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（耳コピ・ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（耳コピ・ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（レから移調アレンジ）",
+        "notes": [
+          1,
+          2,
+          3,
+          5,
+          3,
+          2,
+          1
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（ファから移調アレンジ）",
+        "notes": [
+          3,
+          4,
+          5,
+          6,
+          5,
+          4,
+          3
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🏠 家路・新世界より（ほんもの）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🏠 家路・新世界より（ちょい変え）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 35,
+    "padCount": 8,
+    "noteDurationMs": 363,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "synth",
+    "baseSong": "🌷 チューリップ（耳コピ・ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      4,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（耳コピ・ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（耳コピ・ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（レから移調アレンジ）",
+        "notes": [
+          1,
+          2,
+          3,
+          5,
+          3,
+          2,
+          1
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（ファから移調アレンジ）",
+        "notes": [
+          3,
+          4,
+          5,
+          6,
+          5,
+          4,
+          3
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🏠 家路・新世界より（ほんもの）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🏠 家路・新世界より（ちょい変え）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 36,
+    "padCount": 8,
+    "noteDurationMs": 357,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "synth",
+    "baseSong": "🌷 チューリップ（耳コピ・ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      4,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（耳コピ・ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（耳コピ・ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（レから移調アレンジ）",
+        "notes": [
+          1,
+          2,
+          3,
+          5,
+          3,
+          2,
+          1
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（ファから移調アレンジ）",
+        "notes": [
+          3,
+          4,
+          5,
+          6,
+          5,
+          4,
+          3
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🏠 家路・新世界より（ほんもの）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🏠 家路・新世界より（ちょい変え）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 37,
+    "padCount": 8,
+    "noteDurationMs": 352,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "synth",
+    "baseSong": "🌷 チューリップ（耳コピ・ほんもの）",
+    "notes": [
+      0,
+      1,
+      2,
+      4,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（耳コピ・ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌷 チューリップ（耳コピ・ちょい変え）",
+        "notes": [
+          0,
+          1,
+          2,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌷 チューリップ（レから移調アレンジ）",
+        "notes": [
+          1,
+          2,
+          3,
+          5,
+          3,
+          2,
+          1
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐸 かえるのうた（ファから移調アレンジ）",
+        "notes": [
+          3,
+          4,
+          5,
+          6,
+          5,
+          4,
+          3
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🏠 家路・新世界より（ほんもの）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🏠 家路・新世界より（ちょい変え）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          2
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 38,
+    "padCount": 8,
+    "noteDurationMs": 346,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "synth",
+    "baseSong": "🐝 ぶんぶんぶん（ほんもの）",
+    "notes": [
+      4,
+      3,
+      2,
+      1,
+      2,
+      3,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐝 ぶんぶんぶん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ほんもの）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ちょい変え）",
+        "notes": [
+          4,
+          7,
+          6,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐻 もりのくまさん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐻 もりのくまさん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          5,
+          4,
+          7
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 39,
+    "padCount": 8,
+    "noteDurationMs": 341,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "synth",
+    "baseSong": "🐝 ぶんぶんぶん（ほんもの）",
+    "notes": [
+      4,
+      3,
+      2,
+      1,
+      2,
+      3,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐝 ぶんぶんぶん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ほんもの）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ちょい変え）",
+        "notes": [
+          4,
+          7,
+          6,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐻 もりのくまさん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐻 もりのくまさん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          5,
+          4,
+          7
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 40,
+    "padCount": 8,
+    "noteDurationMs": 335,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "synth",
+    "baseSong": "🐝 ぶんぶんぶん（ほんもの）",
+    "notes": [
+      4,
+      3,
+      2,
+      1,
+      2,
+      3,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐝 ぶんぶんぶん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ほんもの）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ちょい変え）",
+        "notes": [
+          4,
+          7,
+          6,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐻 もりのくまさん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐻 もりのくまさん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          5,
+          4,
+          7
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 41,
+    "padCount": 8,
+    "noteDurationMs": 330,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "random",
+    "baseSong": "🐝 ぶんぶんぶん（ほんもの）",
+    "notes": [
+      4,
+      3,
+      2,
+      1,
+      2,
+      3,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐝 ぶんぶんぶん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ほんもの）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ちょい変え）",
+        "notes": [
+          4,
+          7,
+          6,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐻 もりのくまさん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐻 もりのくまさん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          5,
+          4,
+          7
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 42,
+    "padCount": 8,
+    "noteDurationMs": 324,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "random",
+    "baseSong": "🐝 ぶんぶんぶん（ほんもの）",
+    "notes": [
+      4,
+      3,
+      2,
+      1,
+      2,
+      3,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐝 ぶんぶんぶん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ほんもの）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ちょい変え）",
+        "notes": [
+          4,
+          7,
+          6,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐻 もりのくまさん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐻 もりのくまさん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          5,
+          4,
+          7
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 43,
+    "padCount": 8,
+    "noteDurationMs": 319,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "random",
+    "baseSong": "🐝 ぶんぶんぶん（ほんもの）",
+    "notes": [
+      4,
+      3,
+      2,
+      1,
+      2,
+      3,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐝 ぶんぶんぶん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ほんもの）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ちょい変え）",
+        "notes": [
+          4,
+          7,
+          6,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐻 もりのくまさん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐻 もりのくまさん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          5,
+          4,
+          7
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 44,
+    "padCount": 8,
+    "noteDurationMs": 313,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "random",
+    "baseSong": "🐝 ぶんぶんぶん（ほんもの）",
+    "notes": [
+      4,
+      3,
+      2,
+      1,
+      2,
+      3,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐝 ぶんぶんぶん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ほんもの）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（ちょい変え）",
+        "notes": [
+          4,
+          7,
+          6,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🐻 もりのくまさん（ほんもの）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4,
+          2
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🐻 もりのくまさん（ちょい変え）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          5,
+          4,
+          7
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 45,
+    "padCount": 8,
+    "noteDurationMs": 308,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "random",
+    "baseSong": "🎵 よろこびのうた（フル・ほんもの）",
+    "notes": [
+      2,
+      2,
+      3,
+      4,
+      4,
+      3,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🎵 よろこびのうた（フル・ほんもの）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3,
+          2,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🎵 よろこびのうた（フル・ちょい変え）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "⭐ きらきらぼし（後半・ほんもの）",
+        "notes": [
+          4,
+          4,
+          3,
+          3,
+          2,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（後半・ちょい変え）",
+        "notes": [
+          4,
+          4,
+          3,
+          3,
+          2,
+          4,
+          7,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌈 ドレミの階段スペシャル（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌈 ドレミの階段（折り返しアレンジ）",
+        "notes": [
+          0,
+          2,
+          4,
+          7,
+          6,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 46,
+    "padCount": 8,
+    "noteDurationMs": 302,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "random",
+    "baseSong": "🎵 よろこびのうた（フル・ほんもの）",
+    "notes": [
+      2,
+      2,
+      3,
+      4,
+      4,
+      3,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🎵 よろこびのうた（フル・ほんもの）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3,
+          2,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🎵 よろこびのうた（フル・ちょい変え）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "⭐ きらきらぼし（後半・ほんもの）",
+        "notes": [
+          4,
+          4,
+          3,
+          3,
+          2,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（後半・ちょい変え）",
+        "notes": [
+          4,
+          4,
+          3,
+          3,
+          2,
+          4,
+          7,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌈 ドレミの階段スペシャル（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌈 ドレミの階段（折り返しアレンジ）",
+        "notes": [
+          0,
+          2,
+          4,
+          7,
+          6,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 47,
+    "padCount": 8,
+    "noteDurationMs": 297,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "random",
+    "baseSong": "🎵 よろこびのうた（フル・ほんもの）",
+    "notes": [
+      2,
+      2,
+      3,
+      4,
+      4,
+      3,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🎵 よろこびのうた（フル・ほんもの）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3,
+          2,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🎵 よろこびのうた（フル・ちょい変え）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "⭐ きらきらぼし（後半・ほんもの）",
+        "notes": [
+          4,
+          4,
+          3,
+          3,
+          2,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（後半・ちょい変え）",
+        "notes": [
+          4,
+          4,
+          3,
+          3,
+          2,
+          4,
+          7,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌈 ドレミの階段スペシャル（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌈 ドレミの階段（折り返しアレンジ）",
+        "notes": [
+          0,
+          2,
+          4,
+          7,
+          6,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 48,
+    "padCount": 8,
+    "noteDurationMs": 291,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "random",
+    "baseSong": "🎵 よろこびのうた（フル・ほんもの）",
+    "notes": [
+      2,
+      2,
+      3,
+      4,
+      4,
+      3,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🎵 よろこびのうた（フル・ほんもの）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3,
+          2,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🎵 よろこびのうた（フル・ちょい変え）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "⭐ きらきらぼし（後半・ほんもの）",
+        "notes": [
+          4,
+          4,
+          3,
+          3,
+          2,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（後半・ちょい変え）",
+        "notes": [
+          4,
+          4,
+          3,
+          3,
+          2,
+          4,
+          7,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌈 ドレミの階段スペシャル（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌈 ドレミの階段（折り返しアレンジ）",
+        "notes": [
+          0,
+          2,
+          4,
+          7,
+          6,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 49,
+    "padCount": 8,
+    "noteDurationMs": 286,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "random",
+    "baseSong": "🎵 よろこびのうた（フル・ほんもの）",
+    "notes": [
+      2,
+      2,
+      3,
+      4,
+      4,
+      3,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🎵 よろこびのうた（フル・ほんもの）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3,
+          2,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🎵 よろこびのうた（フル・ちょい変え）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "⭐ きらきらぼし（後半・ほんもの）",
+        "notes": [
+          4,
+          4,
+          3,
+          3,
+          2,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（後半・ちょい変え）",
+        "notes": [
+          4,
+          4,
+          3,
+          3,
+          2,
+          4,
+          7,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌈 ドレミの階段スペシャル（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌈 ドレミの階段（折り返しアレンジ）",
+        "notes": [
+          0,
+          2,
+          4,
+          7,
+          6,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  },
+  {
+    "level": 50,
+    "padCount": 8,
+    "noteDurationMs": 280,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "random",
+    "baseSong": "🎵 よろこびのうた（フル・ほんもの）",
+    "notes": [
+      2,
+      2,
+      3,
+      4,
+      4,
+      3,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🎵 よろこびのうた（フル・ほんもの）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3,
+          2,
+          1
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🎵 よろこびのうた（フル・ちょい変え）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          5,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "⭐ きらきらぼし（後半・ほんもの）",
+        "notes": [
+          4,
+          4,
+          3,
+          3,
+          2,
+          2,
+          1,
+          0
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "⭐ きらきらぼし（後半・ちょい変え）",
+        "notes": [
+          4,
+          4,
+          3,
+          3,
+          2,
+          4,
+          7,
+          7
+        ],
+        "isVariation": true
+      },
+      {
+        "title": "🌈 ドレミの階段スペシャル（ほんもの）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "isVariation": false
+      },
+      {
+        "title": "🌈 ドレミの階段（折り返しアレンジ）",
+        "notes": [
+          0,
+          2,
+          4,
+          7,
+          6,
+          4,
+          2,
+          0
+        ],
+        "isVariation": true
+      }
+    ]
+  }
+]

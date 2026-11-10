@@ -1,0 +1,6 @@
+{
+  "name": "メロディーおぼえよう！",
+  "description": "おてほんの メロディーを きいて、おなじ じゅんばんで おとを ならそう！",
+  "entry_point": "index.html",
+  "thumbnail": "images/thumbnail.png"
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>メロディーおぼえよう！</title>
+    <link href="../../static/common/style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../static/common/ui-lock.js"></script>
+</head>
+<body class="bg-indigo-50 overflow-hidden select-none touch-none">
+
+    <!-- 簡易説明ポップアップ (ゲーム開始前) -->
+    <section id="instructions-popup" class="fixed inset-0 flex items-center justify-center bg-black/70 z-[100] hidden" aria-label="あそびかた">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-lg w-full mx-4 text-center border-4 border-indigo-400">
+            <h2 class="text-4xl font-black text-indigo-600 mb-6 drop-shadow-md">あそびかた</h2>
+            <div class="space-y-5 text-lg text-gray-700 font-bold leading-relaxed">
+                <p>
+                    <span class="text-3xl">🎵</span> 最初に <span class="text-indigo-600">おてほんのメロディー</span> が なるよ！<br>
+                    よく きいて おぼえてね。
+                </p>
+                <div class="bg-indigo-50 p-4 rounded-xl border-2 border-indigo-200">
+                    <p>
+                        <span class="text-3xl">🎹</span> 「まねしてね！」の 合図が でたら、<br>
+                        おなじ じゅんばんで ボタンを タッチしよう！
+                    </p>
+                </div>
+            </div>
+            <button id="instructions-start-button" type="button" class="mt-8 bg-gradient-to-b from-indigo-500 to-indigo-700 text-white font-black text-2xl py-3 px-10 rounded-full shadow-lg transform transition hover:scale-105 active:scale-95 border-b-4 border-indigo-800">
+                スタート！
+            </button>
+        </div>
+    </section>
+
+    <!-- レベル開始前 出題ポップアップ -->
+    <section id="level-intro-popup" class="fixed inset-0 flex items-center justify-center bg-black/60 z-[90] hidden" aria-label="レベル情報">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-md w-full mx-4 text-center border-4 border-indigo-400 transform transition-all">
+            <p class="text-xl font-bold text-indigo-500 mb-1">メロディーに ちょうせん！</p>
+            <h2 id="intro-level" class="text-5xl font-black text-gray-800 mb-4">レベル 1</h2>
+            <div class="space-y-3 bg-indigo-50 p-4 rounded-2xl border-2 border-indigo-200">
+                <p id="intro-song" class="text-xl font-black text-pink-600">🌷 チューリップ（ほんもの）</p>
+                <p id="intro-notes-count" class="text-2xl font-black text-indigo-600">3おんの メロディー！</p>
+                <p id="intro-guide-mode" class="text-base font-bold text-gray-700">🌟 ぜんぶ ひかるよ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 判定ポップアップ -->
+    <section id="judgment-popup" class="fixed inset-0 flex items-center justify-center bg-black/70 z-[95] hidden" aria-label="けっか">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-md w-full mx-4 text-center border-4 border-yellow-400">
+            <div id="judgment-stars" class="text-5xl mb-3 tracking-widest">⭐⭐⭐</div>
+            <h2 id="judgment-title" class="text-4xl font-black text-indigo-600 mb-1">パーフェクト！</h2>
+            <p id="judgment-song-name" class="text-sm font-extrabold text-pink-600 mb-2">🌷 チューリップ（ほんもの）</p>
+            <p id="judgment-message" class="text-base font-bold text-gray-600 mb-4">おてほん通りに ひけたね！すごい！</p>
+
+            <div class="bg-indigo-50 rounded-2xl p-4 mb-5 border-2 border-indigo-200">
+                <p class="text-xs font-bold text-gray-500">せいかいの メロディー</p>
+                <p id="judgment-expected-notes" class="text-lg font-black text-indigo-700 mb-2">ド → レ → ミ</p>
+                <p class="text-xs font-bold text-gray-500">こんかいの スコア</p>
+                <p id="judgment-score" class="text-4xl font-black text-indigo-600">+410</p>
+                <div id="judgment-details" class="flex justify-center gap-2 mt-3 flex-wrap"></div>
+            </div>
+
+            <div class="flex gap-3 justify-center">
+                <button id="retry-level-btn" type="button" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-black text-lg py-3 px-4 rounded-2xl border-b-4 border-gray-400 active:translate-y-1">
+                    🔄 もういちど
+                </button>
+                <button id="next-level-btn" type="button" class="flex-1 bg-gradient-to-b from-green-400 to-green-600 text-white font-black text-lg py-3 px-4 rounded-2xl border-b-4 border-green-700 active:translate-y-1">
+                    つぎへ！ ➡️
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ゲームプレイ画面 -->
+    <main id="game-screen" class="relative w-full h-screen flex flex-col justify-between p-4 hidden bg-gradient-to-b from-indigo-100 via-sky-50 to-purple-100">
+        <!-- 上部ヘッダー -->
+        <header class="w-full max-w-4xl mx-auto flex justify-between items-center bg-white/90 backdrop-blur rounded-2xl px-5 py-3 shadow-md border-2 border-indigo-300">
+            <div class="flex items-center gap-4">
+                <div>
+                    <span class="text-xs font-bold text-gray-500 block">レベル</span>
+                    <span id="current-level" class="text-2xl font-black text-indigo-600">1</span>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <span class="text-xs font-bold text-gray-500 block">スコア</span>
+                    <span id="score" class="text-2xl font-black text-pink-600">0</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button id="replay-btn" type="button" class="bg-sky-500 hover:bg-sky-600 text-white font-bold text-sm md:text-base py-2 px-4 rounded-xl border-b-4 border-sky-700 active:translate-y-0.5 flex items-center gap-1">
+                    <span>🔊</span> もういちど きく
+                </button>
+                <button id="finish-btn" type="button" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold text-sm py-2 px-3 rounded-xl border-b-4 border-gray-400 active:translate-y-0.5">
+                    おわる
+                </button>
+            </div>
+        </header>
+
+        <!-- 状態メッセージ & 曲名・音符スロット -->
+        <section class="text-center my-2 max-w-3xl mx-auto w-full" aria-live="polite">
+            <div id="phase-banner" class="inline-block bg-gray-200 px-6 py-2 rounded-full shadow-md border-2 border-gray-400 text-xl md:text-2xl font-black text-gray-700">
+                🎵 おてほんを きいてね！
+            </div>
+            <p id="song-hint-text" class="text-base md:text-lg font-extrabold text-pink-600 mt-2">🌷 チューリップ（ほんもの）</p>
+
+            <!-- 音符スロット列 -->
+            <div id="note-slots-container" class="flex items-center justify-center gap-2 md:gap-3 mt-3 min-h-[3.25rem] bg-white/80 rounded-2xl py-2.5 px-4 shadow-inner border border-indigo-200 flex-wrap">
+                <!-- JavaScriptで動的にスロットを生成 -->
+            </div>
+        </section>
+
+        <!-- 中央〜下部 音階パッドエリア -->
+        <section class="flex-1 flex items-center justify-center my-2 w-full max-w-5xl mx-auto">
+            <div id="melody-pads-container" class="grid grid-cols-3 gap-3 md:gap-4 w-full px-2">
+                <!-- JavaScriptで動的に音階パッドを生成 -->
+            </div>
+        </section>
+
+        <footer class="w-full max-w-xl mx-auto pb-2 text-center">
+            <p id="input-counter-text" class="text-xs font-bold text-gray-500">タッチ: 0 / 3</p>
+        </footer>
+    </main>
+
+    <!-- スタート/レベル選択画面 -->
+    <main id="start-screen" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-4 overflow-y-auto">
+        <h1 class="text-4xl md:text-6xl font-black text-indigo-600 mb-3 text-center leading-tight drop-shadow-sm">
+            🎹 メロディー<span class="text-pink-500">おぼえよう！</span>
+        </h1>
+        <p class="text-gray-600 font-bold mb-6 text-center">おてほんの メロディーを きいて、おなじ じゅんばんで ひいてみよう！</p>
+
+        <!-- 音色選択 -->
+        <section class="mb-6 w-full max-w-2xl bg-indigo-50 p-4 rounded-2xl border-2 border-indigo-200" aria-label="ねいろをえらぶ">
+            <h2 class="text-center font-bold text-gray-700 mb-3 text-base">ねいろを えらんでね</h2>
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3">
+                <label class="cursor-pointer">
+                    <input type="radio" name="melody-sound" value="auto" checked class="peer sr-only">
+                    <div class="p-2.5 rounded-xl border-2 border-gray-200 bg-white peer-checked:border-indigo-500 peer-checked:bg-indigo-100 transition-all text-center w-24">
+                        <div class="text-2xl">✨</div>
+                        <div class="text-xs font-bold text-gray-700 mt-1">おまかせ</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="melody-sound" value="marimba" class="peer sr-only">
+                    <div class="p-2.5 rounded-xl border-2 border-gray-200 bg-white peer-checked:border-indigo-500 peer-checked:bg-indigo-100 transition-all text-center w-24">
+                        <div class="text-2xl">🪵</div>
+                        <div class="text-xs font-bold text-gray-700 mt-1">もっきん</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="melody-sound" value="musicbox" class="peer sr-only">
+                    <div class="p-2.5 rounded-xl border-2 border-gray-200 bg-white peer-checked:border-indigo-500 peer-checked:bg-indigo-100 transition-all text-center w-24">
+                        <div class="text-2xl">🔔</div>
+                        <div class="text-xs font-bold text-gray-700 mt-1">オルゴール</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="melody-sound" value="piano" class="peer sr-only">
+                    <div class="p-2.5 rounded-xl border-2 border-gray-200 bg-white peer-checked:border-indigo-500 peer-checked:bg-indigo-100 transition-all text-center w-24">
+                        <div class="text-2xl">🎹</div>
+                        <div class="text-xs font-bold text-gray-700 mt-1">ピアノ</div>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="melody-sound" value="synth" class="peer sr-only">
+                    <div class="p-2.5 rounded-xl border-2 border-gray-200 bg-white peer-checked:border-indigo-500 peer-checked:bg-indigo-100 transition-all text-center w-24">
+                        <div class="text-2xl">🌟</div>
+                        <div class="text-xs font-bold text-gray-700 mt-1">シンセ</div>
+                    </div>
+                </label>
+            </div>
+        </section>
+
+        <!-- 難易度選択ボタン -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl mb-8" aria-label="レベルせんたく">
+            <button id="level-easy-btn" type="button" data-level="1" class="level-select-btn level-btn bg-green-400 hover:bg-green-500 border-b-8 border-green-600 py-6">
+                <span class="text-4xl">🐣</span>
+                <span class="text-2xl font-black mt-2 text-white drop-shadow-md">かんたん</span>
+                <span class="text-xs font-bold text-green-900 mt-1">レベル 1 から（ひかりガイド）</span>
+            </button>
+            <button id="level-normal-btn" type="button" data-level="15" class="level-select-btn level-btn bg-blue-400 hover:bg-blue-500 border-b-8 border-blue-600 py-6">
+                <span class="text-4xl">🐇</span>
+                <span class="text-2xl font-black mt-2 text-white drop-shadow-md">ふつう</span>
+                <span class="text-xs font-bold text-blue-900 mt-1">レベル 15 から（5〜8おん）</span>
+            </button>
+            <button id="level-hard-btn" type="button" data-level="30" class="level-select-btn level-btn bg-red-400 hover:bg-red-500 border-b-8 border-red-600 py-6">
+                <span class="text-4xl">🦅</span>
+                <span class="text-2xl font-black mt-2 text-white drop-shadow-md">むずかしい</span>
+                <span class="text-xs font-bold text-red-900 mt-1">レベル 30 から（耳コピ！）</span>
+            </button>
+        </section>
+
+        <nav class="flex gap-6 items-center">
+            <button id="open-ranking-btn" type="button" class="text-indigo-600 hover:text-indigo-800 font-bold flex items-center gap-2">
+                <span>🏆</span> ランキング
+            </button>
+            <button id="open-help-btn" type="button" class="text-indigo-600 hover:text-indigo-800 font-bold flex items-center gap-2">
+                <span>📖</span> くわしいせつめい
+            </button>
+            <a href="../../index.html" class="text-gray-500 hover:text-gray-700 font-bold">もどる</a>
+        </nav>
+    </main>
+
+    <!-- くわしいせつめいモーダル -->
+    <section id="help-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0" aria-label="くわしいせつめい">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto flex flex-col">
+            <header class="p-6 border-b sticky top-0 bg-white z-10 flex justify-between items-center rounded-t-2xl">
+                <h2 class="text-2xl font-bold text-indigo-600">あそびかた</h2>
+                <button id="close-help-top-btn" type="button" class="text-gray-400 hover:text-gray-600 text-3xl font-bold leading-none">&times;</button>
+            </header>
+            <div class="p-6 text-left space-y-6 text-gray-700 leading-relaxed">
+                <section>
+                    <h3 class="font-bold text-lg text-indigo-600 mb-2">🎹 どんなゲーム？</h3>
+                    <p>有名な童謡や名曲のメロディー（または、ちょっぴり変わったアレンジ曲）をお手本で聴いて、同じ順番でどうぶつボタンをタッチして演奏するゲームだよ。</p>
+                </section>
+                <section>
+                    <h3 class="font-bold text-lg text-pink-600 mb-2">🎵 「ほんもの」と「ちょい変えアレンジ」</h3>
+                    <p>よく知っている曲でも、最後の音が少し違う「ちょい変えアレンジ」が出ることがあるよ！最後までよく耳で聴いてね。</p>
+                </section>
+                <section>
+                    <h3 class="font-bold text-lg text-amber-600 mb-2">👂 高レベルは「耳コピ」モード！</h3>
+                    <p>レベルが上がると、お手本の途中で光るヒントが消えて「音だけ」になるよ。最初の音をヒントに、音の高さの違いを聴き分けて当ててみよう！</p>
+                </section>
+            </div>
+            <footer class="p-4 border-t bg-gray-50 rounded-b-2xl sticky bottom-0">
+                <button id="close-help-bottom-btn" type="button" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition-colors">
+                    わかった！
+                </button>
+            </footer>
+        </div>
+    </section>
+
+    <!-- 最終結果画面 (フォールバック兼クリア画面) -->
+    <section id="result-screen" class="fixed inset-0 bg-black/80 z-50 flex flex-col items-center justify-center p-4 hidden text-white" aria-label="最終結果">
+        <h2 class="text-4xl font-bold mb-4">おしまい！</h2>
+        <div class="text-2xl mb-8">
+            スコア: <span id="final-score" class="text-6xl font-black text-yellow-400">0</span>
+        </div>
+        <button id="restart-game-btn" type="button" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-4 px-12 rounded-full shadow-lg text-2xl">
+            もういちど
+        </button>
+    </section>
+
+    <script src="../../static/config.js?v=2"></script>
+    <script src="../../static/common/score-manager.js"></script>
+    <script src="game_logic.js?v=1"></script>
+    <script src="game.js?v=1"></script>
+    <script src="main.js?v=1"></script>
+</body>
+</html>
