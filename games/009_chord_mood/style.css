@@ -1,0 +1,145 @@
+/* games/009_chord_mood/style.css */
+
+.level-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.level-btn:active {
+    transform: translateY(4px);
+}
+
+/* Weather Mood Pads */
+.mood-pad {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 0.6rem;
+    border-radius: 1.5rem;
+    border-bottom-width: 8px;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.16);
+    transition: transform 0.12s ease, filter 0.15s ease, opacity 0.15s ease, box-shadow 0.12s ease;
+    cursor: pointer;
+    user-select: none;
+    min-height: 175px;
+}
+
+.mood-pad:active:not(.pad-disabled),
+.mood-pad.pad-tapped {
+    transform: translateY(5px) scale(0.96);
+    border-bottom-width: 3px;
+}
+
+/* Grayed-out disabled state during demo playback */
+.mood-pad.pad-disabled {
+    filter: grayscale(85%);
+    opacity: 0.58;
+    cursor: not-allowed;
+}
+
+/* Bright highlight when a pad is lit by the demo guide (even while input-locked) */
+.mood-pad.pad-demo-lit {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: translateY(-10px) scale(1.07);
+    box-shadow:
+        0 0 0 5px #fde047,
+        0 14px 25px rgba(250, 204, 21, 0.68);
+    z-index: 10;
+}
+
+/* Sky Weather Stage Themes */
+.sky-stage-box {
+    transition: background 0.35s ease, border-color 0.35s ease, transform 0.2s ease;
+}
+
+.sky-sunny {
+    background: linear-gradient(135deg, #fef08a 0%, #fde047 50%, #bae6fd 100%);
+    border-color: #f59e0b;
+}
+
+.sky-rainy {
+    background: linear-gradient(135deg, #bae6fd 0%, #7dd3fc 50%, #cbd5e1 100%);
+    border-color: #0284c7;
+}
+
+.sky-stormy {
+    background: linear-gradient(135deg, #e9d5ff 0%, #c084fc 50%, #94a3b8 100%);
+    border-color: #7e22ce;
+}
+
+.sky-aurora {
+    background: linear-gradient(135deg, #fbcfe8 0%, #c4b5fd 50%, #99f6e4 100%);
+    border-color: #db2777;
+}
+
+/* Weather Progression Slots */
+.mood-slot {
+    min-width: 3.5rem;
+    height: 3.25rem;
+    padding: 0 0.75rem;
+    border-radius: 1rem;
+    background-color: #f3f4f6;
+    border: 3px solid #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #6b7280;
+    transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.mood-slot.slot-demo-active {
+    background-color: #fef08a;
+    border-color: #eab308;
+    color: #854d0e;
+    transform: scale(1.18);
+}
+
+.mood-slot.slot-filled {
+    background-color: #e0f2fe;
+    border-color: #0284c7;
+    color: #075985;
+    transform: scale(1.08);
+}
+
+.mood-slot.slot-correct {
+    background-color: #d1fae5;
+    border-color: #10b981;
+    color: #065f46;
+}
+
+.mood-slot.slot-wrong {
+    background-color: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+}
+
+/* Star pop animation */
+@keyframes star-pop {
+    0% {
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.25) rotate(8deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.star-animate {
+    display: inline-block;
+    animation: star-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
