@@ -1,0 +1,952 @@
+[
+  {
+    "level": 1,
+    "padCount": 2,
+    "beatDurationMs": 580,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "🦁 ドン・トッ（2びょうし）",
+    "meter": "2拍子",
+    "pattern": ["f", "p"],
+    "patterns": [
+      { "title": "🦁 ドン・トッ（つよい→よわい）", "pattern": ["f", "p"], "meter": "2拍子", "isVariation": false },
+      { "title": "🐭 トッ・ドン（よわい→つよい）", "pattern": ["p", "f"], "meter": "2拍子", "isVariation": true },
+      { "title": "🦁 ドン・ドン（どっちもつよい！）", "pattern": ["f", "f"], "meter": "2拍子", "isVariation": true },
+      { "title": "🐭 トッ・トッ（どっちもよわい！）", "pattern": ["p", "p"], "meter": "2拍子", "isVariation": true },
+      { "title": "🥁 ドン・トッ・ドン（3かい）", "pattern": ["f", "p", "f"], "meter": "3拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 2,
+    "padCount": 2,
+    "beatDurationMs": 570,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "🐭 トッ・ドン（よわい→つよい）",
+    "meter": "2拍子",
+    "pattern": ["p", "f"],
+    "patterns": [
+      { "title": "🐭 トッ・ドン（よわい→つよい）", "pattern": ["p", "f"], "meter": "2拍子", "isVariation": false },
+      { "title": "🦁 ドン・トッ（つよい→よわい）", "pattern": ["f", "p"], "meter": "2拍子", "isVariation": false },
+      { "title": "🦁 ドン・ドン（つよい2かい）", "pattern": ["f", "f"], "meter": "2拍子", "isVariation": true },
+      { "title": "🐭 トッ・トッ（よわい2かい）", "pattern": ["p", "p"], "meter": "2拍子", "isVariation": true },
+      { "title": "🐭 トッ・トッ・ドン（びっくり！）", "pattern": ["p", "p", "f"], "meter": "3拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 3,
+    "padCount": 2,
+    "beatDurationMs": 560,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "💃 3びょうしの ワルツ（ドン・ト・ト）",
+    "meter": "3拍子",
+    "pattern": ["f", "p", "p"],
+    "patterns": [
+      { "title": "💃 3びょうしの ワルツ（ドン・ト・ト）", "pattern": ["f", "p", "p"], "meter": "3拍子", "isVariation": false },
+      { "title": "🥁 ぎゃくワルツ（ト・ト・ドン）", "pattern": ["p", "p", "f"], "meter": "3拍子", "isVariation": true },
+      { "title": "🦁 ドン・ト・ドン（はさみうち）", "pattern": ["f", "p", "f"], "meter": "3拍子", "isVariation": true },
+      { "title": "🐭 ト・ドン・ト（まんなかドン！）", "pattern": ["p", "f", "p"], "meter": "3拍子", "isVariation": true },
+      { "title": "🦁 ドン・ドン・ト（つよい2かい）", "pattern": ["f", "f", "p"], "meter": "3拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 4,
+    "padCount": 2,
+    "beatDurationMs": 555,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "🐭 ト・ドン・ト（まんなかアクセント）",
+    "meter": "3拍子",
+    "pattern": ["p", "f", "p"],
+    "patterns": [
+      { "title": "🐭 ト・ドン・ト（まんなかドン！）", "pattern": ["p", "f", "p"], "meter": "3拍子", "isVariation": false },
+      { "title": "💃 3びょうしの ワルツ（ドン・ト・ト）", "pattern": ["f", "p", "p"], "meter": "3拍子", "isVariation": false },
+      { "title": "🥁 さいごにドン！（ト・ト・ドン）", "pattern": ["p", "p", "f"], "meter": "3拍子", "isVariation": true },
+      { "title": "🦁 ドン・ト・ドン（はさみうち）", "pattern": ["f", "p", "f"], "meter": "3拍子", "isVariation": true },
+      { "title": "🐭 ト・ドン・ドン（あとからつよく）", "pattern": ["p", "f", "f"], "meter": "3拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 5,
+    "padCount": 2,
+    "beatDurationMs": 550,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "🥁 さいごに ドン！（ト・ト・ドン）",
+    "meter": "3拍子",
+    "pattern": ["p", "p", "f"],
+    "patterns": [
+      { "title": "🥁 さいごに ドン！（ト・ト・ドン）", "pattern": ["p", "p", "f"], "meter": "3拍子", "isVariation": false },
+      { "title": "💃 3びょうしの ワルツ（ドン・ト・ト）", "pattern": ["f", "p", "p"], "meter": "3拍子", "isVariation": false },
+      { "title": "🦁 ドン・ドン・ト（まえノリ）", "pattern": ["f", "f", "p"], "meter": "3拍子", "isVariation": true },
+      { "title": "🐭 ト・ドン・ドン（うしろノリ）", "pattern": ["p", "f", "f"], "meter": "3拍子", "isVariation": true },
+      { "title": "🦁 ドン・ト・ドン（サンドイッチ）", "pattern": ["f", "p", "f"], "meter": "3拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 6,
+    "padCount": 2,
+    "beatDurationMs": 540,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "march",
+    "contrastScale": 1.0,
+    "baseTitle": "🚶 2びょうし マーチ（ドン・ト・ドン・ト）",
+    "meter": "2拍子×2",
+    "pattern": ["f", "p", "f", "p"],
+    "patterns": [
+      { "title": "🚶 2びょうし マーチ（ドン・ト・ドン・ト）", "pattern": ["f", "p", "f", "p"], "meter": "2拍子×2", "isVariation": false },
+      { "title": "🥁 うらうち マーチ（ト・ドン・ト・ドン）", "pattern": ["p", "f", "p", "f"], "meter": "2拍子×2", "isVariation": true },
+      { "title": "🦁 4びょうし 基本（ドン・ト・ト・ト）", "pattern": ["f", "p", "p", "p"], "meter": "4拍子", "isVariation": false },
+      { "title": "🥁 はさみうち 4拍（ドン・ト・ト・ドン）", "pattern": ["f", "p", "p", "f"], "meter": "4拍子", "isVariation": true },
+      { "title": "🐭 だんだん元気に（ト・ト・ドン・ドン）", "pattern": ["p", "p", "f", "f"], "meter": "4拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 7,
+    "padCount": 2,
+    "beatDurationMs": 535,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "march",
+    "contrastScale": 1.0,
+    "baseTitle": "🥁 うらうち マーチ（ト・ドン・ト・ドン）",
+    "meter": "2拍子×2",
+    "pattern": ["p", "f", "p", "f"],
+    "patterns": [
+      { "title": "🥁 うらうち マーチ（ト・ドン・ト・ドン）", "pattern": ["p", "f", "p", "f"], "meter": "2拍子×2", "isVariation": false },
+      { "title": "🚶 2びょうし マーチ（ドン・ト・ドン・ト）", "pattern": ["f", "p", "f", "p"], "meter": "2拍子×2", "isVariation": false },
+      { "title": "🦁 まえはんぶんドン（ドン・ドン・ト・ト）", "pattern": ["f", "f", "p", "p"], "meter": "4拍子", "isVariation": true },
+      { "title": "🐭 あとはんぶんドン（ト・ト・ドン・ドン）", "pattern": ["p", "p", "f", "f"], "meter": "4拍子", "isVariation": true },
+      { "title": "🥁 さいごにびっくり（ト・ト・ト・ドン）", "pattern": ["p", "p", "p", "f"], "meter": "4拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 8,
+    "padCount": 2,
+    "beatDurationMs": 530,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "march",
+    "contrastScale": 1.0,
+    "baseTitle": "🦁 4びょうし パレード（ドン・ト・ト・ト）",
+    "meter": "4拍子",
+    "pattern": ["f", "p", "p", "p"],
+    "patterns": [
+      { "title": "🦁 4びょうし パレード（ドン・ト・ト・ト）", "pattern": ["f", "p", "p", "p"], "meter": "4拍子", "isVariation": false },
+      { "title": "🚶 2びょうし マーチ（ドン・ト・ドン・ト）", "pattern": ["f", "p", "f", "p"], "meter": "2拍子×2", "isVariation": false },
+      { "title": "🥁 シンコペーション（ドン・ト・ト・ドン）", "pattern": ["f", "p", "p", "f"], "meter": "4拍子", "isVariation": true },
+      { "title": "🐭 なかよし2拍（ト・ドン・ドン・ト）", "pattern": ["p", "f", "f", "p"], "meter": "4拍子", "isVariation": true },
+      { "title": "🦁 つよつよスタート（ドン・ドン・ト・ドン）", "pattern": ["f", "f", "p", "f"], "meter": "4拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 9,
+    "padCount": 2,
+    "beatDurationMs": 520,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "march",
+    "contrastScale": 1.0,
+    "baseTitle": "🥁 シンコペーション（ドン・ト・ト・ドン）",
+    "meter": "4拍子",
+    "pattern": ["f", "p", "p", "f"],
+    "patterns": [
+      { "title": "🥁 シンコペーション（ドン・ト・ト・ドン）", "pattern": ["f", "p", "p", "f"], "meter": "4拍子", "isVariation": false },
+      { "title": "🐭 ぎゃくシンコペ（ト・ドン・ドン・ト）", "pattern": ["p", "f", "f", "p"], "meter": "4拍子", "isVariation": true },
+      { "title": "🚶 2びょうし マーチ（ドン・ト・ドン・ト）", "pattern": ["f", "p", "f", "p"], "meter": "2拍子×2", "isVariation": false },
+      { "title": "🥁 うらうち マーチ（ト・ドン・ト・ドン）", "pattern": ["p", "f", "p", "f"], "meter": "2拍子×2", "isVariation": true },
+      { "title": "🦁 3かいドン！（ドン・ドン・ドン・ト）", "pattern": ["f", "f", "f", "p"], "meter": "4拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 10,
+    "padCount": 2,
+    "beatDurationMs": 510,
+    "demoCount": 2,
+    "guideMode": "all",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "🎊 おまつり たいこ（ドン・ドン・ト・ドン）",
+    "meter": "4拍子",
+    "pattern": ["f", "f", "p", "f"],
+    "patterns": [
+      { "title": "🎊 おまつり たいこ（ドン・ドン・ト・ドン）", "pattern": ["f", "f", "p", "f"], "meter": "4拍子", "isVariation": false },
+      { "title": "🥁 おまつり へんそう（ドン・ト・ドン・ドン）", "pattern": ["f", "p", "f", "f"], "meter": "4拍子", "isVariation": true },
+      { "title": "🐭 しのびあし太鼓（ト・ト・ドン・ト）", "pattern": ["p", "p", "f", "p"], "meter": "4拍子", "isVariation": true },
+      { "title": "🚶 2びょうし マーチ（ドン・ト・ドン・ト）", "pattern": ["f", "p", "f", "p"], "meter": "2拍子×2", "isVariation": false },
+      { "title": "🥁 シンコペーション（ドン・ト・ト・ドン）", "pattern": ["f", "p", "p", "f"], "meter": "4拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 11,
+    "padCount": 2,
+    "beatDurationMs": 500,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "💃 3びょうし 耳トレ（ドン・ト・ト）",
+    "meter": "3拍子",
+    "pattern": ["f", "p", "p"],
+    "patterns": [
+      { "title": "💃 3びょうしの ワルツ（ドン・ト・ト）", "pattern": ["f", "p", "p"], "meter": "3拍子", "isVariation": false },
+      { "title": "🥁 さいごにドン！（ト・ト・ドン）", "pattern": ["p", "p", "f"], "meter": "3拍子", "isVariation": true },
+      { "title": "🦁 はさみうち3拍（ドン・ト・ドン）", "pattern": ["f", "p", "f"], "meter": "3拍子", "isVariation": true },
+      { "title": "🐭 まんなかドン！（ト・ドン・ト）", "pattern": ["p", "f", "p"], "meter": "3拍子", "isVariation": true },
+      { "title": "🦁 まえノリ3拍（ドン・ドン・ト）", "pattern": ["f", "f", "p"], "meter": "3拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 12,
+    "padCount": 2,
+    "beatDurationMs": 495,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "march",
+    "contrastScale": 1.0,
+    "baseTitle": "🚶 マーチ 耳トレ（ドン・ト・ドン・ト）",
+    "meter": "4拍子",
+    "pattern": ["f", "p", "f", "p"],
+    "patterns": [
+      { "title": "🚶 2びょうし マーチ（ドン・ト・ドン・ト）", "pattern": ["f", "p", "f", "p"], "meter": "2拍子×2", "isVariation": false },
+      { "title": "🥁 うらうち マーチ（ト・ドン・ト・ドン）", "pattern": ["p", "f", "p", "f"], "meter": "2拍子×2", "isVariation": true },
+      { "title": "🦁 4びょうし 基本（ドン・ト・ト・ト）", "pattern": ["f", "p", "p", "p"], "meter": "4拍子", "isVariation": false },
+      { "title": "🥁 シンコペーション（ドン・ト・ト・ドン）", "pattern": ["f", "p", "p", "f"], "meter": "4拍子", "isVariation": true },
+      { "title": "🐭 ぎゃくシンコペ（ト・ドン・ドン・ト）", "pattern": ["p", "f", "f", "p"], "meter": "4拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 13,
+    "padCount": 2,
+    "beatDurationMs": 490,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "march",
+    "contrastScale": 1.0,
+    "baseTitle": "🥁 4びょうし アクセント探し",
+    "meter": "4拍子",
+    "pattern": ["p", "p", "f", "p"],
+    "patterns": [
+      { "title": "🥁 3ぱくめドン！（ト・ト・ドン・ト）", "pattern": ["p", "p", "f", "p"], "meter": "4拍子", "isVariation": false },
+      { "title": "🥁 2はくめドン！（ト・ドン・ト・ト）", "pattern": ["p", "f", "p", "p"], "meter": "4拍子", "isVariation": true },
+      { "title": "🥁 4はくめドン！（ト・ト・ト・ドン）", "pattern": ["p", "p", "p", "f"], "meter": "4拍子", "isVariation": true },
+      { "title": "🦁 1ぱくめドン！（ドン・ト・ト・ト）", "pattern": ["f", "p", "p", "p"], "meter": "4拍子", "isVariation": false },
+      { "title": "🎊 おまつり4拍（ドン・ドン・ト・ドン）", "pattern": ["f", "f", "p", "f"], "meter": "4拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 14,
+    "padCount": 2,
+    "beatDurationMs": 485,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "orchestra",
+    "contrastScale": 1.0,
+    "baseTitle": "🎻 5はくの リズム（ドン・ト・ドン・ト・ト）",
+    "meter": "5拍子",
+    "pattern": ["f", "p", "f", "p", "p"],
+    "patterns": [
+      { "title": "🎻 5びょうし A（ドン・ト・ドン・ト・ト）", "pattern": ["f", "p", "f", "p", "p"], "meter": "5拍子", "isVariation": false },
+      { "title": "🎻 5びょうし B（ドン・ト・ト・ドン・ト）", "pattern": ["f", "p", "p", "f", "p"], "meter": "5拍子", "isVariation": false },
+      { "title": "🥁 こうごに5拍（ドン・ト・ドン・ト・ドン）", "pattern": ["f", "p", "f", "p", "f"], "meter": "5拍子", "isVariation": true },
+      { "title": "🐭 うらうち5拍（ト・ドン・ト・ドン・ト）", "pattern": ["p", "f", "p", "f", "p"], "meter": "5拍子", "isVariation": true },
+      { "title": "🦁 さいごに2連打（ドン・ト・ト・ドン・ドン）", "pattern": ["f", "p", "p", "f", "f"], "meter": "5拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 15,
+    "padCount": 2,
+    "beatDurationMs": 480,
+    "demoCount": 1,
+    "guideMode": "partial",
+    "sound": "orchestra",
+    "contrastScale": 1.0,
+    "baseTitle": "💃 3びょうし×2（6はくワルツ）",
+    "meter": "3拍子×2",
+    "pattern": ["f", "p", "p", "f", "p", "p"],
+    "patterns": [
+      { "title": "💃 6はくワルツ（ドン・ト・ト・ドン・ト・ト）", "pattern": ["f", "p", "p", "f", "p", "p"], "meter": "3拍子×2", "isVariation": false },
+      { "title": "💃 ワルツちょい変え（ドン・ト・ト・ドン・ト・ドン）", "pattern": ["f", "p", "p", "f", "p", "f"], "meter": "3拍子×2", "isVariation": true },
+      { "title": "🚶 6はくマーチ（ドン・ト・ドン・ト・ドン・ト）", "pattern": ["f", "p", "f", "p", "f", "p"], "meter": "2拍子×3", "isVariation": false },
+      { "title": "🥁 ぎゃくワルツ6拍（ト・ト・ドン・ト・ト・ドン）", "pattern": ["p", "p", "f", "p", "p", "f"], "meter": "3拍子×2", "isVariation": true },
+      { "title": "🎊 おまつり6拍（ドン・ドン・ト・ドン・ドン・ト）", "pattern": ["f", "f", "p", "f", "f", "p"], "meter": "3拍子×2", "isVariation": true }
+    ]
+  },
+  {
+    "level": 16,
+    "padCount": 2,
+    "beatDurationMs": 470,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "👂 耳コピ 4びょうし（さいしょだけ光るよ）",
+    "meter": "4拍子",
+    "pattern": ["f", "p", "f", "p"],
+    "patterns": [
+      { "title": "🚶 2びょうし マーチ（ドン・ト・ドン・ト）", "pattern": ["f", "p", "f", "p"], "meter": "2拍子×2", "isVariation": false },
+      { "title": "🦁 4びょうし 基本（ドン・ト・ト・ト）", "pattern": ["f", "p", "p", "p"], "meter": "4拍子", "isVariation": false },
+      { "title": "🥁 シンコペーション（ドン・ト・ト・ドン）", "pattern": ["f", "p", "p", "f"], "meter": "4拍子", "isVariation": true },
+      { "title": "🐭 うらうち マーチ（ト・ドン・ト・ドン）", "pattern": ["p", "f", "p", "f"], "meter": "2拍子×2", "isVariation": true },
+      { "title": "🎊 おまつり太鼓（ドン・ドン・ト・ドン）", "pattern": ["f", "f", "p", "f"], "meter": "4拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 17,
+    "padCount": 2,
+    "beatDurationMs": 465,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "march",
+    "contrastScale": 1.0,
+    "baseTitle": "👂 耳コピ 5びょうし（2＋3拍子）",
+    "meter": "5拍子",
+    "pattern": ["f", "p", "f", "p", "p"],
+    "patterns": [
+      { "title": "🎻 2＋3びょうし（ドン・ト・ドン・ト・ト）", "pattern": ["f", "p", "f", "p", "p"], "meter": "5拍子", "isVariation": false },
+      { "title": "🎻 3＋2びょうし（ドン・ト・ト・ドン・ト）", "pattern": ["f", "p", "p", "f", "p"], "meter": "5拍子", "isVariation": false },
+      { "title": "🥁 こうごに5拍（ドン・ト・ドン・ト・ドン）", "pattern": ["f", "p", "f", "p", "f"], "meter": "5拍子", "isVariation": true },
+      { "title": "🐭 うらうち5拍（ト・ドン・ト・ドン・ト）", "pattern": ["p", "f", "p", "f", "p"], "meter": "5拍子", "isVariation": true },
+      { "title": "🦁 後半もりあがり（ドン・ト・ト・ドン・ドン）", "pattern": ["f", "p", "p", "f", "f"], "meter": "5拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 18,
+    "padCount": 2,
+    "beatDurationMs": 460,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "orchestra",
+    "contrastScale": 1.0,
+    "baseTitle": "💃 耳コピ 6はくワルツ",
+    "meter": "3拍子×2",
+    "pattern": ["f", "p", "p", "f", "p", "p"],
+    "patterns": [
+      { "title": "💃 6はくワルツ（ドン・ト・ト・ドン・ト・ト）", "pattern": ["f", "p", "p", "f", "p", "p"], "meter": "3拍子×2", "isVariation": false },
+      { "title": "💃 ワルツ変奏（ドン・ト・ト・ト・ドン・ト）", "pattern": ["f", "p", "p", "p", "f", "p"], "meter": "6拍", "isVariation": true },
+      { "title": "🚶 6はくマーチ（ドン・ト・ドン・ト・ドン・ト）", "pattern": ["f", "p", "f", "p", "f", "p"], "meter": "2拍子×3", "isVariation": false },
+      { "title": "🥁 シンコペ6拍（ドン・ト・ト・ドン・ト・ドン）", "pattern": ["f", "p", "p", "f", "p", "f"], "meter": "6拍", "isVariation": true },
+      { "title": "🐭 うらワルツ（ト・ト・ドン・ト・ト・ドン）", "pattern": ["p", "p", "f", "p", "p", "f"], "meter": "3拍子×2", "isVariation": true }
+    ]
+  },
+  {
+    "level": 19,
+    "padCount": 2,
+    "beatDurationMs": 450,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "synth",
+    "contrastScale": 1.0,
+    "baseTitle": "🌟 ダンスビート 6拍（強弱コンビ）",
+    "meter": "6拍",
+    "pattern": ["f", "p", "f", "f", "p", "f"],
+    "patterns": [
+      { "title": "🌟 ダンスビートA（ドン・ト・ドン・ドン・ト・ドン）", "pattern": ["f", "p", "f", "f", "p", "f"], "meter": "6拍", "isVariation": false },
+      { "title": "🌟 ダンスビートB（ドン・ト・ト・ドン・ドン・ト）", "pattern": ["f", "p", "p", "f", "f", "p"], "meter": "6拍", "isVariation": true },
+      { "title": "🌟 ダンスビートC（ト・ドン・ト・ドン・ドン・f）", "pattern": ["p", "f", "p", "f", "f", "p"], "meter": "6拍", "isVariation": true },
+      { "title": "💃 6はくワルツ（ドン・ト・ト・ドン・ト・ト）", "pattern": ["f", "p", "p", "f", "p", "p"], "meter": "3拍子×2", "isVariation": false },
+      { "title": "🚶 6はくマーチ（ドン・ト・ドン・ト・ドン・ト）", "pattern": ["f", "p", "f", "p", "f", "p"], "meter": "2拍子×3", "isVariation": false }
+    ]
+  },
+  {
+    "level": 20,
+    "padCount": 2,
+    "beatDurationMs": 445,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "👑 2つたいこ マスター試験（6拍）",
+    "meter": "6拍",
+    "pattern": ["f", "f", "p", "f", "p", "p"],
+    "patterns": [
+      { "title": "👑 たいこパレードA（ドン・ドン・ト・ドン・ト・ト）", "pattern": ["f", "f", "p", "f", "p", "p"], "meter": "6拍", "isVariation": false },
+      { "title": "👑 たいこパレードB（ドン・ト・ト・ドン・ドン・f）", "pattern": ["f", "p", "p", "f", "f", "f"], "meter": "6拍", "isVariation": true },
+      { "title": "👑 たいこパレードC（ト・ドン・ドン・ト・ドン・ト）", "pattern": ["p", "f", "f", "p", "f", "p"], "meter": "6拍", "isVariation": true },
+      { "title": "👑 たいこパレードD（ドン・ト・ドン・ト・ト・ドン）", "pattern": ["f", "p", "f", "p", "p", "f"], "meter": "6拍", "isVariation": true },
+      { "title": "👑 たいこパレードE（ト・ト・ドン・ト・ドン・ドン）", "pattern": ["p", "p", "f", "p", "f", "f"], "meter": "6拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 21,
+    "padCount": 3,
+    "beatDurationMs": 480,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "orchestra",
+    "contrastScale": 1.0,
+    "baseTitle": "📈 だんだん おおきく！（クレッシェンド）",
+    "meter": "クレッシェンド",
+    "pattern": ["p", "mf", "f"],
+    "patterns": [
+      { "title": "📈 クレッシェンド（トッ→ポン→ドン！）", "pattern": ["p", "mf", "f"], "meter": "クレッシェンド", "isVariation": false },
+      { "title": "📉 デクレッシェンド（ドン！→ポン→トッ）", "pattern": ["f", "mf", "p"], "meter": "デクレッシェンド", "isVariation": false },
+      { "title": "⛰️ やまがた（トッ→ドン！→トッ）", "pattern": ["p", "f", "p"], "meter": "アクセント", "isVariation": true },
+      { "title": "🐰 なかよし中太鼓（ポン→ポン→ドン！）", "pattern": ["mf", "mf", "f"], "meter": "クレッシェンド", "isVariation": true },
+      { "title": "🐭 だんだんちいさく変奏（ドン！→ポン→ポン）", "pattern": ["f", "mf", "mf"], "meter": "デクレッシェンド", "isVariation": true }
+    ]
+  },
+  {
+    "level": 22,
+    "padCount": 3,
+    "beatDurationMs": 475,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "orchestra",
+    "contrastScale": 1.0,
+    "baseTitle": "📉 だんだん ちいさく！（デクレッシェンド）",
+    "meter": "デクレッシェンド",
+    "pattern": ["f", "mf", "p"],
+    "patterns": [
+      { "title": "📉 デクレッシェンド（ドン！→ポン→トッ）", "pattern": ["f", "mf", "p"], "meter": "デクレッシェンド", "isVariation": false },
+      { "title": "📈 クレッシェンド（トッ→ポン→ドン！）", "pattern": ["p", "mf", "f"], "meter": "クレッシェンド", "isVariation": false },
+      { "title": "🐰 谷型ダイナミクス（ドン！→トッ→ポン）", "pattern": ["f", "p", "mf"], "meter": "ダイナミクス", "isVariation": true },
+      { "title": "🦁 びっくりスタート（ポン→トッ→ドン！）", "pattern": ["mf", "p", "f"], "meter": "ダイナミクス", "isVariation": true },
+      { "title": "🐰 中から小さく（ポン→ポン→トッ）", "pattern": ["mf", "mf", "p"], "meter": "デクレッシェンド", "isVariation": true }
+    ]
+  },
+  {
+    "level": 23,
+    "padCount": 3,
+    "beatDurationMs": 470,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "march",
+    "contrastScale": 1.0,
+    "baseTitle": "🎼 ほんかく 4びょうし（強・弱・中・弱）",
+    "meter": "4拍子",
+    "pattern": ["f", "p", "mf", "p"],
+    "patterns": [
+      { "title": "🎼 ほんかく4びょうし（ドン！・トッ・ポン・トッ）", "pattern": ["f", "p", "mf", "p"], "meter": "4拍子", "isVariation": false },
+      { "title": "📈 4拍クレッシェンド（トッ・トッ・ポン・ドン！）", "pattern": ["p", "p", "mf", "f"], "meter": "クレッシェンド", "isVariation": false },
+      { "title": "📉 4拍デクレッシェンド（ドン！・ドン！・ポン・トッ）", "pattern": ["f", "f", "mf", "p"], "meter": "デクレッシェンド", "isVariation": false },
+      { "title": "🎼 ぎゃく4びょうし（ポン・トッ・ドン！・トッ）", "pattern": ["mf", "p", "f", "p"], "meter": "4拍子", "isVariation": true },
+      { "title": "⛰️ やまがた4拍（トッ・ポン・ドン！・ポン）", "pattern": ["p", "mf", "f", "mf"], "meter": "ダイナミクス", "isVariation": true }
+    ]
+  },
+  {
+    "level": 24,
+    "padCount": 3,
+    "beatDurationMs": 465,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "📈 4はく クレッシェンド＆デクレッシェンド",
+    "meter": "4拍ダイナミクス",
+    "pattern": ["p", "mf", "mf", "f"],
+    "patterns": [
+      { "title": "📈 4はくクレッシェンド（トッ・ポン・ポン・ドン！）", "pattern": ["p", "mf", "mf", "f"], "meter": "クレッシェンド", "isVariation": false },
+      { "title": "📉 4はくデクレッシェンド（ドン！・ポン・ポン・トッ）", "pattern": ["f", "mf", "mf", "p"], "meter": "デクレッシェンド", "isVariation": false },
+      { "title": "🎼 ほんかく4びょうし（ドン！・トッ・ポン・トッ）", "pattern": ["f", "p", "mf", "p"], "meter": "4拍子", "isVariation": false },
+      { "title": "⛰️ もりあがり4拍（トッ・ポン・ドン！・トッ）", "pattern": ["p", "mf", "f", "p"], "meter": "ダイナミクス", "isVariation": true },
+      { "title": "🌊 なみがた4拍（ドン！・ポン・トッ・ドン！）", "pattern": ["f", "mf", "p", "f"], "meter": "ダイナミクス", "isVariation": true }
+    ]
+  },
+  {
+    "level": 25,
+    "padCount": 3,
+    "beatDurationMs": 460,
+    "demoCount": 1,
+    "guideMode": "first_only",
+    "sound": "orchestra",
+    "contrastScale": 1.0,
+    "baseTitle": "⛰️ やまがた ダイナミクス（5拍）",
+    "meter": "クレッシェンド＆デクレッシェンド",
+    "pattern": ["p", "mf", "f", "mf", "p"],
+    "patterns": [
+      { "title": "⛰️ やまがた5拍（トッ→ポン→ドン！→ポン→トッ）", "pattern": ["p", "mf", "f", "mf", "p"], "meter": "山型ダイナミクス", "isVariation": false },
+      { "title": "🌊 たにがた5拍（ドン！→ポン→トッ→ポン→ドン！）", "pattern": ["f", "mf", "p", "mf", "f"], "meter": "谷型ダイナミクス", "isVariation": false },
+      { "title": "📈 5拍クレッシェンド（トッ・トッ・ポン・ポン・ドン！）", "pattern": ["p", "p", "mf", "mf", "f"], "meter": "クレッシェンド", "isVariation": true },
+      { "title": "📉 5拍デクレッシェンド（ドン！・ポン・ポン・トッ・トッ）", "pattern": ["f", "mf", "mf", "p", "p"], "meter": "デクレッシェンド", "isVariation": true },
+      { "title": "🎻 5拍子アクセント（ドン！・トッ・ポン・トッ・トッ）", "pattern": ["f", "p", "mf", "p", "p"], "meter": "5拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 26,
+    "padCount": 3,
+    "beatDurationMs": 450,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "🎧 光なし！3拍クレッシェンド聴き分け",
+    "meter": "3拍ダイナミクス",
+    "pattern": ["p", "mf", "f"],
+    "patterns": [
+      { "title": "📈 クレッシェンド（トッ→ポン→ドン！）", "pattern": ["p", "mf", "f"], "meter": "クレッシェンド", "isVariation": false },
+      { "title": "📉 デクレッシェンド（ドン！→ポン→トッ）", "pattern": ["f", "mf", "p"], "meter": "デクレッシェンド", "isVariation": false },
+      { "title": "💃 3びょうしワルツ（ドン！→トッ→トッ）", "pattern": ["f", "p", "p"], "meter": "3拍子", "isVariation": false },
+      { "title": "⛰️ まんなか強調（トッ→ドン！→ポン）", "pattern": ["p", "f", "mf"], "meter": "アクセント", "isVariation": true },
+      { "title": "🐰 中から強へ（ポン→トッ→ドン！）", "pattern": ["mf", "p", "f"], "meter": "ダイナミクス", "isVariation": true }
+    ]
+  },
+  {
+    "level": 27,
+    "padCount": 3,
+    "beatDurationMs": 445,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "march",
+    "contrastScale": 1.0,
+    "baseTitle": "🎧 光なし！ほんかく4拍子（強・弱・中・弱）",
+    "meter": "4拍子",
+    "pattern": ["f", "p", "mf", "p"],
+    "patterns": [
+      { "title": "🎼 ほんかく4びょうし（ドン！・トッ・ポン・トッ）", "pattern": ["f", "p", "mf", "p"], "meter": "4拍子", "isVariation": false },
+      { "title": "🎼 ぎゃく4びょうし（ポン・トッ・ドン！・トッ）", "pattern": ["mf", "p", "f", "p"], "meter": "4拍子", "isVariation": true },
+      { "title": "📈 4拍クレッシェンド（トッ・ポン・ポン・ドン！）", "pattern": ["p", "mf", "mf", "f"], "meter": "クレッシェンド", "isVariation": false },
+      { "title": "📉 4拍デクレッシェンド（ドン！・ポン・ポン・トッ）", "pattern": ["f", "mf", "mf", "p"], "meter": "デクレッシェンド", "isVariation": false },
+      { "title": "🥁 シンコペ4拍（ドン！・トッ・ポン・ドン！）", "pattern": ["f", "p", "mf", "f"], "meter": "4拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 28,
+    "padCount": 3,
+    "beatDurationMs": 440,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "orchestra",
+    "contrastScale": 1.0,
+    "baseTitle": "🎧 光なし！やまがた・たにがた（5拍）",
+    "meter": "5拍ダイナミクス",
+    "pattern": ["p", "mf", "f", "mf", "p"],
+    "patterns": [
+      { "title": "⛰️ やまがた5拍（トッ・ポン・ドン！・ポン・トッ）", "pattern": ["p", "mf", "f", "mf", "p"], "meter": "山型", "isVariation": false },
+      { "title": "🌊 たにがた5拍（ドン！・ポン・トッ・ポン・ドン！）", "pattern": ["f", "mf", "p", "mf", "f"], "meter": "谷型", "isVariation": false },
+      { "title": "🎻 5拍子 2+3（ドン！・トッ・ポン・トッ・トッ）", "pattern": ["f", "p", "mf", "p", "p"], "meter": "5拍子", "isVariation": false },
+      { "title": "🎻 5拍子 3+2（ドン！・トッ・トッ・ポン・トッ）", "pattern": ["f", "p", "p", "mf", "p"], "meter": "5拍子", "isVariation": true },
+      { "title": "📈 5拍クレッシェンド（トッ・トッ・ポン・ポン・ドン！）", "pattern": ["p", "p", "mf", "mf", "f"], "meter": "クレッシェンド", "isVariation": true }
+    ]
+  },
+  {
+    "level": 29,
+    "padCount": 3,
+    "beatDurationMs": 430,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "synth",
+    "contrastScale": 1.0,
+    "baseTitle": "🎧 6拍子 2小節ワルツ（強弱対比）",
+    "meter": "6拍子",
+    "pattern": ["f", "p", "p", "mf", "p", "p"],
+    "patterns": [
+      { "title": "💃 6拍子ワルツA（ドン！・トッ・トッ・ポン・トッ・トッ）", "pattern": ["f", "p", "p", "mf", "p", "p"], "meter": "6拍子", "isVariation": false },
+      { "title": "💃 6拍子ワルツB（ポン・トッ・トッ・ドン！・トッ・トッ）", "pattern": ["mf", "p", "p", "f", "p", "p"], "meter": "6拍子", "isVariation": true },
+      { "title": "📈 6拍クレッシェンド（トッ・トッ・ポン・ポン・ドン！・ドン！）", "pattern": ["p", "p", "mf", "mf", "f", "f"], "meter": "クレッシェンド", "isVariation": false },
+      { "title": "📉 6拍デクレッシェンド（ドン！・ドン！・ポン・ポン・トッ・トッ）", "pattern": ["f", "f", "mf", "mf", "p", "p"], "meter": "デクレッシェンド", "isVariation": false },
+      { "title": "⛰️ 6拍アーチ（トッ・ポン・ドン！・ドン！・ポン・トッ）", "pattern": ["p", "mf", "f", "f", "mf", "p"], "meter": "アーチ型", "isVariation": true }
+    ]
+  },
+  {
+    "level": 30,
+    "padCount": 3,
+    "beatDurationMs": 420,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "orchestra",
+    "contrastScale": 1.0,
+    "baseTitle": "👑 ふつうコース卒業試験！6拍ダイナミクス",
+    "meter": "6拍ダイナミクス",
+    "pattern": ["p", "mf", "f", "f", "mf", "p"],
+    "patterns": [
+      { "title": "⛰️ 6拍アーチ（トッ・ポン・ドン！・ドン！・ポン・トッ）", "pattern": ["p", "mf", "f", "f", "mf", "p"], "meter": "アーチ型", "isVariation": false },
+      { "title": "🌊 6拍ウェーブ（ドン！・ポン・トッ・トッ・ポン・ドン！）", "pattern": ["f", "mf", "p", "p", "mf", "f"], "meter": "ウェーブ型", "isVariation": true },
+      { "title": "📈 2回クレッシェンド（トッ・ポン・ドン！・トッ・ポン・ドン！）", "pattern": ["p", "mf", "f", "p", "mf", "f"], "meter": "クレッシェンド×2", "isVariation": false },
+      { "title": "📉 2回デクレッシェンド（ドン！・ポン・トッ・ドン！・ポン・トッ）", "pattern": ["f", "mf", "p", "f", "mf", "p"], "meter": "デクレッシェンド×2", "isVariation": false },
+      { "title": "💃 6拍子ボレロ風（ドン！・トッ・ポン・ドン！・ポン・トッ）", "pattern": ["f", "p", "mf", "f", "mf", "p"], "meter": "6拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 31,
+    "padCount": 3,
+    "beatDurationMs": 410,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "⚡ スフォルツァンド！（急な強音アクセント）",
+    "meter": "アクセント移動",
+    "pattern": ["p", "p", "f", "p", "mf", "p"],
+    "patterns": [
+      { "title": "⚡ 3拍目スフォルツァンド（トッ・トッ・ドン！・トッ・ポン・トッ）", "pattern": ["p", "p", "f", "p", "mf", "p"], "meter": "6拍", "isVariation": false },
+      { "title": "⚡ 4拍目スフォルツァンド（ポン・トッ・トッ・ドン！・トッ・トッ）", "pattern": ["mf", "p", "p", "f", "p", "p"], "meter": "6拍", "isVariation": true },
+      { "title": "⚡ ラスト爆発（トッ・ポン・トッ・ポン・トッ・ドン！）", "pattern": ["p", "mf", "p", "mf", "p", "f"], "meter": "6拍", "isVariation": true },
+      { "title": "⚡ 2連アクセント（トッ・ドン！・ドン！・トッ・ポン・トッ）", "pattern": ["p", "f", "f", "p", "mf", "p"], "meter": "6拍", "isVariation": true },
+      { "title": "⚡ 交互ステップ（ドン！・トッ・ポン・ドン！・トッ・ポン）", "pattern": ["f", "p", "mf", "f", "p", "mf"], "meter": "6拍", "isVariation": false }
+    ]
+  },
+  {
+    "level": 32,
+    "padCount": 3,
+    "beatDurationMs": 405,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "march",
+    "contrastScale": 1.0,
+    "baseTitle": "🥁 マーチング・ダイナミクス 6拍",
+    "meter": "6拍マーチ",
+    "pattern": ["f", "p", "mf", "p", "f", "p"],
+    "patterns": [
+      { "title": "🥁 マーチA（ドン！・トッ・ポン・トッ・ドン！・トッ）", "pattern": ["f", "p", "mf", "p", "f", "p"], "meter": "6拍", "isVariation": false },
+      { "title": "🥁 マーチB（ポン・トッ・ドン！・トッ・ポン・ドン！）", "pattern": ["mf", "p", "f", "p", "mf", "f"], "meter": "6拍", "isVariation": true },
+      { "title": "🥁 マーチC（ドン！・ポン・トッ・ドン！・ポン・ドン！）", "pattern": ["f", "mf", "p", "f", "mf", "f"], "meter": "6拍", "isVariation": true },
+      { "title": "🥁 マーチD（トッ・ポン・ドン！・ポン・トッ・ドン！）", "pattern": ["p", "mf", "f", "mf", "p", "f"], "meter": "6拍", "isVariation": true },
+      { "title": "🥁 マーチE（ドン！・トッ・トッ・ポン・ポン・ドン！）", "pattern": ["f", "p", "p", "mf", "mf", "f"], "meter": "6拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 33,
+    "padCount": 3,
+    "beatDurationMs": 400,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "orchestra",
+    "contrastScale": 1.0,
+    "baseTitle": "🎻 5拍子 変拍子マスター（2+3 / 3+2）",
+    "meter": "5拍子",
+    "pattern": ["f", "p", "mf", "p", "f"],
+    "patterns": [
+      { "title": "🎻 5拍子シンコペ（ドン！・トッ・ポン・トッ・ドン！）", "pattern": ["f", "p", "mf", "p", "f"], "meter": "5拍子", "isVariation": false },
+      { "title": "🎻 5拍子クレッシェンド（トッ・ポン・トッ・ポン・ドン！）", "pattern": ["p", "mf", "p", "mf", "f"], "meter": "5拍子", "isVariation": true },
+      { "title": "🎻 5拍子デクレッシェンド（ドン！・ポン・ドン！・ポン・トッ）", "pattern": ["f", "mf", "f", "mf", "p"], "meter": "5拍子", "isVariation": true },
+      { "title": "🎻 5拍子ワルツ＋マーチ（ドン！・トッ・トッ・ポン・ドン！）", "pattern": ["f", "p", "p", "mf", "f"], "meter": "5拍子", "isVariation": true },
+      { "title": "🎻 5拍子うら拍（トッ・ドン！・ポン・トッ・ドン！）", "pattern": ["p", "f", "mf", "p", "f"], "meter": "5拍子", "isVariation": true }
+    ]
+  },
+  {
+    "level": 34,
+    "padCount": 3,
+    "beatDurationMs": 395,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "synth",
+    "contrastScale": 1.0,
+    "baseTitle": "🌟 6拍 シンコペーション・グルーヴ",
+    "meter": "6拍",
+    "pattern": ["p", "f", "mf", "p", "f", "mf"],
+    "patterns": [
+      { "title": "🌟 グルーヴA（トッ・ドン！・ポン・トッ・ドン！・ポン）", "pattern": ["p", "f", "mf", "p", "f", "mf"], "meter": "6拍", "isVariation": false },
+      { "title": "🌟 グルーヴB（ポン・トッ・ドン！・ポン・トッ・ドン！）", "pattern": ["mf", "p", "f", "mf", "p", "f"], "meter": "6拍", "isVariation": true },
+      { "title": "🌟 グルーヴC（ドン！・ポン・トッ・ポン・ドン！・トッ）", "pattern": ["f", "mf", "p", "mf", "f", "p"], "meter": "6拍", "isVariation": true },
+      { "title": "🌟 グルーヴD（トッ・ポン・ドン！・トッ・ドン！・ポン）", "pattern": ["p", "mf", "f", "p", "f", "mf"], "meter": "6拍", "isVariation": true },
+      { "title": "🌟 グルーヴE（ドン！・トッ・ポン・ポン・ドン！・トッ）", "pattern": ["f", "p", "mf", "mf", "f", "p"], "meter": "6拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 35,
+    "padCount": 3,
+    "beatDurationMs": 390,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "taiko",
+    "contrastScale": 1.0,
+    "baseTitle": "🔥 7拍子 変拍子チャレンジ（4+3拍子）",
+    "meter": "7拍子",
+    "pattern": ["f", "p", "mf", "p", "f", "p", "p"],
+    "patterns": [
+      { "title": "🔥 7拍子 4+3（ドン！・トッ・ポン・トッ＋ドン！・トッ・トッ）", "pattern": ["f", "p", "mf", "p", "f", "p", "p"], "meter": "7拍子(4+3)", "isVariation": false },
+      { "title": "🔥 7拍子 3+4（ドン！・トッ・トッ＋ドン！・トッ・ポン・トッ）", "pattern": ["f", "p", "p", "f", "p", "mf", "p"], "meter": "7拍子(3+4)", "isVariation": false },
+      { "title": "🔥 7拍子 2+2+3（ドン！・トッ・ポン・トッ・ドン！・ポン・トッ）", "pattern": ["f", "p", "mf", "p", "f", "mf", "p"], "meter": "7拍子(2+2+3)", "isVariation": true },
+      { "title": "📈 7拍大クレッシェンド（トッ・トッ・ポン・ポン・ポン・ドン！・ドン！）", "pattern": ["p", "p", "mf", "mf", "mf", "f", "f"], "meter": "7拍クレッシェンド", "isVariation": true },
+      { "title": "⛰️ 7拍ピラミッド（トッ・ポン・ポン・ドン！・ポン・ポン・トッ）", "pattern": ["p", "mf", "mf", "f", "mf", "mf", "p"], "meter": "7拍ピラミッド", "isVariation": true }
+    ]
+  },
+  {
+    "level": 36,
+    "padCount": 3,
+    "beatDurationMs": 385,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "orchestra",
+    "contrastScale": 0.85,
+    "baseTitle": "🎻 繊細ダイナミクス 6拍（音量差すこし小さめ）",
+    "meter": "6拍",
+    "pattern": ["p", "mf", "f", "mf", "p", "mf"],
+    "patterns": [
+      { "title": "🎻 なみまのワルツA（トッ・ポン・ドン！・ポン・トッ・ポン）", "pattern": ["p", "mf", "f", "mf", "p", "mf"], "meter": "6拍", "isVariation": false },
+      { "title": "🎻 なみまのワルツB（ドン！・ポン・トッ・ポン・ドン！・ポン）", "pattern": ["f", "mf", "p", "mf", "f", "mf"], "meter": "6拍", "isVariation": true },
+      { "title": "🎻 なみまのワルツC（ポン・トッ・ポン・ドン！・ポン・トッ）", "pattern": ["mf", "p", "mf", "f", "mf", "p"], "meter": "6拍", "isVariation": true },
+      { "title": "🎻 なみまのワルツD（ドン！・トッ・ポン・トッ・ポン・ドン！）", "pattern": ["f", "p", "mf", "p", "mf", "f"], "meter": "6拍", "isVariation": true },
+      { "title": "🎻 なみまのワルツE（トッ・ポン・トッ・ドン！・ポン・ドン！）", "pattern": ["p", "mf", "p", "f", "mf", "f"], "meter": "6拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 37,
+    "padCount": 3,
+    "beatDurationMs": 380,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "march",
+    "contrastScale": 0.85,
+    "baseTitle": "🥁 7拍 マーチング・パレード",
+    "meter": "7拍子",
+    "pattern": ["f", "p", "mf", "f", "p", "mf", "p"],
+    "patterns": [
+      { "title": "🥁 7拍パレードA（ドン！・トッ・ポン・ドン！・トッ・ポン・トッ）", "pattern": ["f", "p", "mf", "f", "p", "mf", "p"], "meter": "7拍", "isVariation": false },
+      { "title": "🥁 7拍パレードB（ポン・トッ・ドン！・トッ・ポン・トッ・ドン！）", "pattern": ["mf", "p", "f", "p", "mf", "p", "f"], "meter": "7拍", "isVariation": true },
+      { "title": "🥁 7拍パレードC（ドン！・ポン・トッ・ドン！・ポン・トッ・ドン！）", "pattern": ["f", "mf", "p", "f", "mf", "p", "f"], "meter": "7拍", "isVariation": true },
+      { "title": "🥁 7拍パレードD（トッ・ポン・ドン！・ポン・トッ・ポン・ドン！）", "pattern": ["p", "mf", "f", "mf", "p", "mf", "f"], "meter": "7拍", "isVariation": true },
+      { "title": "🥁 7拍パレードE（ドン！・トッ・トッ・ポン・ドン！・ポン・トッ）", "pattern": ["f", "p", "p", "mf", "f", "mf", "p"], "meter": "7拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 38,
+    "padCount": 3,
+    "beatDurationMs": 370,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "synth",
+    "contrastScale": 0.85,
+    "baseTitle": "🌟 7拍 エレクトロ・アクセント",
+    "meter": "7拍",
+    "pattern": ["p", "mf", "f", "p", "mf", "f", "f"],
+    "patterns": [
+      { "title": "🌟 エレクトロ7拍A（トッ・ポン・ドン！・トッ・ポン・ドン！・ドン！）", "pattern": ["p", "mf", "f", "p", "mf", "f", "f"], "meter": "7拍", "isVariation": false },
+      { "title": "🌟 エレクトロ7拍B（ドン！・ポン・トッ・ドン！・ポン・トッ・トッ）", "pattern": ["f", "mf", "p", "f", "mf", "p", "p"], "meter": "7拍", "isVariation": true },
+      { "title": "🌟 エレクトロ7拍C（ポン・ドン！・トッ・ポン・ドン！・トッ・ドン！）", "pattern": ["mf", "f", "p", "mf", "f", "p", "f"], "meter": "7拍", "isVariation": true },
+      { "title": "🌟 エレクトロ7拍D（トッ・ドン！・ポン・ドン！・トッ・ポン・ドン！）", "pattern": ["p", "f", "mf", "f", "p", "mf", "f"], "meter": "7拍", "isVariation": true },
+      { "title": "🌟 エレクトロ7拍E（ドン！・トッ・ポン・ドン！・ポン・ドン！・トッ）", "pattern": ["f", "p", "mf", "f", "mf", "f", "p"], "meter": "7拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 39,
+    "padCount": 3,
+    "beatDurationMs": 365,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "taiko",
+    "contrastScale": 0.85,
+    "baseTitle": "🔥 7拍 疾風たいこ連打",
+    "meter": "7拍",
+    "pattern": ["f", "f", "p", "mf", "f", "p", "mf"],
+    "patterns": [
+      { "title": "🔥 疾風たいこA（ドン！・ドン！・トッ・ポン・ドン！・トッ・ポン）", "pattern": ["f", "f", "p", "mf", "f", "p", "mf"], "meter": "7拍", "isVariation": false },
+      { "title": "🔥 疾風たいこB（トッ・ポン・ドン！・ドン！・ポン・トッ・ドン！）", "pattern": ["p", "mf", "f", "f", "mf", "p", "f"], "meter": "7拍", "isVariation": true },
+      { "title": "🔥 疾風たいこC（ドン！・トッ・ポン・ポン・ドン！・ドン！・トッ）", "pattern": ["f", "p", "mf", "mf", "f", "f", "p"], "meter": "7拍", "isVariation": true },
+      { "title": "🔥 疾風たいこD（ポン・ポン・トッ・ドン！・トッ・ポン・ドン！）", "pattern": ["mf", "mf", "p", "f", "p", "mf", "f"], "meter": "7拍", "isVariation": true },
+      { "title": "🔥 疾風たいこE（ドン！・ポン・トッ・ポン・ドン！・トッ・ドン！）", "pattern": ["f", "mf", "p", "mf", "f", "p", "f"], "meter": "7拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 40,
+    "padCount": 3,
+    "beatDurationMs": 360,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "orchestra",
+    "contrastScale": 0.85,
+    "baseTitle": "🎼 8拍（4拍子×2小節）シンフォニー入門",
+    "meter": "4拍子×2",
+    "pattern": ["f", "p", "mf", "p", "f", "p", "mf", "f"],
+    "patterns": [
+      { "title": "🎼 シンフォニーA（ドン！・トッ・ポン・トッ・ドン！・トッ・ポン・ドン！）", "pattern": ["f", "p", "mf", "p", "f", "p", "mf", "f"], "meter": "4拍子×2", "isVariation": false },
+      { "title": "🎼 シンフォニーB（ドン！・トッ・ポン・トッ・ポン・ポン・ドン！・トッ）", "pattern": ["f", "p", "mf", "p", "mf", "mf", "f", "p"], "meter": "4拍子×2", "isVariation": true },
+      { "title": "📈 8拍クレッシェンド（トッ・トッ・ポン・ポン・ポン・ドン！・ドン！・ドン！）", "pattern": ["p", "p", "mf", "mf", "mf", "f", "f", "f"], "meter": "8拍クレッシェンド", "isVariation": false },
+      { "title": "📉 8拍デクレッシェンド（ドン！・ドン！・ドン！・ポン・ポン・ポン・トッ・トッ）", "pattern": ["f", "f", "f", "mf", "mf", "mf", "p", "p"], "meter": "8拍デクレッシェンド", "isVariation": false },
+      { "title": "⛰️ 8拍山脈（トッ・ポン・ドン！・ポン・トッ・ポン・ドン！・トッ）", "pattern": ["p", "mf", "f", "mf", "p", "mf", "f", "p"], "meter": "8拍ウェーブ", "isVariation": true }
+    ]
+  },
+  {
+    "level": 41,
+    "padCount": 3,
+    "beatDurationMs": 350,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "random",
+    "contrastScale": 0.8,
+    "baseTitle": "🎯 8拍 4拍子×2 クレッシェンド展開",
+    "meter": "8拍",
+    "pattern": ["p", "mf", "p", "mf", "p", "mf", "f", "f"],
+    "patterns": [
+      { "title": "🎯 展開A（トッ・ポン・トッ・ポン・トッ・ポン・ドン！・ドン！）", "pattern": ["p", "mf", "p", "mf", "p", "mf", "f", "f"], "meter": "8拍", "isVariation": false },
+      { "title": "🎯 展開B（ドン！・ポン・ドン！・ポン・ドン！・ポン・トッ・トッ）", "pattern": ["f", "mf", "f", "mf", "f", "mf", "p", "p"], "meter": "8拍", "isVariation": true },
+      { "title": "🎯 展開C（ドン！・トッ・ポン・トッ・トッ・ポン・ドン！・ドン！）", "pattern": ["f", "p", "mf", "p", "p", "mf", "f", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "🎯 展開D（ポン・トッ・ポン・ドン！・ポン・トッ・ドン！・トッ）", "pattern": ["mf", "p", "mf", "f", "mf", "p", "f", "p"], "meter": "8拍", "isVariation": true },
+      { "title": "🎯 展開E（トッ・ポン・ドン！・トッ・ポン・ドン！・ポン・トッ）", "pattern": ["p", "mf", "f", "p", "mf", "f", "mf", "p"], "meter": "8拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 42,
+    "padCount": 3,
+    "beatDurationMs": 345,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "random",
+    "contrastScale": 0.8,
+    "baseTitle": "🎯 8拍 シンコペーション・パレード",
+    "meter": "8拍",
+    "pattern": ["f", "p", "p", "f", "mf", "p", "f", "p"],
+    "patterns": [
+      { "title": "🎯 シンコペ8拍A（ドン！・トッ・トッ・ドン！・ポン・トッ・ドン！・トッ）", "pattern": ["f", "p", "p", "f", "mf", "p", "f", "p"], "meter": "8拍", "isVariation": false },
+      { "title": "🎯 シンコペ8拍B（トッ・ドン！・ドン！・トッ・ポン・ドン！・トッ・ドン！）", "pattern": ["p", "f", "f", "p", "mf", "f", "p", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "🎯 シンコペ8拍C（ドン！・ポン・トッ・ドン！・トッ・ポン・ドン！・ポン）", "pattern": ["f", "mf", "p", "f", "p", "mf", "f", "mf"], "meter": "8拍", "isVariation": true },
+      { "title": "🎯 シンコペ8拍D（ポン・トッ・ドン！・ポン・ドン！・トッ・ポン・トッ）", "pattern": ["mf", "p", "f", "mf", "f", "p", "mf", "p"], "meter": "8拍", "isVariation": true },
+      { "title": "🎯 シンコペ8拍E（ドン！・トッ・ポン・ドン！・ポン・トッ・トッ・ドン！）", "pattern": ["f", "p", "mf", "f", "mf", "p", "p", "f"], "meter": "8拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 43,
+    "padCount": 3,
+    "beatDurationMs": 340,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "random",
+    "contrastScale": 0.78,
+    "baseTitle": "🎯 8拍 3+3+2 ラテン・アクセント",
+    "meter": "8拍(3+3+2)",
+    "pattern": ["f", "p", "p", "f", "p", "p", "mf", "f"],
+    "patterns": [
+      { "title": "💃 ラテン3+3+2 A（ドン！・トッ・トッ・ドン！・トッ・トッ・ポン・ドン！）", "pattern": ["f", "p", "p", "f", "p", "p", "mf", "f"], "meter": "3+3+2拍子", "isVariation": false },
+      { "title": "💃 ラテン3+3+2 B（ドン！・ポン・トッ・ドン！・ポン・トッ・ドン！・トッ）", "pattern": ["f", "mf", "p", "f", "mf", "p", "f", "p"], "meter": "3+3+2拍子", "isVariation": true },
+      { "title": "💃 ラテン2+3+3（ドン！・トッ・ポン・トッ・トッ・ドン！・トッ・トッ）", "pattern": ["f", "p", "mf", "p", "p", "f", "p", "p"], "meter": "2+3+3拍子", "isVariation": true },
+      { "title": "💃 ラテン3+2+3（ドン！・トッ・トッ・ポン・トッ・ドン！・ポン・トッ）", "pattern": ["f", "p", "p", "mf", "p", "f", "mf", "p"], "meter": "3+2+3拍子", "isVariation": true },
+      { "title": "💃 ラテンクレッシェンド（トッ・トッ・ポン・トッ・ポン・ドン！・ポン・ドン！）", "pattern": ["p", "p", "mf", "p", "mf", "f", "mf", "f"], "meter": "8拍ラテン", "isVariation": true }
+    ]
+  },
+  {
+    "level": 44,
+    "padCount": 3,
+    "beatDurationMs": 335,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "random",
+    "contrastScale": 0.78,
+    "baseTitle": "🎯 8拍 ダブル・アーチ（山・谷・山）",
+    "meter": "8拍ダイナミクス",
+    "pattern": ["p", "mf", "f", "mf", "p", "mf", "f", "mf"],
+    "patterns": [
+      { "title": "⛰️ ダブルアーチA（トッ・ポン・ドン！・ポン・トッ・ポン・ドン！・ポン）", "pattern": ["p", "mf", "f", "mf", "p", "mf", "f", "mf"], "meter": "8拍", "isVariation": false },
+      { "title": "🌊 ダブルウェーブB（ドン！・ポン・トッ・ポン・ドン！・ポン・トッ・ポン）", "pattern": ["f", "mf", "p", "mf", "f", "mf", "p", "mf"], "meter": "8拍", "isVariation": true },
+      { "title": "⛰️ ダブルアーチC（ポン・ドン！・ポン・トッ・ポン・ドン！・ポン・トッ）", "pattern": ["mf", "f", "mf", "p", "mf", "f", "mf", "p"], "meter": "8拍", "isVariation": true },
+      { "title": "🌊 ダブルウェーブD（トッ・ドン！・ポン・トッ・トッ・ドン！・ポン・トッ）", "pattern": ["p", "f", "mf", "p", "p", "f", "mf", "p"], "meter": "8拍", "isVariation": true },
+      { "title": "⛰️ ダブルアーチE（ドン！・トッ・ポン・ドン！・ドン！・ポン・トッ・ドン！）", "pattern": ["f", "p", "mf", "f", "f", "mf", "p", "f"], "meter": "8拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 45,
+    "padCount": 3,
+    "beatDurationMs": 330,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "random",
+    "contrastScale": 0.75,
+    "baseTitle": "👑 達人領域！微細ダイナミクス 8拍",
+    "meter": "8拍",
+    "pattern": ["mf", "p", "mf", "f", "mf", "f", "p", "mf"],
+    "patterns": [
+      { "title": "👑 達人パターンA（ポン・トッ・ポン・ドン！・ポン・ドン！・トッ・ポン）", "pattern": ["mf", "p", "mf", "f", "mf", "f", "p", "mf"], "meter": "8拍", "isVariation": false },
+      { "title": "👑 達人パターンB（トッ・ポン・ドン！・ポン・ドン！・トッ・ポン・ドン！）", "pattern": ["p", "mf", "f", "mf", "f", "p", "mf", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "👑 達人パターンC（ドン！・ポン・トッ・ドン！・ポン・ポン・トッ・ドン！）", "pattern": ["f", "mf", "p", "f", "mf", "mf", "p", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "👑 達人パターンD（ポン・ドン！・トッ・ポン・トッ・ドン！・ポン・トッ）", "pattern": ["mf", "f", "p", "mf", "p", "f", "mf", "p"], "meter": "8拍", "isVariation": true },
+      { "title": "👑 達人パターンE（ドン！・トッ・ポン・トッ・ドン！・ポン・ドン！・トッ）", "pattern": ["f", "p", "mf", "p", "f", "mf", "f", "p"], "meter": "8拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 46,
+    "padCount": 3,
+    "beatDurationMs": 325,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "random",
+    "contrastScale": 0.75,
+    "baseTitle": "👑 高速パレード！8拍アクセント移動",
+    "meter": "8拍",
+    "pattern": ["p", "f", "p", "mf", "p", "f", "mf", "p"],
+    "patterns": [
+      { "title": "👑 高速パレードA（トッ・ドン！・トッ・ポン・トッ・ドン！・ポン・トッ）", "pattern": ["p", "f", "p", "mf", "p", "f", "mf", "p"], "meter": "8拍", "isVariation": false },
+      { "title": "👑 高速パレードB（ドン！・トッ・ポン・ドン！・トッ・ポン・トッ・ドン！）", "pattern": ["f", "p", "mf", "f", "p", "mf", "p", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "👑 高速パレードC（ポン・ポン・ドン！・トッ・ポン・ドン！・トッ・トッ）", "pattern": ["mf", "mf", "f", "p", "mf", "f", "p", "p"], "meter": "8拍", "isVariation": true },
+      { "title": "👑 高速パレードD（トッ・ポン・トッ・ドン！・ドン！・ポン・トッ・ドン！）", "pattern": ["p", "mf", "p", "f", "f", "mf", "p", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "👑 高速パレードE（ドン！・ポン・ドン！・トッ・ポン・トッ・ドン！・ポン）", "pattern": ["f", "mf", "f", "p", "mf", "p", "f", "mf"], "meter": "8拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 47,
+    "padCount": 3,
+    "beatDurationMs": 320,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "random",
+    "contrastScale": 0.74,
+    "baseTitle": "👑 交響曲フィナーレ風 8拍ダイナミクス",
+    "meter": "8拍",
+    "pattern": ["f", "f", "mf", "p", "p", "mf", "f", "f"],
+    "patterns": [
+      { "title": "🎻 フィナーレA（ドン！・ドン！・ポン・トッ・トッ・ポン・ドン！・ドン！）", "pattern": ["f", "f", "mf", "p", "p", "mf", "f", "f"], "meter": "8拍", "isVariation": false },
+      { "title": "🎻 フィナーレB（トッ・トッ・ポン・ドン！・ドン！・ポン・トッ・ドン！）", "pattern": ["p", "p", "mf", "f", "f", "mf", "p", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "🎻 フィナーレC（ドン！・ポン・トッ・ポン・ドン！・トッ・ポン・ドン！）", "pattern": ["f", "mf", "p", "mf", "f", "p", "mf", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "🎻 フィナーレD（ポン・トッ・ドン！・ポン・トッ・ドン！・ドン！・トッ）", "pattern": ["mf", "p", "f", "mf", "p", "f", "f", "p"], "meter": "8拍", "isVariation": true },
+      { "title": "🎻 フィナーレE（ドン！・トッ・ドン！・ポン・トッ・ポン・ドン！・ドン！）", "pattern": ["f", "p", "f", "mf", "p", "mf", "f", "f"], "meter": "8拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 48,
+    "padCount": 3,
+    "beatDurationMs": 315,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "random",
+    "contrastScale": 0.73,
+    "baseTitle": "👑 超絶技巧！変幻自在の8拍",
+    "meter": "8拍",
+    "pattern": ["p", "f", "mf", "p", "mf", "f", "p", "f"],
+    "patterns": [
+      { "title": "👑 超絶技巧A（トッ・ドン！・ポン・トッ・ポン・ドン！・トッ・ドン！）", "pattern": ["p", "f", "mf", "p", "mf", "f", "p", "f"], "meter": "8拍", "isVariation": false },
+      { "title": "👑 超絶技巧B（ドン！・トッ・ポン・ドン！・ポン・トッ・ドン！・トッ）", "pattern": ["f", "p", "mf", "f", "mf", "p", "f", "p"], "meter": "8拍", "isVariation": true },
+      { "title": "👑 超絶技巧C（ポン・ドン！・トッ・ドン！・ポン・トッ・ポン・ドン！）", "pattern": ["mf", "f", "p", "f", "mf", "p", "mf", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "👑 超絶技巧D（ドン！・ポン・ドン！・トッ・トッ・ポン・ドン！・ポン）", "pattern": ["f", "mf", "f", "p", "p", "mf", "f", "mf"], "meter": "8拍", "isVariation": true },
+      { "title": "👑 超絶技巧E（トッ・ポン・ドン！・トッ・ドン！・ポン・トッ・ドン！）", "pattern": ["p", "mf", "f", "p", "f", "mf", "p", "f"], "meter": "8拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 49,
+    "padCount": 3,
+    "beatDurationMs": 308,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "random",
+    "contrastScale": 0.72,
+    "baseTitle": "👑 マエストロ直前！高速8拍ダイナミクス",
+    "meter": "8拍",
+    "pattern": ["mf", "f", "p", "mf", "f", "p", "p", "f"],
+    "patterns": [
+      { "title": "👑 マエストロA（ポン・ドン！・トッ・ポン・ドン！・トッ・トッ・ドン！）", "pattern": ["mf", "f", "p", "mf", "f", "p", "p", "f"], "meter": "8拍", "isVariation": false },
+      { "title": "👑 マエストロB（ドン！・ポン・トッ・ドン！・ポン・トッ・ドン！・ポン）", "pattern": ["f", "mf", "p", "f", "mf", "p", "f", "mf"], "meter": "8拍", "isVariation": true },
+      { "title": "👑 マエストロC（トッ・ドン！・ポン・ドン！・トッ・ポン・ドン！・トッ）", "pattern": ["p", "f", "mf", "f", "p", "mf", "f", "p"], "meter": "8拍", "isVariation": true },
+      { "title": "👑 マエストロD（ドン！・トッ・ポン・ポン・トッ・ドン！・ポン・ドン！）", "pattern": ["f", "p", "mf", "mf", "p", "f", "mf", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "👑 マエストロE（ポン・トッ・ドン！・トッ・ポン・ドン！・ポン・ドン！）", "pattern": ["mf", "p", "f", "p", "mf", "f", "mf", "f"], "meter": "8拍", "isVariation": true }
+    ]
+  },
+  {
+    "level": 50,
+    "padCount": 3,
+    "beatDurationMs": 300,
+    "demoCount": 1,
+    "guideMode": "none",
+    "sound": "random",
+    "contrastScale": 0.72,
+    "baseTitle": "🏆 グランド・フィナーレ！たいこマエストロ（8拍）",
+    "meter": "8拍",
+    "pattern": ["p", "mf", "f", "p", "mf", "f", "mf", "f"],
+    "patterns": [
+      { "title": "🏆 グランド・フィナーレA（トッ・ポン・ドン！・トッ・ポン・ドン！・ポン・ドン！）", "pattern": ["p", "mf", "f", "p", "mf", "f", "mf", "f"], "meter": "8拍", "isVariation": false },
+      { "title": "🏆 グランド・フィナーレB（ドン！・ポン・トッ・ドン！・ポン・トッ・ポン・ドン！）", "pattern": ["f", "mf", "p", "f", "mf", "p", "mf", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "🏆 グランド・フィナーレC（ドン！・トッ・ポン・ドン！・トッ・ポン・ドン！・ドン！）", "pattern": ["f", "p", "mf", "f", "p", "mf", "f", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "🏆 グランド・フィナーレD（ポン・トッ・ポン・ドン！・ポン・ドン！・トッ・ドン！）", "pattern": ["mf", "p", "mf", "f", "mf", "f", "p", "f"], "meter": "8拍", "isVariation": true },
+      { "title": "🏆 グランド・フィナーレE（トッ・ドン！・ポン・トッ・ポン・ドン！・ドン！・トッ）", "pattern": ["p", "f", "mf", "p", "mf", "f", "f", "p"], "meter": "8拍", "isVariation": true }
+    ]
+  }
+]
