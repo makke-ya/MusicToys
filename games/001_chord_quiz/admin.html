@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../static/config.js"></script>
     <script src="../../static/common/ui-lock.js"></script>
 </head>
 
@@ -16,9 +17,22 @@
     <div id="app" class="flex flex-col h-screen">
 
         <!-- Header -->
-        <header class="bg-indigo-700 text-white p-4 shadow flex justify-between items-center">
-            <h1 class="text-xl font-bold">和音当てクイズ 管理ダッシュボード</h1>
-            <div class="flex gap-2">
+        <header class="bg-indigo-700 text-white p-4 shadow flex flex-wrap justify-between items-center gap-2">
+            <h1 class="text-xl font-bold">MusicToys 管理ダッシュボード</h1>
+            <div class="flex flex-wrap items-center gap-2">
+                <select v-model="selectedGameFilter" @change="applyFilter"
+                    class="px-3 py-1 rounded text-black text-sm">
+                    <option value="all">すべてのゲーム</option>
+                    <option value="001_chord_quiz">001: わおんあてクイズ</option>
+                    <option value="002_harmony_game">002: ハーモニーをさがせ！</option>
+                    <option value="003_sound_updown">003: おと・アップダウン</option>
+                    <option value="004_rhythm_tap">004: リズムにのろう！</option>
+                    <option value="005_melody_memory">005: メロディーおぼえよう！</option>
+                    <option value="006_scale_puzzle">006: おんかいステップ・パズル！</option>
+                    <option value="007_melody_detective">007: まちがいさがし・おんがくたんてい！</option>
+                    <option value="008_dynamics_beat">008: おおきく・ちいさく・たいこでドン！</option>
+                    <option value="009_chord_mood">009: わおんの きもち！</option>
+                </select>
                 <input v-model="adminKey" type="password" placeholder="Admin Key"
                     class="px-3 py-1 rounded text-black text-sm w-32">
                 <button @click="loadAllData"
@@ -72,6 +86,7 @@
                             <thead class="bg-gray-100 border-b">
                                 <tr>
                                     <th class="px-4 py-3">日時</th>
+                                    <th class="px-4 py-3">ゲーム</th>
                                     <th class="px-4 py-3">レベル</th>
                                     <th class="px-4 py-3">スコア</th>
                                     <th class="px-4 py-3">正答率</th>
@@ -81,11 +96,12 @@
                             <tbody class="divide-y">
                                 <tr v-for="item in selectedHistory" :key="item.timestamp" class="hover:bg-gray-50">
                                     <td class="px-4 py-2">{{ formatDate(item.timestamp) }}</td>
+                                    <td class="px-4 py-2 text-xs text-gray-600">{{ item.gameId || '001_chord_quiz' }}</td>
                                     <td class="px-4 py-2"><span class="font-bold">{{ item.level }}</span></td>
-                                    <td class="px-4 py-2">{{ item.score }} / {{ item.total }}</td>
-                                    <td class="px-4 py-2" :class="getRateColor(item.rate)">{{ item.rate }}%</td>
+                                    <td class="px-4 py-2">{{ item.total ? `${item.score} / ${item.total}` : item.score }}</td>
+                                    <td class="px-4 py-2" :class="getRateColor(item.rate)">{{ item.rate != null ? `${item.rate}%` : '-' }}</td>
                                     <td class="px-4 py-2 text-gray-500">
-                                        {{ item.settings?.instant ? '即時' : '後で' }}
+                                        {{ item.settings && item.settings.instant !== undefined ? (item.settings.instant ? '即時' : '後で') : '-' }}
                                     </td>
                                 </tr>
                             </tbody>
@@ -98,13 +114,15 @@
 
     <script>
         const { createApp, nextTick } = Vue;
-        // Replace with actual API URL
-        const API_ENDPOINT = 'https://cn3gzqh9ff.execute-api.ap-northeast-1.amazonaws.com/result';
+        const API_ENDPOINT = (window.Config && window.Config.API_ENDPOINT)
+            ? window.Config.API_ENDPOINT
+            : 'https://skht6osyhe.execute-api.ap-northeast-1.amazonaws.com/result';
 
         createApp({
             data() {
                 return {
                     adminKey: '',
+                    selectedGameFilter: 'all',
                     rawData: [],
                     users: [], // { id, name, count, lastActive, history: [] }
                     selectedUserId: null,
@@ -130,11 +148,12 @@
                     this.selectedUserId = null;
 
                     try {
-                        const res = await fetch(`${API_ENDPOINT}?adminKey=${this.adminKey}`);
+                        const res = await fetch(`${API_ENDPOINT}?adminKey=${encodeURIComponent(this.adminKey)}`);
                         if (!res.ok) throw new Error("データの取得に失敗しました (Keyが間違っている可能性があります)");
                         const data = await res.json();
+                        this.rawData = Array.isArray(data) ? data : [];
 
-                        this.processData(data);
+                        this.processData(this.rawData);
                     } catch (e) {
                         console.error(e);
                         this.error = e.message;
@@ -143,11 +162,22 @@
                     }
                 },
 
+                applyFilter() {
+                    this.selectedUserId = null;
+                    this.processData(this.rawData);
+                },
+
+                matchesGameFilter(item) {
+                    if (this.selectedGameFilter === 'all') return true;
+                    const itemGameId = item.gameId || '001_chord_quiz';
+                    return itemGameId === this.selectedGameFilter || itemGameId.startsWith(this.selectedGameFilter + '_');
+                },
+
                 processData(data) {
                     // Group by userId
                     const userMap = {};
 
-                    data.filter(d => !d.gameId || d.gameId === '001_chord_quiz').forEach(item => {
+                    data.filter(d => this.matchesGameFilter(d)).forEach(item => {
                         const uid = item.userId || 'unknown';
                         if (!userMap[uid]) {
                             userMap[uid] = {
@@ -233,7 +263,7 @@
                             responsive: true,
                             maintainAspectRatio: false,
                             scales: {
-                                y: { beginAtZero: true, max: 10 },
+                                y: { beginAtZero: true, suggestedMax: 10 },
                                 x: { display: false } // Hide X labels if too crowded
                             },
                             plugins: {

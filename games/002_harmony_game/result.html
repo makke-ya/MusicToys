@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>結果発表！ - ハーモニーをさがせ！</title>
-  <link href="/static/common/style.css" rel="stylesheet" />
+  <link href="../../static/common/style.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="/static/common/ui-lock.js"></script>
+  <script src="../../static/config.js"></script>
+  <script src="../../static/common/ui-lock.js"></script>
 </head>
 
 <body class="bg-sky-100 flex items-center justify-center min-h-screen">
@@ -82,22 +83,21 @@
 
     // AWSからランキングデータを取得して表示
     async function fetchAndDisplayRanking() {
-      const API_ENDPOINT = window.Config.API_ENDPOINT;
-      const level = localStorage.getItem('harmonyGameLevel');
-      if (!API_ENDPOINT || !level) {
-        console.error('API Endpoint or Level not configured.');
-        return;
-      }
+      const API_ENDPOINT = (window.Config && window.Config.API_ENDPOINT)
+        ? window.Config.API_ENDPOINT
+        : 'https://skht6osyhe.execute-api.ap-northeast-1.amazonaws.com/result';
+      const difficulty = localStorage.getItem('harmonyGameDifficulty') || 'normal';
+      const gameId = `002_harmony_game_${difficulty}`;
 
       try {
         // ランキングデータを取得
-        const response = await fetch(`${API_ENDPOINT}?game_id=002_harmony_game&level=${level}`);
+        const response = await fetch(`${API_ENDPOINT}?type=leaderboard&gameId=${encodeURIComponent(gameId)}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
 
-        const scores = data.scores || [];
+        const scores = Array.isArray(data) ? data : (data.scores || []);
         const rankingListEl = document.getElementById('ranking-list');
         const scoreChartCanvas = document.getElementById('score-chart');
 

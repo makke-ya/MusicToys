@@ -10,6 +10,7 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
   <script src="../../static/config.js"></script>
   <script src="../../static/common/site.js"></script>
+  <script src="../../static/common/score-manager.js"></script>
   <script src="../../static/common/ui-lock.js"></script>
 </head>
 
@@ -50,8 +51,8 @@
     <p class="text-sm text-gray-600">${msg}</p>
   `;
 
-    const name = localStorage.getItem('username');
-    if (name) document.getElementById('resultName').textContent = `${name} さんのけっか`;
+    const initialName = localStorage.getItem('userName') || localStorage.getItem('username');
+    if (initialName) document.getElementById('resultName').textContent = `${initialName} さんのけっか`;
 
     if (lastAnswers.length) {
       const table = document.createElement('table');
@@ -71,18 +72,21 @@
     }
 
     // AWS API Endpoint URL from config.js
-    const API_ENDPOINT = window.Config ? window.Config.API_ENDPOINT : '';
+    const API_ENDPOINT = (window.Config && window.Config.API_ENDPOINT)
+      ? window.Config.API_ENDPOINT
+      : 'https://skht6osyhe.execute-api.ap-northeast-1.amazonaws.com/result';
 
     async function sendResultToAws() {
-      const name = localStorage.getItem('username');
-      if (!name) return;
-
-      // Check if already sent (to avoid duplicates on reload)
-      // We can use a simple session flag or just check if the latest result matches current timestamp?
-      // For now, let's just send. The user might want to see it recorded.
-
-      // To prevent spamming on reload, we could check if we just sent this result.
-      // relying on the specific result page load.
+      let name = localStorage.getItem('userName') || localStorage.getItem('username');
+      if (!name && window.ScoreManager && typeof window.ScoreManager.showNameInputModal === 'function') {
+        name = await window.ScoreManager.showNameInputModal();
+      }
+      if (!name) {
+        name = '名無しさん';
+      }
+      localStorage.setItem('username', name);
+      localStorage.setItem('userName', name);
+      document.getElementById('resultName').textContent = `${name} さんのけっか`;
 
       try {
         const payload = {
@@ -111,7 +115,7 @@
         if (res.ok) {
           console.log('Successfully saved to AWS');
         } else {
-          console.error('Failed to save to AWS', await res.text());
+          console.error('Failed to save to AWS', res.status, await res.text());
         }
       } catch (e) {
         console.error('Error sending result:', e);

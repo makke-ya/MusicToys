@@ -64,7 +64,9 @@
         const { createApp } = Vue;
         // Replace API_ENDPOINT with the same URL used in result.html
         // In a real app, this should be in a config file.
-        const API_ENDPOINT = window.Config ? window.Config.API_ENDPOINT : '';
+        const API_ENDPOINT = (window.Config && window.Config.API_ENDPOINT)
+            ? window.Config.API_ENDPOINT
+            : 'https://skht6osyhe.execute-api.ap-northeast-1.amazonaws.com/result';
 
         createApp({
             data() {

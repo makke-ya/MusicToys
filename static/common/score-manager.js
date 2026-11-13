@@ -1,5 +1,9 @@
 window.ScoreManager = (function() {
-    const API_ENDPOINT = window.Config ? window.Config.API_ENDPOINT : null;
+    const DEFAULT_API_ENDPOINT = 'https://skht6osyhe.execute-api.ap-northeast-1.amazonaws.com/result';
+
+    function getApiEndpoint() {
+        return (window.Config && window.Config.API_ENDPOINT) ? window.Config.API_ENDPOINT : DEFAULT_API_ENDPOINT;
+    }
 
     function getUserId() {
         if (window.Site && typeof window.Site.getUserId === 'function') {
@@ -13,6 +17,15 @@ window.ScoreManager = (function() {
         return id;
     }
 
+    function getStoredUserName() {
+        return localStorage.getItem('userName') || localStorage.getItem('username') || '';
+    }
+
+    function setStoredUserName(name) {
+        localStorage.setItem('userName', name);
+        localStorage.setItem('username', name);
+    }
+
     /**
      * Post a game score to the backend.
      * @param {string} gameId - The ID of the game (e.g., '002_harmony_game').
@@ -22,7 +35,8 @@ window.ScoreManager = (function() {
      * @returns {Promise<object>} The JSON response.
      */
     async function postScore(gameId, score, level, additionalData = {}) {
-        if (!API_ENDPOINT) {
+        const apiEndpoint = getApiEndpoint();
+        if (!apiEndpoint) {
             console.warn('API_ENDPOINT is not defined in window.Config');
             return null;
         }
@@ -31,26 +45,30 @@ window.ScoreManager = (function() {
         const timestamp = new Date().toISOString();
         
         // Retrieve user name if saved, else default
-        const userName = localStorage.getItem('userName') || '名無しさん';
+        const userName = getStoredUserName() || '名無しさん';
 
         const payload = {
             userId: userId,
             timestamp: timestamp,
             gameId: gameId,
             name: userName,
-            score: score,
-            level: level,
+            score: Number(score) || 0,
+            level: Number(level) || 1,
             ...additionalData
         };
 
         try {
-            const response = await fetch(API_ENDPOINT, {
+            const response = await fetch(apiEndpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(payload)
             });
+            if (!response.ok) {
+                const errorText = await response.text().catch(() => '');
+                throw new Error(`HTTP ${response.status}: ${errorText}`);
+            }
             return await response.json();
         } catch (error) {
             console.error('Failed to post score:', error);
@@ -64,13 +82,14 @@ window.ScoreManager = (function() {
      * @returns {Promise<Array>} List of top scores.
      */
     async function getLeaderboard(gameId) {
-        if (!API_ENDPOINT) return [];
+        const apiEndpoint = getApiEndpoint();
+        if (!apiEndpoint) return [];
 
         try {
             // Add timestamp to prevent caching
-            const response = await fetch(`${API_ENDPOINT}?type=leaderboard&gameId=${gameId}&_t=${Date.now()}`);
+            const response = await fetch(`${apiEndpoint}?type=leaderboard&gameId=${encodeURIComponent(gameId)}&_t=${Date.now()}`);
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error(`Network response was not ok (HTTP ${response.status})`);
             }
             return await response.json();
         } catch (error) {
@@ -230,7 +249,7 @@ window.ScoreManager = (function() {
             const existing = document.getElementById('name-input-modal');
             if (existing) existing.remove();
 
-            const storedName = localStorage.getItem('userName') || '';
+            const storedName = getStoredUserName();
 
             const modal = document.createElement('div');
             modal.id = 'name-input-modal';
@@ -259,7 +278,7 @@ window.ScoreManager = (function() {
 
             const submit = () => {
                 const name = input.value.trim() || '名無しさん';
-                localStorage.setItem('userName', name);
+                setStoredUserName(name);
                 modal.remove();
                 resolve(name);
             };

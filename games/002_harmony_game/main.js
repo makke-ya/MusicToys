@@ -104,6 +104,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        const finishBtn = document.getElementById('finish-button');
+        if (finishBtn) {
+            finishBtn.addEventListener('click', () => {
+                HarmonyGame.stopAllSounds();
+                isPlaying = false;
+                endGameAndUploadScore();
+            });
+        }
+
         // Leaderboard Button in Difficulty Screen
         const leaderboardBtn = document.getElementById('leaderboard-btn');
         if (leaderboardBtn) {
@@ -522,51 +531,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (lives <= 0) {
                  // GAME OVER
-                 setTimeout(async () => {
-                    if (window.ScoreManager) {
-                        try {
-                            // 0. Input Name
-                            await window.ScoreManager.showNameInputModal();
-
-                            const gameId = `002_harmony_game_${currentDifficulty}`;
-                            
-                            // 1. Post Score
-                            await window.ScoreManager.postScore(gameId, score, level);
-                            
-                            // 2. Show Leaderboard with actions and tabs
-                            await window.ScoreManager.showLeaderboardModal(gameId, { score, level, name: localStorage.getItem('userName') }, [
-                                {
-                                    label: 'もういちど',
-                                    primary: true,
-                                    onClick: () => {
-                                        location.reload();
-                                    }
-                                },
-                                {
-                                    label: 'なんいどをえらぶ',
-                                    primary: false,
-                                    onClick: () => {
-                                        window.location.href = 'level_select.html';
-                                    }
-                                }
-                            ], [
-                                { label: 'かんたん', gameId: '002_harmony_game_easy' },
-                                { label: 'ふつう', gameId: '002_harmony_game_normal' },
-                                { label: 'むずかしい', gameId: '002_harmony_game_hard' }
-                            ]);
-                            
-                            // Reset local storage for next run
-                            localStorage.setItem('harmonyGameLevel', 1);
-                            
-                        } catch (err) {
-                            console.error('Score upload failed', err);
-                            alert('ランキングのとうろくに しっぱいしました。\nインターネットにつながっているか 確認してね。');
-                            location.reload();
-                        }
-                    } else {
-                        alert('ゲームオーバー！');
-                        location.reload();
-                    }
+                 setTimeout(() => {
+                    endGameAndUploadScore();
                  }, 1000); // Slightly faster than 2000ms
                  return;
             }
@@ -577,6 +543,53 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => feedbackPopupEl.classList.add('hidden'), 300);
                 postAnswerControlsEl.classList.remove('hidden');
             }, 2000);
+        }
+    }
+
+    async function endGameAndUploadScore() {
+        if (window.ScoreManager) {
+            try {
+                // 0. Input Name
+                await window.ScoreManager.showNameInputModal();
+
+                const gameId = `002_harmony_game_${currentDifficulty}`;
+                
+                // 1. Post Score
+                await window.ScoreManager.postScore(gameId, score, level);
+                
+                // 2. Show Leaderboard with actions and tabs
+                await window.ScoreManager.showLeaderboardModal(gameId, { score, level, name: localStorage.getItem('userName') }, [
+                    {
+                        label: 'もういちど',
+                        primary: true,
+                        onClick: () => {
+                            location.reload();
+                        }
+                    },
+                    {
+                        label: 'なんいどをえらぶ',
+                        primary: false,
+                        onClick: () => {
+                            window.location.href = 'level_select.html';
+                        }
+                    }
+                ], [
+                    { label: 'かんたん', gameId: '002_harmony_game_easy' },
+                    { label: 'ふつう', gameId: '002_harmony_game_normal' },
+                    { label: 'むずかしい', gameId: '002_harmony_game_hard' }
+                ]);
+                
+                // Reset local storage for next run
+                localStorage.setItem('harmonyGameLevel', 1);
+                
+            } catch (err) {
+                console.error('Score upload failed', err);
+                alert('ランキングのとうろくに しっぱいしました。\nインターネットにつながっているか 確認してね。');
+                location.reload();
+            }
+        } else {
+            alert('ゲームオーバー！');
+            location.reload();
         }
     }
 

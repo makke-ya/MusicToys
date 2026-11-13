@@ -15,9 +15,13 @@
 <body class="bg-gray-50 min-h-screen flex items-center justify-center">
     <div id="app" class="w-full max-w-2xl p-6">
         <div class="bg-white rounded-xl shadow p-6">
-            <div class="flex justify-between items-center mb-4">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
                 <h1 class="text-xl font-bold">れべるをえらんでね</h1>
-                <span id="welcomeName" class="text-sm text-gray-600 font-medium"></span>
+                <div class="flex items-center gap-2">
+                    <label for="usernameInput" class="text-sm font-bold text-gray-600">おなまえ:</label>
+                    <input id="usernameInput" v-model="username" type="text" maxlength="10" placeholder="おなまえをいれてね"
+                        class="border rounded px-3 py-1 text-sm text-gray-800 w-40 focus:outline-none focus:border-indigo-500" />
+                </div>
             </div>
 
             <div class="grid gap-3 mb-4" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));">
@@ -45,6 +49,7 @@
             </div>
 
             <div class="flex items-center gap-4">
+                <button onclick="location.href='stats.html'" class="px-3 py-2 border rounded text-indigo-700 bg-indigo-50 hover:bg-indigo-100 text-sm font-bold">📊 グラフをみる</button>
                 <button @click="goBack" class="ml-auto px-3 py-2 border rounded">もどる</button>
             </div>
         </div>
@@ -53,9 +58,14 @@
     <script>
         const { createApp } = Vue;
         createApp({
-            data() { return { levels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], instant: true, iconSet: 'animals' } },
+            data() { return { levels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], instant: true, iconSet: 'animals', username: '' } },
             methods: {
                 selectLevel(l) {
+                    const trimmed = (this.username || '').trim();
+                    if (trimmed) {
+                        localStorage.setItem('username', trimmed);
+                        localStorage.setItem('userName', trimmed);
+                    }
                     localStorage.setItem('selectedLevel', String(l));
                     localStorage.setItem('instant', this.instant ? '1' : '0');
                     localStorage.setItem('iconSet', this.iconSet || 'animals');
@@ -70,12 +80,17 @@
                 const storedIcon = localStorage.getItem('iconSet');
                 if (storedIcon) this.iconSet = storedIcon;
 
-                const name = localStorage.getItem('username');
-                if (name) document.getElementById('welcomeName').textContent = `ようこそ ${name} さん`;
+                const name = localStorage.getItem('userName') || localStorage.getItem('username') || '';
+                this.username = name;
             },
             watch: {
                 iconSet(newVal) {
                     localStorage.setItem('iconSet', newVal || 'animals');
+                },
+                username(newVal) {
+                    const trimmed = (newVal || '').trim();
+                    localStorage.setItem('username', trimmed);
+                    localStorage.setItem('userName', trimmed);
                 }
             }
         }).mount('#app');
