@@ -1,0 +1,6 @@
+{
+  "name": "まちがいさがし・おんがくたんてい！",
+  "description": "おてほん先生と まねっこ生徒の メロディーを ききくらべて、ちがう おとを みつけよう！",
+  "entry_point": "index.html",
+  "thumbnail": "images/thumbnail.png"
+}

@@ -1,0 +1,116 @@
+/* games/007_melody_detective/style.css */
+
+.level-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.level-btn:active {
+    transform: translateY(4px);
+}
+
+/* Singer Stage Cards (Teacher Owl & Student Puppy) */
+.singer-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.singer-card.stage-singer-active {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow:
+        0 0 0 4px #f59e0b,
+        0 12px 24px rgba(245, 158, 11, 0.35);
+}
+
+/* Interactive Detective Choice Buttons (Binary O/X and Note Suspect Cards) */
+.detective-choice {
+    position: relative;
+    transition: transform 0.12s ease, filter 0.15s ease, opacity 0.15s ease, box-shadow 0.12s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+.detective-choice:active:not(.choice-disabled),
+.detective-choice.choice-tapped {
+    transform: translateY(4px) scale(0.96);
+}
+
+/* Grayed-out disabled state during demo playback */
+.detective-choice.choice-disabled {
+    filter: grayscale(85%);
+    opacity: 0.58;
+    cursor: not-allowed;
+}
+
+/* Suspect Note Card in Lineup */
+.suspect-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 0.45rem;
+    border-radius: 1.2rem;
+    border-bottom-width: 6px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    min-width: 4.4rem;
+    min-height: 6.75rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* Highlight when a note is currently sounding during Teacher or Student demo */
+.suspect-card.suspect-demo-teacher {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: translateY(-8px) scale(1.08);
+    box-shadow:
+        0 0 0 4px #38bdf8,
+        0 12px 20px rgba(56, 189, 248, 0.5);
+    z-index: 10;
+}
+
+.suspect-card.suspect-demo-student {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: translateY(-8px) scale(1.08);
+    box-shadow:
+        0 0 0 4px #fbbf24,
+        0 12px 20px rgba(251, 191, 36, 0.55);
+    z-index: 10;
+}
+
+.suspect-card.suspect-correct {
+    background-color: #d1fae5 !important;
+    border-color: #10b981 !important;
+    color: #065f46 !important;
+}
+
+.suspect-card.suspect-mistake {
+    background-color: #fee2e2 !important;
+    border-color: #ef4444 !important;
+    color: #991b1b !important;
+}
+
+/* Star pop animation */
+@keyframes star-pop {
+    0% {
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.25) rotate(8deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.star-animate {
+    display: inline-block;
+    animation: star-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}

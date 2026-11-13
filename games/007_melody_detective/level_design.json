@@ -1,0 +1,4073 @@
+[
+  {
+    "level": 1,
+    "mode": "same_or_diff",
+    "noteCount": 3,
+    "mistakeDistance": "large",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 520,
+    "gapBetweenPhrasesMs": 750,
+    "sound": "marimba",
+    "baseSong": "🌷 チューリップ（でだし）",
+    "notes": [
+      0,
+      1,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（でだし）",
+        "notes": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🥖 あつあつパン",
+        "notes": [
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（ショート）",
+        "notes": [
+          0,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ショート）",
+        "notes": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（ショート）",
+        "notes": [
+          2,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（ショート）",
+        "notes": [
+          4,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "mode": "same_or_diff",
+    "noteCount": 3,
+    "mistakeDistance": "large",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 516,
+    "gapBetweenPhrasesMs": 746,
+    "sound": "marimba",
+    "baseSong": "🥖 あつあつパン",
+    "notes": [
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（でだし）",
+        "notes": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🥖 あつあつパン",
+        "notes": [
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（ショート）",
+        "notes": [
+          0,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ショート）",
+        "notes": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（ショート）",
+        "notes": [
+          2,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（ショート）",
+        "notes": [
+          4,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "mode": "same_or_diff",
+    "noteCount": 3,
+    "mistakeDistance": "large",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 511,
+    "gapBetweenPhrasesMs": 742,
+    "sound": "marimba",
+    "baseSong": "🐸 かえるのうた（ショート）",
+    "notes": [
+      0,
+      2,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（でだし）",
+        "notes": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🥖 あつあつパン",
+        "notes": [
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（ショート）",
+        "notes": [
+          0,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ショート）",
+        "notes": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（ショート）",
+        "notes": [
+          2,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（ショート）",
+        "notes": [
+          4,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "mode": "same_or_diff",
+    "noteCount": 3,
+    "mistakeDistance": "large",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 507,
+    "gapBetweenPhrasesMs": 738,
+    "sound": "marimba",
+    "baseSong": "🐑 メリーさんのひつじ（ショート）",
+    "notes": [
+      2,
+      1,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（でだし）",
+        "notes": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🥖 あつあつパン",
+        "notes": [
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（ショート）",
+        "notes": [
+          0,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ショート）",
+        "notes": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（ショート）",
+        "notes": [
+          2,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（ショート）",
+        "notes": [
+          4,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 5,
+    "mode": "same_or_diff",
+    "noteCount": 3,
+    "mistakeDistance": "large",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 502,
+    "gapBetweenPhrasesMs": 734,
+    "sound": "marimba",
+    "baseSong": "🔔 ジングルベル（ショート）",
+    "notes": [
+      2,
+      2,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（でだし）",
+        "notes": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🥖 あつあつパン",
+        "notes": [
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（ショート）",
+        "notes": [
+          0,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ショート）",
+        "notes": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（ショート）",
+        "notes": [
+          2,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（ショート）",
+        "notes": [
+          4,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 6,
+    "mode": "same_or_diff",
+    "noteCount": 4,
+    "mistakeDistance": "large",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 498,
+    "gapBetweenPhrasesMs": 730,
+    "sound": "marimba",
+    "baseSong": "🌰 どんぐりころころ（4おん）",
+    "notes": [
+      4,
+      4,
+      2,
+      3
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（4おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（4おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "title": "🌷 チューリップ（後半）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（4おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（4おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（4おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "level": 7,
+    "mode": "same_or_diff",
+    "noteCount": 4,
+    "mistakeDistance": "large",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 493,
+    "gapBetweenPhrasesMs": 726,
+    "sound": "marimba",
+    "baseSong": "🐸 かえるのうた（4おん）",
+    "notes": [
+      0,
+      1,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（4おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（4おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "title": "🌷 チューリップ（後半）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（4おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（4おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（4おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "level": 8,
+    "mode": "same_or_diff",
+    "noteCount": 4,
+    "mistakeDistance": "large",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 489,
+    "gapBetweenPhrasesMs": 721,
+    "sound": "marimba",
+    "baseSong": "🐑 メリーさんのひつじ（4おん）",
+    "notes": [
+      2,
+      1,
+      0,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（4おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（4おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "title": "🌷 チューリップ（後半）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（4おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（4おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（4おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "level": 9,
+    "mode": "same_or_diff",
+    "noteCount": 4,
+    "mistakeDistance": "large",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 484,
+    "gapBetweenPhrasesMs": 717,
+    "sound": "marimba",
+    "baseSong": "🌷 チューリップ（後半）",
+    "notes": [
+      4,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（4おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（4おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "title": "🌷 チューリップ（後半）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（4おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（4おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（4おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "mode": "same_or_diff",
+    "noteCount": 4,
+    "mistakeDistance": "large",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 480,
+    "gapBetweenPhrasesMs": 713,
+    "sound": "marimba",
+    "baseSong": "⭐ きらきらぼし（4おん）",
+    "notes": [
+      0,
+      0,
+      4,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（4おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（4おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "title": "🌷 チューリップ（後半）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（4おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（4おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（4おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "level": 11,
+    "mode": "same_or_diff",
+    "noteCount": 4,
+    "mistakeDistance": "medium",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 475,
+    "gapBetweenPhrasesMs": 709,
+    "sound": "musicbox",
+    "baseSong": "🎵 よろこびのうた（4おん）",
+    "notes": [
+      2,
+      2,
+      3,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（4おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（4おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "title": "🌷 チューリップ（後半）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（4おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（4おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（4おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "mode": "same_or_diff",
+    "noteCount": 4,
+    "mistakeDistance": "medium",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 471,
+    "gapBetweenPhrasesMs": 705,
+    "sound": "musicbox",
+    "baseSong": "🌰 どんぐりころころ（4おん）",
+    "notes": [
+      4,
+      4,
+      2,
+      3
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（4おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（4おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "title": "🌷 チューリップ（後半）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（4おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（4おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（4おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "level": 13,
+    "mode": "same_or_diff",
+    "noteCount": 5,
+    "mistakeDistance": "medium",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 466,
+    "gapBetweenPhrasesMs": 701,
+    "sound": "musicbox",
+    "baseSong": "🦋 ちょうちょ（5おん）",
+    "notes": [
+      4,
+      2,
+      2,
+      3,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（5おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（5おん）",
+        "notes": [
+          2,
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（5おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（5おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（5おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "level": 14,
+    "mode": "same_or_diff",
+    "noteCount": 5,
+    "mistakeDistance": "medium",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 462,
+    "gapBetweenPhrasesMs": 697,
+    "sound": "musicbox",
+    "baseSong": "🐸 かえるのうた（5おん）",
+    "notes": [
+      0,
+      1,
+      2,
+      3,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（5おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（5おん）",
+        "notes": [
+          2,
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（5おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（5おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（5おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "level": 15,
+    "mode": "same_or_diff",
+    "noteCount": 5,
+    "mistakeDistance": "medium",
+    "guideMode": "all",
+    "allowTranspose": false,
+    "noteDurationMs": 457,
+    "gapBetweenPhrasesMs": 693,
+    "sound": "musicbox",
+    "baseSong": "🔔 ジングルベル（5おん）",
+    "notes": [
+      2,
+      4,
+      0,
+      1,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（5おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（5おん）",
+        "notes": [
+          2,
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（5おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（5おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（5おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "level": 16,
+    "mode": "find_index",
+    "noteCount": 3,
+    "mistakeDistance": "large",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 453,
+    "gapBetweenPhrasesMs": 689,
+    "sound": "musicbox",
+    "baseSong": "🐑 メリーさんのひつじ（ショート）",
+    "notes": [
+      2,
+      1,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（でだし）",
+        "notes": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🥖 あつあつパン",
+        "notes": [
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（ショート）",
+        "notes": [
+          0,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ショート）",
+        "notes": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（ショート）",
+        "notes": [
+          2,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（ショート）",
+        "notes": [
+          4,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 17,
+    "mode": "find_index",
+    "noteCount": 3,
+    "mistakeDistance": "large",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 448,
+    "gapBetweenPhrasesMs": 685,
+    "sound": "musicbox",
+    "baseSong": "🔔 ジングルベル（ショート）",
+    "notes": [
+      2,
+      2,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（でだし）",
+        "notes": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🥖 あつあつパン",
+        "notes": [
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（ショート）",
+        "notes": [
+          0,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ショート）",
+        "notes": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（ショート）",
+        "notes": [
+          2,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（ショート）",
+        "notes": [
+          4,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 18,
+    "mode": "find_index",
+    "noteCount": 3,
+    "mistakeDistance": "large",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 444,
+    "gapBetweenPhrasesMs": 681,
+    "sound": "musicbox",
+    "baseSong": "🦋 ちょうちょ（ショート）",
+    "notes": [
+      4,
+      2,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（でだし）",
+        "notes": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🥖 あつあつパン",
+        "notes": [
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（ショート）",
+        "notes": [
+          0,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（ショート）",
+        "notes": [
+          2,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（ショート）",
+        "notes": [
+          2,
+          2,
+          4
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（ショート）",
+        "notes": [
+          4,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 19,
+    "mode": "find_index",
+    "noteCount": 4,
+    "mistakeDistance": "large",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 439,
+    "gapBetweenPhrasesMs": 677,
+    "sound": "musicbox",
+    "baseSong": "🐸 かえるのうた（4おん）",
+    "notes": [
+      0,
+      1,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（4おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（4おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "title": "🌷 チューリップ（後半）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（4おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（4おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（4おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "level": 20,
+    "mode": "find_index",
+    "noteCount": 4,
+    "mistakeDistance": "large",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 435,
+    "gapBetweenPhrasesMs": 672,
+    "sound": "musicbox",
+    "baseSong": "🐑 メリーさんのひつじ（4おん）",
+    "notes": [
+      2,
+      1,
+      0,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（4おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（4おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "title": "🌷 チューリップ（後半）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（4おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（4おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（4おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "level": 21,
+    "mode": "find_index",
+    "noteCount": 4,
+    "mistakeDistance": "medium",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 430,
+    "gapBetweenPhrasesMs": 668,
+    "sound": "piano",
+    "baseSong": "🌷 チューリップ（後半）",
+    "notes": [
+      4,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（4おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（4おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "title": "🌷 チューリップ（後半）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（4おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（4おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（4おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "level": 22,
+    "mode": "find_index",
+    "noteCount": 4,
+    "mistakeDistance": "medium",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 426,
+    "gapBetweenPhrasesMs": 664,
+    "sound": "piano",
+    "baseSong": "⭐ きらきらぼし（4おん）",
+    "notes": [
+      0,
+      0,
+      4,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（4おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          1
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（4おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "title": "🌷 チューリップ（後半）",
+        "notes": [
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（4おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（4おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（4おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "level": 23,
+    "mode": "find_index",
+    "noteCount": 5,
+    "mistakeDistance": "medium",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 421,
+    "gapBetweenPhrasesMs": 660,
+    "sound": "piano",
+    "baseSong": "🐝 ぶんぶんぶん（5おん）",
+    "notes": [
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（5おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（5おん）",
+        "notes": [
+          2,
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（5おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（5おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（5おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "level": 24,
+    "mode": "find_index",
+    "noteCount": 5,
+    "mistakeDistance": "medium",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 417,
+    "gapBetweenPhrasesMs": 656,
+    "sound": "piano",
+    "baseSong": "🏠 家路・新世界より（5おん）",
+    "notes": [
+      2,
+      4,
+      4,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（5おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（5おん）",
+        "notes": [
+          2,
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（5おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（5おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（5おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "level": 25,
+    "mode": "find_index",
+    "noteCount": 5,
+    "mistakeDistance": "medium",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 412,
+    "gapBetweenPhrasesMs": 652,
+    "sound": "piano",
+    "baseSong": "🦋 ちょうちょ（5おん）",
+    "notes": [
+      4,
+      2,
+      2,
+      3,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（5おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（5おん）",
+        "notes": [
+          2,
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（5おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（5おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（5おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "level": 26,
+    "mode": "find_index",
+    "noteCount": 5,
+    "mistakeDistance": "medium",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 408,
+    "gapBetweenPhrasesMs": 648,
+    "sound": "piano",
+    "baseSong": "🐸 かえるのうた（5おん）",
+    "notes": [
+      0,
+      1,
+      2,
+      3,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（5おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（5おん）",
+        "notes": [
+          2,
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（5おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（5おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（5おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "level": 27,
+    "mode": "find_index",
+    "noteCount": 5,
+    "mistakeDistance": "medium",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 403,
+    "gapBetweenPhrasesMs": 644,
+    "sound": "piano",
+    "baseSong": "🔔 ジングルベル（5おん）",
+    "notes": [
+      2,
+      4,
+      0,
+      1,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（5おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（5おん）",
+        "notes": [
+          2,
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（5おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（5おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（5おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "level": 28,
+    "mode": "find_index",
+    "noteCount": 5,
+    "mistakeDistance": "medium",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 399,
+    "gapBetweenPhrasesMs": 640,
+    "sound": "piano",
+    "baseSong": "🌉 ロンドンばし（5おん）",
+    "notes": [
+      4,
+      5,
+      4,
+      3,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（5おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（5おん）",
+        "notes": [
+          2,
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（5おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（5おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（5おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "level": 29,
+    "mode": "find_index",
+    "noteCount": 5,
+    "mistakeDistance": "medium",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 394,
+    "gapBetweenPhrasesMs": 636,
+    "sound": "piano",
+    "baseSong": "🐝 ぶんぶんぶん（5おん）",
+    "notes": [
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（5おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（5おん）",
+        "notes": [
+          2,
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（5おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（5おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（5おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "level": 30,
+    "mode": "find_index",
+    "noteCount": 5,
+    "mistakeDistance": "medium",
+    "guideMode": "position_only",
+    "allowTranspose": false,
+    "noteDurationMs": 390,
+    "gapBetweenPhrasesMs": 632,
+    "sound": "piano",
+    "baseSong": "🏠 家路・新世界より（5おん）",
+    "notes": [
+      2,
+      4,
+      4,
+      2,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🦋 ちょうちょ（5おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        "title": "🐸 かえるのうた（5おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🔔 ジングルベル（5おん）",
+        "notes": [
+          2,
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（5おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        "title": "🐝 ぶんぶんぶん（5おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（5おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "level": 31,
+    "mode": "find_index",
+    "noteCount": 6,
+    "mistakeDistance": "medium",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 385,
+    "gapBetweenPhrasesMs": 628,
+    "sound": "synth",
+    "baseSong": "🌷 チューリップ（6おん）",
+    "notes": [
+      0,
+      1,
+      2,
+      0,
+      1,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（6おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（6おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（6おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（6おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（6おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐻 もりのくまさん（6おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "level": 32,
+    "mode": "find_index",
+    "noteCount": 6,
+    "mistakeDistance": "medium",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 381,
+    "gapBetweenPhrasesMs": 623,
+    "sound": "synth",
+    "baseSong": "🦋 ちょうちょ（6おん）",
+    "notes": [
+      4,
+      2,
+      2,
+      3,
+      1,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（6おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（6おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（6おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（6おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（6おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐻 もりのくまさん（6おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "level": 33,
+    "mode": "find_index",
+    "noteCount": 6,
+    "mistakeDistance": "medium",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 376,
+    "gapBetweenPhrasesMs": 619,
+    "sound": "synth",
+    "baseSong": "⭐ きらきらぼし（6おん）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（6おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（6おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（6おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（6おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（6おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐻 もりのくまさん（6おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "level": 34,
+    "mode": "find_index",
+    "noteCount": 6,
+    "mistakeDistance": "medium",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 372,
+    "gapBetweenPhrasesMs": 615,
+    "sound": "synth",
+    "baseSong": "🎵 よろこびのうた（6おん）",
+    "notes": [
+      2,
+      2,
+      3,
+      4,
+      4,
+      3
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（6おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（6おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（6おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（6おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（6おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐻 もりのくまさん（6おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "level": 35,
+    "mode": "find_index",
+    "noteCount": 6,
+    "mistakeDistance": "medium",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 367,
+    "gapBetweenPhrasesMs": 611,
+    "sound": "synth",
+    "baseSong": "🏠 家路・新世界より（6おん）",
+    "notes": [
+      2,
+      4,
+      4,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（6おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（6おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（6おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（6おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（6おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐻 もりのくまさん（6おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "level": 36,
+    "mode": "find_index",
+    "noteCount": 6,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 363,
+    "gapBetweenPhrasesMs": 607,
+    "sound": "synth",
+    "baseSong": "🐻 もりのくまさん（6おん）",
+    "notes": [
+      4,
+      3,
+      2,
+      4,
+      7,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（6おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（6おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（6おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（6おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（6おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐻 もりのくまさん（6おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "level": 37,
+    "mode": "find_index",
+    "noteCount": 6,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 358,
+    "gapBetweenPhrasesMs": 603,
+    "sound": "synth",
+    "baseSong": "🌷 チューリップ（6おん）",
+    "notes": [
+      0,
+      1,
+      2,
+      0,
+      1,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（6おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（6おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（6おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（6おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（6おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐻 もりのくまさん（6おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "level": 38,
+    "mode": "find_index",
+    "noteCount": 6,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 354,
+    "gapBetweenPhrasesMs": 599,
+    "sound": "synth",
+    "baseSong": "🦋 ちょうちょ（6おん）",
+    "notes": [
+      4,
+      2,
+      2,
+      3,
+      1,
+      1
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（6おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（6おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（6おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（6おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（6おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐻 もりのくまさん（6おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "level": 39,
+    "mode": "find_index",
+    "noteCount": 6,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 349,
+    "gapBetweenPhrasesMs": 595,
+    "sound": "synth",
+    "baseSong": "⭐ きらきらぼし（6おん）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（6おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（6おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（6おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（6おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（6おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐻 もりのくまさん（6おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "level": 40,
+    "mode": "find_index",
+    "noteCount": 6,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 345,
+    "gapBetweenPhrasesMs": 591,
+    "sound": "synth",
+    "baseSong": "🎵 よろこびのうた（6おん）",
+    "notes": [
+      2,
+      2,
+      3,
+      4,
+      4,
+      3
+    ],
+    "melodies": [
+      {
+        "title": "🌷 チューリップ（6おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "title": "🦋 ちょうちょ（6おん）",
+        "notes": [
+          4,
+          2,
+          2,
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（6おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🎵 よろこびのうた（6おん）",
+        "notes": [
+          2,
+          2,
+          3,
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "title": "🏠 家路・新世界より（6おん）",
+        "notes": [
+          2,
+          4,
+          4,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐻 もりのくまさん（6おん）",
+        "notes": [
+          4,
+          3,
+          2,
+          4,
+          7,
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "level": 41,
+    "mode": "find_index",
+    "noteCount": 7,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 340,
+    "gapBetweenPhrasesMs": 587,
+    "sound": "random",
+    "baseSong": "🌉 ロンドンばし（7おん）",
+    "notes": [
+      4,
+      5,
+      4,
+      3,
+      2,
+      3,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（7おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（7おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（7おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（7おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（7おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（7おん）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 42,
+    "mode": "find_index",
+    "noteCount": 7,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 336,
+    "gapBetweenPhrasesMs": 583,
+    "sound": "random",
+    "baseSong": "🕰️ おおきなのっぽの古時計（7おん）",
+    "notes": [
+      4,
+      7,
+      6,
+      7,
+      4,
+      3,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（7おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（7おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（7おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（7おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（7おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（7おん）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 43,
+    "mode": "find_index",
+    "noteCount": 7,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 331,
+    "gapBetweenPhrasesMs": 579,
+    "sound": "random",
+    "baseSong": "🐸 かえるのうた（7おん）",
+    "notes": [
+      0,
+      1,
+      2,
+      3,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（7おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（7おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（7おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（7おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（7おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（7おん）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 44,
+    "mode": "find_index",
+    "noteCount": 7,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 327,
+    "gapBetweenPhrasesMs": 574,
+    "sound": "random",
+    "baseSong": "🐑 メリーさんのひつじ（7おん）",
+    "notes": [
+      2,
+      1,
+      0,
+      1,
+      2,
+      2,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（7おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（7おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（7おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（7おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（7おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（7おん）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 45,
+    "mode": "find_index",
+    "noteCount": 7,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 322,
+    "gapBetweenPhrasesMs": 570,
+    "sound": "random",
+    "baseSong": "⭐ きらきらぼし（7おん）",
+    "notes": [
+      0,
+      0,
+      4,
+      4,
+      5,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（7おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（7おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（7おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（7おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（7おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（7おん）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 46,
+    "mode": "find_index",
+    "noteCount": 7,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 318,
+    "gapBetweenPhrasesMs": 566,
+    "sound": "random",
+    "baseSong": "🌰 どんぐりころころ（7おん）",
+    "notes": [
+      4,
+      4,
+      2,
+      3,
+      4,
+      5,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（7おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（7おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（7おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（7おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（7おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（7おん）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 47,
+    "mode": "find_index",
+    "noteCount": 7,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 313,
+    "gapBetweenPhrasesMs": 562,
+    "sound": "random",
+    "baseSong": "🌉 ロンドンばし（7おん）",
+    "notes": [
+      4,
+      5,
+      4,
+      3,
+      2,
+      3,
+      4
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（7おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（7おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（7おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（7おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（7おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（7おん）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 48,
+    "mode": "find_index",
+    "noteCount": 7,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 309,
+    "gapBetweenPhrasesMs": 558,
+    "sound": "random",
+    "baseSong": "🕰️ おおきなのっぽの古時計（7おん）",
+    "notes": [
+      4,
+      7,
+      6,
+      7,
+      4,
+      3,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（7おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（7おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（7おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（7おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（7おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（7おん）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 49,
+    "mode": "find_index",
+    "noteCount": 7,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 304,
+    "gapBetweenPhrasesMs": 554,
+    "sound": "random",
+    "baseSong": "🐸 かえるのうた（7おん）",
+    "notes": [
+      0,
+      1,
+      2,
+      3,
+      2,
+      1,
+      0
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（7おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（7おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（7おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（7おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（7おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（7おん）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "level": 50,
+    "mode": "find_index",
+    "noteCount": 7,
+    "mistakeDistance": "subtle",
+    "guideMode": "ear_only",
+    "allowTranspose": true,
+    "noteDurationMs": 300,
+    "gapBetweenPhrasesMs": 550,
+    "sound": "random",
+    "baseSong": "🐑 メリーさんのひつじ（7おん）",
+    "notes": [
+      2,
+      1,
+      0,
+      1,
+      2,
+      2,
+      2
+    ],
+    "melodies": [
+      {
+        "title": "🐸 かえるのうた（7おん）",
+        "notes": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "title": "🐑 メリーさんのひつじ（7おん）",
+        "notes": [
+          2,
+          1,
+          0,
+          1,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "title": "⭐ きらきらぼし（7おん）",
+        "notes": [
+          0,
+          0,
+          4,
+          4,
+          5,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌰 どんぐりころころ（7おん）",
+        "notes": [
+          4,
+          4,
+          2,
+          3,
+          4,
+          5,
+          4
+        ]
+      },
+      {
+        "title": "🌉 ロンドンばし（7おん）",
+        "notes": [
+          4,
+          5,
+          4,
+          3,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "title": "🕰️ おおきなのっぽの古時計（7おん）",
+        "notes": [
+          4,
+          7,
+          6,
+          7,
+          4,
+          3,
+          2
+        ]
+      }
+    ]
+  }
+]
