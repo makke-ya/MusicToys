@@ -1,0 +1,6 @@
+{
+  "name": "おとのかいだん・パズル！",
+  "description": "おとの たかさを ききくらべて、かいだんの ブロックを ただしい じゅんばんに ならべよう！",
+  "entry_point": "index.html",
+  "thumbnail": "images/thumbnail.png"
+}
