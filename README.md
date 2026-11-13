@@ -51,12 +51,6 @@
 - **対象年齢**: 3歳〜
 - **特徴**: メジャー／マイナー／サスフォー等の響き学習、不正解時の聴き比べリプレイ対応
 
-## 📊 管理ダッシュボード
-
-各ゲームのプレイ結果・スコア履歴を一覧・グラフで確認できます。
-- 公開URL: https://makke-ya.github.io/MusicToys/games/admin.html
-- ファイル: [games/admin.html](games/admin.html)（閲覧には `ADMIN_KEY` が必要です）
-
 ## 🚀 実行方法
 
 ### ローカル開発
